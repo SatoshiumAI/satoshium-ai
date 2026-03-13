@@ -144,7 +144,7 @@
   position:absolute;
   inset:0;
 
-  background-image:url('/assets/world-grid.jpg');
+  background-image:url('https://satoshium.link/assets/world-grid.jpg');
   background-size:cover;
   background-position:center;
 
@@ -489,7 +489,7 @@
 
   </main>
 <script>
-fetch("/components/topbar.html")
+fetch("https://satoshium.link/components/topbar.html")
   .then(r => r.text())
   .then(data => {
     document.getElementById("topbar-container").innerHTML = data;
@@ -510,7 +510,7 @@ fetch("/components/topbar.html")
 
 <script src="/assets/sayings.js"></script>
 <script>
-fetch("/components/footer.html")
+fetch("https://satoshium.link/components/footer.html")
  .then(response => response.text())
  .then(data => {
  document.getElementById("footer-container").innerHTML = data;
