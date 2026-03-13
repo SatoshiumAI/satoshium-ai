@@ -54,6 +54,15 @@
     background:rgba(12,16,24,.88);
   }
 
+.card{
+transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover{
+transform: translateY(-3px);
+box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+    
   .span-2{
     grid-column:1 / -1;
   }
@@ -73,14 +82,14 @@
     background:rgba(214,163,74,.06);
     font-size:12px;
     font-weight:700;
-    margin-bottom:16px;
+    margin-bottom:28px;
   }
 
   .hero-actions{
     display:flex;
     flex-wrap:wrap;
     gap:12px;
-    margin-top:20px;
+    margin-top:80px;
   }
 
   .hero-content::before{
@@ -501,7 +510,7 @@ fetch("https://satoshium.link/components/topbar.html")
 </script>
 <div class="wrap reflection">
 <hr />
-<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+<div id="random-saying" class="muted" style="margin-bottom:28px; max-width:760px;">
   Satoshium is being built slowly, in public, and with architectural discipline.
 </div>
 <hr />
