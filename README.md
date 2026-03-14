@@ -1,8 +1,10 @@
-# 🪐 Satoshium — Info
+# 🪐 Satoshium — A.I.
 
-Satoshium Info is the documentation, architecture, and development intelligence surface of the Satoshium ecosystem. It exists to make the project understandable, navigable, and durable — not just for today’s build cycle, but for the long arc of what Satoshium could become by 2035 and beyond.
+Satoshium is a decentralized intelligence infrastructure project aligned with the Bitcoin standard. It is being developed as a platform where humans and AI can reason about complex systems using shared knowledge, verifiable claims, and simulation environments.
 
-This repository is part of the **Satoshium platform**, an experimental system exploring how decentralized intelligence, AI agents, and cryptographic infrastructure can evolve together over long time horizons.
+This Readme documents the public build of that platform — including its architecture, systems, knowledge layer, experimental labs, and long-horizon development progress.
+
+This repository is the main part of the **Satoshium platform**, an experimental system exploring how decentralized intelligence, AI agents, and cryptographic infrastructure can evolve together over long time horizons.
 
 ---
 
