@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Satoshium — Terms of Use</title>
+<style>
+
+/* ===== Core Theme ===== */
+
+:root{
+ --card-wm: url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+margin:0;
+padding:0;
+background:var(--bg);
+color:var(--text);
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+line-height:1.55
+}
+body{
+ padding-top:80px;
+}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+
+/* ===== Layout ===== */
+
+.content{
+padding:34px 18px 60px
+}
+
+h1,h2{
+margin:0 0 10px
+}
+
+h1{
+font-size:30px;
+color:var(--gold2)
+}
+
+h2{
+font-size:20px;
+color:var(--gold2);
+margin-top:26px
+}
+
+p,li{
+color:var(--text)
+}
+
+hr{
+border:none;
+border-top:1px solid var(--line);
+margin:22px 0
+}
+
+/* ===== Cards ===== */
+
+.card{
+position: relative;
+overflow: hidden;
+
+background: linear-gradient(
+to bottom right,
+rgba(12,16,24,.94),
+rgba(12,16,24,.88)
+);
+
+border:1px solid var(--line);
+border-radius:16px;
+
+padding:16px 16px;
+margin:16px 0;
+
+box-shadow:
+0 0 0 1px rgba(214,163,74,.08),
+0 20px 50px rgba(0,0,0,.45);
+}
+
+.card::before{
+content:"";
+position:absolute;
+inset:-60px;
+background-image: var(--card-wm);
+background-repeat:no-repeat;
+background-size: min(720px, 70vw);
+background-position: right -140px center;
+opacity:0.028;
+filter: blur(1px);
+pointer-events:none;
+z-index:0;
+}
+
+.card > *{
+position:relative;
+z-index:1
+}
+
+.card {
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+.card {
+ border: 1px solid rgba(214,163,74,.15);
+}
+
+.muted{
+color:var(--muted)
+}
+
+.footer{
+border-top:1px solid var(--line);
+padding:18px 0 32px;
+color:var(--muted)
+}
+
+/* ===== Pills ===== */
+
+.pill{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:8px 10px;
+border:1px solid var(--line);
+border-radius:999px;
+background:rgba(214,163,74,.08);
+color:var(--gold2);
+font-size:12px;
+font-weight:700
+}
+
+ul{
+margin:8px 0 0 18px
+}
+
+.legal-links{
+display:flex;
+flex-wrap:wrap;
+gap:10px 14px;
+margin-top:10px
+}
+
+.legal-links a{
+font-weight:600
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<div id="topbar-slot"></div>
+<script src="https://satoshium.link/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<div class="pill">📜 Terms</div>
+
+<h1>Terms of Use</h1>
+
+<p class="muted">
+These Terms of Use govern access to and use of the public Satoshium platform, including its websites, pages, documentation, software experiments, design systems, educational materials, and linked public infrastructure.
+</p>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Legal Navigation</h2>
+  <p>
+    This page is part of the Satoshium legal section.
+  </p>
+
+  <div class="legal-links">
+    <a href="https://satoshium.ai/legal/">Legal Home</a>
+    <a href="https://satoshium.ai/legal/privacy.html">Privacy Policy</a>
+    <a href="https://satoshium.ai/legal/terms.html">Terms of Use</a>
+    <a href="https://satoshium.ai/legal/trademark.html">Trademark Notice</a>
+    <a href="https://satoshium.ai/legal/disclaimer.html">Disclaimer</a>
+  </div>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Acceptance of Terms</h2>
+  <p>
+    By accessing or using any public Satoshium page, domain, tool, interface, or resource, you agree to these Terms of Use.
+    If you do not agree with these terms, you should not use the platform.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Platform Nature</h2>
+  <p>
+    Satoshium is an experimental public software platform exploring decentralized intelligence systems, cryptographic coordination, public knowledge infrastructure, governance design, simulations, and Bitcoin-anchored trust models.
+    Portions of the platform may be incomplete, evolving, under active development, or subject to change without notice.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Permitted Use</h2>
+  <p>
+    You may access and use the public Satoshium platform for lawful informational, educational, research, exploratory, and general viewing purposes.
+    You agree not to misuse the platform, interfere with its operation, attempt unauthorized access, disrupt services, scrape protected areas unlawfully, or use the platform in ways that could damage, disable, overload, or compromise public infrastructure.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>No Unlawful or Harmful Use</h2>
+  <p>
+    You may not use the Satoshium platform to engage in unlawful conduct, abuse, harassment, malicious probing, impersonation, fraud, spam, infringement, harmful automation, or activity intended to compromise site integrity, infrastructure, or public trust.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Experimental Features</h2>
+  <p>
+    Satoshium may include prototypes, simulations, experimental workflows, educational demonstrations, public architecture drafts, software concepts, and early-stage technical systems.
+    These features are provided on an exploratory basis and may not be complete, production-ready, error-free, continuously available, or suitable for any particular purpose.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Intellectual Property</h2>
+  <p>
+    The Satoshium name, branding, site design, documentation structure, original text, original graphics, software materials, interface concepts, and related platform elements may be protected by trademark, copyright, and other applicable intellectual property laws.
+    Except where otherwise stated, access to the platform does not grant any ownership rights or license to reuse protected materials beyond normal personal viewing and lawful reference.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Trademark Use</h2>
+  <p>
+    Satoshium™ and related identifiers may not be used in a misleading, confusing, infringing, disparaging, or unauthorized manner.
+    For additional information regarding trademark treatment, please review the dedicated Trademark Notice page.
+  </p>
+  <p>
+    <a href="https://satoshium.ai/legal/trademark.html">View Trademark Notice →</a>
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Third-Party Services and Links</h2>
+  <p>
+    The platform may link to third-party sites, repositories, tools, hosts, services, software providers, payment environments, social platforms, or external resources.
+    Satoshium does not control third-party services and is not responsible for their availability, content, policies, or practices.
+    Use of third-party services is at your own discretion and subject to their respective terms.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>No Warranty</h2>
+  <p>
+    The Satoshium platform is provided on an “as is” and “as available” basis without warranties of any kind, express or implied, to the fullest extent permitted by applicable law.
+    This includes, without limitation, implied warranties of availability, accuracy, reliability, merchantability, fitness for a particular purpose, or non-infringement.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Limitation of Liability</h2>
+  <p>
+    To the fullest extent permitted by applicable law, Satoshium shall not be liable for any direct, indirect, incidental, consequential, special, exemplary, or other damages arising from or related to use of, inability to use, reliance upon, or interaction with the platform, including experimental tools, linked resources, or public materials.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Changes to the Platform</h2>
+  <p>
+    Satoshium may modify, suspend, update, remove, restructure, relocate, or discontinue any part of the platform, including pages, links, experiments, legal materials, services, documentation, public assets, or software elements, at any time and without notice.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Changes to These Terms</h2>
+  <p>
+    These Terms of Use may be updated from time to time as the platform evolves.
+    Continued access to or use of the Satoshium platform after changes are posted may be treated as acceptance of the revised terms.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Termination or Restriction</h2>
+  <p>
+    Access to parts of the platform may be restricted, suspended, or terminated at any time where reasonably necessary for maintenance, security, operational control, legal reasons, or protection of the platform and its users.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Contact</h2>
+  <p>
+    Questions regarding these Terms of Use may be directed through the currently published contact channel:
+    <a href="mailto:contact@satoshium.ai">contact@satoshium.ai</a>
+  </p>
+</section>
+
+<hr />
+
+<div class="wrap reflection">
+  <hr />
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Satoshium is being built slowly, in public, and with architectural discipline.
+  </div>
+  <hr />
+
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+   document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+
+</main>
+</body>
+</html>
