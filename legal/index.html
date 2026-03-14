@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Satoshium — Satoshium Legal Notice</title>
+  <title>Satoshium — Legal & Policies</title>
 <style>
 
 /* ===== Core Theme ===== */
@@ -109,6 +109,7 @@ z-index:0;
 position:relative;
 z-index:1
 }
+
 .card {
   transition: transform .18s ease, box-shadow .18s ease;
 }
@@ -151,6 +152,17 @@ ul{
 margin:8px 0 0 18px
 }
 
+.legal-links{
+display:flex;
+flex-wrap:wrap;
+gap:10px 14px;
+margin-top:10px
+}
+
+.legal-links a{
+font-weight:600
+}
+
 </style>
 </head>
 
@@ -163,63 +175,104 @@ margin:8px 0 0 18px
 
 <div class="pill">⚖️ Legal</div>
 
-<h1>Satoshium Legal Notice</h1>
+<h1>Legal & Policies</h1>
 
 <p class="muted">
-Satoshium is an experimental research platform exploring decentralized intelligence systems anchored to the Bitcoin trust layer.
+Satoshium is an experimental public software platform exploring decentralized intelligence systems, cryptographic coordination, and Bitcoin-anchored trust infrastructure.
 </p>
 
 <section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
-<h2>Experimental Software</h2>
+  <h2>Legal Navigation</h2>
+  <p>
+    This section serves as the legal entry point for the public Satoshium platform. Additional policy pages are available below.
+  </p>
 
-<p>
-Tools presented on this site are experimental demonstrations and prototypes. 
-They are provided for educational and exploratory purposes only.
-</p>
+  <div class="legal-links">
+    <a href="https://satoshium.ai/legal/">Legal Home</a>
+    <a href="https://satoshium.ai/legal/privacy.html">Privacy Policy</a>
+    <a href="https://satoshium.ai/legal/terms.html">Terms of Use</a>
+    <a href="https://satoshium.ai/legal/trademark.html">Trademark Notice</a>
+    <a href="https://satoshium.ai/legal/disclaimer.html">Disclaimer</a>
+  </div>
 </section>
 
 <section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
-<h2>No Financial Advice</h2>
+  <h2>Experimental Software</h2>
 
-<p>
-Nothing presented on this site constitutes financial, legal, or investment advice.
-Bitcoin references are educational and architectural in nature.
-</p>
+  <p>
+    Tools, interfaces, simulations, and documentation presented across the Satoshium platform may include experimental software, prototypes, concept models, and in-progress public infrastructure.
+    These materials are provided for educational, informational, research, and exploratory purposes only.
+  </p>
 </section>
 
 <section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
-<h2>Open Development</h2>
+  <h2>No Financial, Legal, or Investment Advice</h2>
 
-<p>
-Satoshium is built in public. Interfaces, experiments, and systems may evolve, change, or be removed as the platform develops.
-</p>
+  <p>
+    Nothing presented on this site constitutes financial advice, legal advice, investment advice, tax advice, or professional services.
+    References to Bitcoin, digital systems, governance, cryptographic tools, or decentralized infrastructure are provided for educational and architectural discussion only.
+  </p>
 </section>
 
 <section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
-<h2>Copyright</h2>
+  <h2>Open Development</h2>
 
-<p>
-© 2026 Satoshium™. All rights reserved.
-</p>
+  <p>
+    Satoshium is being built in public. Site structure, documentation, experiments, interfaces, services, and public-facing components may evolve, move, expand, be revised, or be removed over time as the platform develops.
+  </p>
 </section>
-            <!-- Footer mission statement + links -->
-      <hr />
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Platform Scope</h2>
+
+  <p>
+    Satoshium may reference software development, AI systems, simulations, educational materials, governance concepts, experimental coordination tools, and future-facing technical architecture.
+    Not all referenced features are currently live, available, production-ready, or offered as commercial services.
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Trademark & Intellectual Property</h2>
+
+  <p>
+    Satoshium™ is a protected brand identifier associated with the Satoshium platform and related software, infrastructure, documentation, and public-facing materials.
+    For additional trademark information, please review the dedicated Trademark Notice page.
+  </p>
+
+  <p>
+    <a href="https://satoshium.ai/legal/trademark.html">View Trademark Notice →</a>
+  </p>
+</section>
+
+<section class="card" style="--card-wm:url('https://satoshium.link/assets/seal.png');">
+  <h2>Copyright</h2>
+
+  <p>
+    © 2026 Satoshium™. All rights reserved.
+  </p>
+</section>
+
+<hr />
+
 <div class="wrap reflection">
-<hr />
-<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-  Satoshium is being built slowly, in public, and with architectural discipline.
-</div>
-<hr />
+  <hr />
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Satoshium is being built slowly, in public, and with architectural discipline.
+  </div>
+  <hr />
 
-<div id="footer-container"></div>
+  <div id="footer-container"></div>
+</div>
 
 <script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
  .then(response => response.text())
  .then(data => {
- document.getElementById("footer-container").innerHTML = data;
+   document.getElementById("footer-container").innerHTML = data;
  });
 </script>
+
+</main>
 </body>
 </html>
