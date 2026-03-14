@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Satoshium — The Origins Story</title>
+
+<style>
+
+/* ===== Core Theme ===== */
+
+:root{
+ --card-wm: url('./assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+margin:0;
+padding:0;
+background:var(--bg);
+color:var(--text);
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+line-height:1.55
+}
+body{
+ padding-top:80px;
+}
+  .reflection{
+ margin-top:40px;
+ margin-bottom:40px;
+ color:var(--muted);
+}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+
+/* ===== Layout ===== */
+
+.content{
+padding:34px 18px 60px
+}
+
+h1,h2{
+margin:0 0 10px
+}
+
+h1{
+font-size:30px;
+color:var(--gold2)
+}
+
+h2{
+font-size:20px;
+color:var(--gold2);
+margin-top:26px
+}
+
+p,li{
+color:var(--text)
+}
+
+hr{
+border:none;
+border-top:1px solid var(--line);
+margin:22px 0
+}
+
+/* ===== Cards ===== */
+
+.card{
+position: relative;
+overflow: hidden;
+
+background: linear-gradient(
+to bottom right,
+rgba(12,16,24,.94),
+rgba(12,16,24,.88)
+);
+
+border:1px solid var(--line);
+border-radius:16px;
+
+padding:16px 16px;
+margin:16px 0;
+
+box-shadow:
+0 0 0 1px rgba(214,163,74,.08),
+0 20px 50px rgba(0,0,0,.45);
+}
+
+.card::before{
+content:"";
+position:absolute;
+inset:-60px;
+background-image: var(--card-wm);
+background-repeat:no-repeat;
+background-size: min(720px, 70vw);
+background-position: right -140px center;
+opacity:0.028;
+filter: blur(1px);
+pointer-events:none;
+z-index:0;
+}
+
+.card > *{
+position:relative;
+z-index:1
+}
+.card {
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+.card {
+ border: 1px solid rgba(214,163,74,.15);
+}
+
+.muted{
+color:var(--muted)
+}
+
+.footer{
+border-top:1px solid var(--line);
+padding:18px 0 32px;
+color:var(--muted)
+}
+
+/* ===== Pills ===== */
+
+.pill{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:8px 10px;
+border:1px solid var(--line);
+border-radius:999px;
+background:rgba(214,163,74,.08);
+color:var(--gold2);
+font-size:12px;
+font-weight:700
+}
+
+ul{
+margin:8px 0 0 18px
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<div id="topbar-container"></div>
+<script>
+fetch("/satoshium-progress/topbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("topbar-container").innerHTML = data;
+
+    const path = window.location.pathname.toLowerCase();
+
+    function setActive(key){
+      const el = document.querySelector(`.topbar .nav a[data-nav="${key}"]`);
+      if (el) el.classList.add("active");
+    }
+
+    if (path.includes("/architecture")) setActive("architecture");
+    else if (path.includes("/start-here/")) setActive("start-here");
+    else if (path.includes("/systems")) setActive("systems");
+    else if (path.includes("/services")) setActive("services");
+    else if (path.includes("/education")) setActive("education");
+    else if (path.includes("/labs")) setActive("labs");
+    else if (path.includes("/build")) setActive("build");
+    else if (path.includes("/updates")) setActive("updates");
+    else if (path.includes("/repo-map")) setActive("repomap");
+    else if (path.includes("/registry")) setActive("registry");
+    else setActive("home");
+  });
+</script>
+
+  <main class="wrap content">
+    <div class="pill">⚡ Satoshium Origins</div>
+
+    <h1 style="margin-top:12px;">Satoshium - The Origins Story</h1>
+    <p class="muted">
+      This page explains the “why” behind Satoshium — the moment the idea became real:
+      Bitcoin as verifiable truth for value, and AI as a capability multiplier for builders.
+      Together, they unlock a new era: systems that can be built by anyone, and verified by everyone.
+    </p>
+
+    <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+      <div class="kicker">The moment</div>
+      <h2 style="margin-top:8px;">A single message landed: “You can build anything.”</h2>
+      <p class="muted" style="margin:8px 0 0;">
+        At Bitcoin Conference 2025, a message from <a href="https://www.michael.com/" target="_blank" rel="noreferrer">Michael Saylor</a> helped crystallize a new possibility: Bitcoin is incorruptible and programmable — and AI gives individuals a new level of capability. The combination makes it possible to build systems that once required entire institutions.
+      </p>
+      <div class="quote" style="margin-top:12px;">
+        <b>Bitcoin hardens truth for value.</b><br />
+        <b>AI amplifies capability for execution.<br/>
+        <b>Satoshium exists to merge those into Bitcoin-governed intelligence.</b>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card" style="--card-wm:url('/satoshium-progress/assets/btc-seal.png');">
+        <h2 style="margin-top:0;">₿ Bitcoin: truth you can verify</h2>
+        <p class="muted" style="margin:8px 0 10px;">
+          Bitcoin is not just “digital money.” It is a live, global protocol where the rules are known in advance
+          and enforcement is distributed. No gatekeeper decides who can participate.
+        </p>
+        <ul>
+          <li><b>Incorruptible</b> — rules are enforced by consensus, not authority</li>
+          <li><b>Scarce</b> — supply is fixed and transparent</li>
+          <li><b>Programmable</b> — predictable rules allow long-term strategy</li>
+          <li><b>Verifiable</b> — anyone can audit the system</li>
+        </ul>
+      </div>
+
+      <div class="card" style="--card-wm:url('/satoshium-progress/assets/ai-seal.jpg');">
+        <h2 style="margin-top:0;">🧠 AI: capability you can wield</h2>
+        <p class="muted" style="margin:8px 0 10px;">
+          AI changes the builder’s starting line. It compresses learning, planning, drafting, prototyping, and iteration.
+          Used correctly, it turns a single person into a small team.
+        </p>
+        <ul>
+          <li><b>Accelerates learning</b> — instant tutor + research assistant</li>
+          <li><b>Speeds execution</b> — structure, drafts, code, and iteration</li>
+          <li><b>Raises output</b> — more experiments, faster feedback loops</li>
+          <li><b>Expands reach</b> — you can build what used to be out of scope</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="--card-wm:url('/satoshium-progress/assets/btc-seal.png');">
+      <div class="kicker">The synthesis</div>
+      <h2 style="margin-top:8px;">⚡Bitcoin + AI is a new civilization lever.</h2>
+      <p class="muted" style="margin:8px 0 10px;">
+        The world is entering an age where intelligence is abundant — and potentially centralized.
+        If intelligence is centralized, society becomes fragile.
+        If intelligence is decentralized and governed by verifiable rules, society becomes resilient.
+      </p>
+      <ul>
+        <li><b>Bitcoin</b> proves we can run a global system on verifiable truth.</li>
+        <li><b>AI</b> gives us the capability to build new systems quickly.</li>
+        <li><b>Satoshium</b> is the attempt to apply Bitcoin-style verifiability to intelligence itself.</li>
+      </ul>
+    </div>
+  <!-- BUILD PHILOSOPHY content here including 4 small cards -->
+   <section class="wm-section" style="--wm:url('/satoshium-progress/assets/seal.png');">
+     <div class="card"> 
+     <div class="kicker">The Satoshium Build Philosophy</div>
+      <h2 style="margin-top:8px;">🧭One tool at a time. Visible progress only.</h2>
+      <p class="muted" style="margin:8px 0 10px;">
+        Satoshium is being built in public, slowly and deliberately.
+        The goal is not hype — the goal is reliability.
+        Every release should be simple, inspectable, and real.
+      </p>
+      <div class="grid">
+        <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+          <h3 style="margin-top:0;">Focus</h3>
+          <p class="muted">
+            Build what matters. Ship what works.
+          </p>
+        </div>
+        <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+          <h3 style="margin-top:0;">Truth</h3>
+          <p class="muted">
+            Systems must be verifiable — not dependent on trust.
+          </p>
+        </div>
+        <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+          <h3 style="margin-top:0;">Execution</h3>
+          <p class="muted">
+            Every commit is forward motion.
+          </p>
+        </div>
+        <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+          <h3 style="margin-top:0;">Longevity</h3>
+          <p class="muted">
+            This is a long arc build.
+          </p>
+        </div>
+      </div>
+    </div>
+   </div>
+</section>
+    <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+      <div class="kicker">Where this leads</div>
+      <h2 style="margin-top:8px;">🚀The direction is clear, even if the final form isn’t.</h2>
+      <p class="muted" style="margin:8px 0 10px;">
+        Satoshium is early. It is growing by steady iteration:
+        education pages, public progress, demos, and an ecosystem map — expanding into real tools over time.
+      </p>
+      <div class="quote">
+        <b>Something special can be built slowly —</b><br />
+        <span class="muted">if the foundation is truth, and the execution is consistent.</span>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn" href="/satoshium-progress/education/satoshium/what-is-satoshium.html">What is Satoshium?</a> | 
+        <a class="btn" href="/satoshium-progress/education/bitcoin/what-is-bitcoin.html">What is Bitcoin?</a> | 
+        <a class="btn" href="/satoshium-progress/updates/">View the Updates</a> | 
+        <a class="btn" href="/satoshium-progress/labs/experiments/">Try the Experiments</a>
+      </div>
+
+      <p class="tiny" style="margin-top:10px;">
+        Note: This page summarizes an idea and inspiration. It is not financial advice.
+      </p>
+    </div>
+</main>                     
+<div class="wrap reflection">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+
+<div id="footer-container"></div>
+
+<script src="/satoshium-progress/assets/sayings.js"></script>
+<script>
+fetch("/satoshium-progress/footer.html")
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</body>
+</html>
+
