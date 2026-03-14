@@ -69,7 +69,7 @@ ul{margin:8px 0 0 18px}
 </head>
 <div id="topbar-container"></div>
 <script>
-fetch("./components/topbar-ai.html")
+fetch("/components/topbar-ai.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("topbar-container").innerHTML = data;
