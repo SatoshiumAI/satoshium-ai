@@ -497,17 +497,9 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
     </section>
 
   </main>
-<script>
-fetch("/components/topbar-ai.html")
-  .then(r => r.text())
-  .then(data => {
-    document.getElementById("topbar-container").innerHTML = data;
+<div id="topbar-slot"></div>
+<script src="https://satoshium.link/components/topbar-loader.js"></script>
 
-    const topbarActive = document.querySelector('.topbar .nav a[data-nav="home"]');
-    if (topbarActive) topbarActive.classList.add("active");
-  });
-
-</script>
 <div class="wrap reflection">
 <hr />
 <div id="random-saying" class="muted" style="margin-bottom:28px; max-width:760px;">
@@ -517,9 +509,9 @@ fetch("/components/topbar-ai.html")
 
 <div id="footer-container"></div>
 
-<script src="/assets/sayings.js"></script>
+<script src="https:/satoshium.link/assets/sayings.js"></script>
 <script>
-fetch("/components/footer.html")
+fetch("https:/satoshium.link/components/footer.html")
  .then(response => response.text())
  .then(data => {
  document.getElementById("footer-container").innerHTML = data;
