@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Satoshium Principles — Architecture Foundations</title>
+<style>
+:root{
+  --card-wm: url('/assets/seal.png');
+  --bg:#07090d;
+  --panel:#0c1018;
+  --text:#e8edf7;
+  --muted:#9aa7bd;
+  --gold:#d6a34a;
+  --gold2:#f4c36a;
+  --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+body{
+ padding-top:80px;
+}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+h1,h2,h3{margin:0 0 10px}
+h1{font-size:30px;color:var(--gold2)}
+h2{font-size:20px;color:var(--gold2);margin-top:26px}
+h3{font-size:16px;color:var(--gold2);margin-top:14px}
+p,li{color:var(--text)}
+hr{border:none;border-top:1px solid var(--line);margin:22px 0}
+.card{position:relative;overflow:hidden;background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));border:1px solid var(--line);border-radius:16px;padding:16px;margin:16px 0;box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45)}
+.card::before{content:"";position:absolute;inset:-60px;background-image:var(--card-wm);background-repeat:no-repeat;background-size:min(720px,70vw);background-position:right -140px center;opacity:.028;filter:blur(1px);pointer-events:none;z-index:0}
+.card > *{position:relative;z-index:1}
+  .card {
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+.card {
+ border: 1px solid rgba(214,163,74,.15);
+}
+.muted{color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(214,163,74,.08);color:var(--gold2);font-size:12px;font-weight:700}
+.pill.small{padding:6px 10px;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:14px}
+.node{border:1px solid rgba(214,163,74,.16);border-radius:14px;padding:12px;background:rgba(7,9,13,.35);min-height:128px}
+.node h3{margin-top:0;font-size:15px}
+.node p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.node .step{display:inline-block;margin-bottom:10px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold2)}
+.flow-arrow{text-align:center;color:rgba(214,163,74,.55);font-size:18px;align-self:center}
+@media (max-width:860px){.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow-arrow{display:none}}
+</style>
+</head>
+<body id="top">
+<div id="topbar-container"></div>
+<script>
+fetch("/components/topbar-ai.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("topbar-container").innerHTML = data;
+
+    const path = window.location.pathname.toLowerCase();
+
+    function setActive(key){
+      const el = document.querySelector(`.topbar .nav a[data-nav="${key}"]`);
+      if (el) el.classList.add("active");
+    }
+
+    if (path.includes("/architecture")) setActive("architecture");
+    else if (path.includes("/start-here/")) setActive("start-here");
+    else if (path.includes("/systems")) setActive("systems");
+    else if (path.includes("/services")) setActive("services");
+    else if (path.includes("/education")) setActive("education");
+    else if (path.includes("/labs")) setActive("labs");
+    else if (path.includes("/build")) setActive("build");
+    else if (path.includes("/updates")) setActive("updates");
+    else if (path.includes("/repo-map")) setActive("repomap");
+    else if (path.includes("/registry")) setActive("registry");
+    else setActive("home");
+  });
+</script>
+
+<main class="wrap content">
+  <div class="pill">📘 Architecture Principles</div>
+
+  <h1 style="margin-top:12px;">Satoshium Principles</h1>
+
+  <p class="muted">
+    This page documents the design principles underneath the Satoshium platform. These principles guide how
+    architecture decisions are made, how knowledge is structured, and how humans and AI systems are expected to
+    reason together inside the platform over time.
+  </p>
+
+  <div class="card">
+    <h2 style="margin-top:0;">Why Principles Matter</h2>
+    <p class="muted">
+      Satoshium is not being built as a short-term product cycle. It is being built as a long-horizon reasoning
+      platform where humans and AI explore complex systems using shared knowledge, verifiable claims, and simulation
+      environments anchored to cryptographic trust. Principles provide continuity as tools, interfaces, and system
+      modules evolve.
+    </p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2 style="margin-top:0;">1. Bitcoin as Trust Base</h2>
+      <p class="muted">
+        Bitcoin matters in Satoshium because it introduces durable assumptions around auditability, constraints,
+        settlement finality, and adversarial design. It acts as the base trust layer beneath higher-order reasoning,
+        governance, and verification systems.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">2. Shared Knowledge Before Scale</h2>
+      <p class="muted">
+        Systems cannot reason together without consistent language. Satoshium prioritizes canonical terminology,
+        definitions, and specifications before large-scale interface expansion. Shared vocabulary is treated as core
+        infrastructure rather than optional documentation.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">3. Verifiable Claims Over Vibes</h2>
+      <p class="muted">
+        Claims inside the platform should be capable of explanation, review, and verification. This applies to
+        architecture decisions, agent behavior, simulation outputs, and long-horizon assertions. The goal is not
+        perfect certainty. The goal is structured accountability.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">4. Simulation Before Assumption</h2>
+      <p class="muted">
+        Satoshium Labs exists because complex systems should be explored before they are trusted. Simulations allow
+        hypotheses, governance models, and future scenarios to be tested in controlled environments before becoming
+        durable architecture or public interfaces.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">5. Public Build Over Hidden Hype</h2>
+      <p class="muted">
+        The platform is being built in public so progress can be inspected over time. This creates traceability,
+        slows careless expansion, and makes the build itself part of the system record. No hype. No vapor. Visible
+        progress only.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">6. Durable Systems Over Fast Release Cycles</h2>
+      <p class="muted">
+        Satoshium is intentionally being built slowly. The priority is long-term coherence across knowledge,
+        governance, reasoning tools, and documentation. Growth is useful only when the underlying structure remains
+        understandable and durable.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0;">🔁 The Satoshium Reasoning Loop</h2>
+    <p class="muted">
+      Satoshium is designed as a reasoning platform. Humans and AI systems interact through a recurring loop that
+      turns ideas into structured knowledge over time.
+    </p>
+
+    <div class="flow">
+      <div class="node">
+        <span class="step">Step 01</span>
+        <h3>Shared Knowledge</h3>
+        <p>The Knowledge Engine provides canonical terms, definitions, specifications, and system context.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="node">
+        <span class="step">Step 02</span>
+        <h3>Proposed Claims</h3>
+        <p>Humans or AI systems propose hypotheses, system ideas, interpretations, or architectural claims.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="node">
+        <span class="step">Step 03</span>
+        <h3>Verification</h3>
+        <p>Trust assumptions, governance rules, and review processes test whether claims are coherent and defensible.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="node">
+        <span class="step">Step 04</span>
+        <h3>Simulation</h3>
+        <p>Labs modules explore scenarios, behavior, and consequences before ideas are treated as durable systems.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="node">
+        <span class="step">Step 05</span>
+        <h3>Refinement</h3>
+        <p>Validated insights feed back into the Knowledge Engine, architecture, documentation, and future tools.</p>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:16px;">
+      The platform becomes more useful over time as this loop repeats. Knowledge improves. Claims become more
+      structured. Simulations become more meaningful. The result is not just more content, but stronger reasoning.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0;">How This Connects to the Architecture</h2>
+    <ul>
+      <li><strong>Trust Layer:</strong> establishes the base assumptions and auditability model.</li>
+      <li><strong>Governance &amp; Safety Layer:</strong> defines policy boundaries and behavioral constraints.</li>
+      <li><strong>Knowledge Engine:</strong> supplies the platform’s shared vocabulary and system definitions.</li>
+      <li><strong>Intelligence Layer:</strong> allows humans and AI systems to query, interpret, and work with knowledge.</li>
+      <li><strong>Simulation Layer:</strong> tests scenarios and explores consequences in controlled environments.</li>
+      <li><strong>Service Exposure Layer:</strong> presents stable interfaces, documentation, and public-facing system views.</li>
+    </ul>
+    <p style="margin-top:14px;">
+      <a class="pill" href="./">← Back to Architecture</a>
+    </p>
+  </div>
+
+ <hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+
+<div id="footer-container"></div>
+
+<script src="/assets/sayings.js"></script>
+<script>
+fetch("/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</body>
+</html>
