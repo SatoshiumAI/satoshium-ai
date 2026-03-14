@@ -10,7 +10,7 @@
 /* ===== Core Theme ===== */
 
 :root{
- --card-wm: url('./assets/seal.png');
+ --card-wm: url('/assets/seal.png');
  --bg:#07090d;
  --panel:#0c1018;
  --text:#e8edf7;
@@ -165,7 +165,7 @@ margin:8px 0 0 18px
 
 <div id="topbar-container"></div>
 <script>
-fetch("/satoshium-progress/topbar.html")
+fetch("/assets/topbar-ai.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("topbar-container").innerHTML = data;
@@ -201,7 +201,7 @@ fetch("/satoshium-progress/topbar.html")
       Together, they unlock a new era: systems that can be built by anyone, and verified by everyone.
     </p>
 
-    <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+    <div class="card" style="--card-wm:url('/assets/seal.png');">
       <div class="kicker">The moment</div>
       <h2 style="margin-top:8px;">A single message landed: “You can build anything.”</h2>
       <p class="muted" style="margin:8px 0 0;">
@@ -269,25 +269,25 @@ fetch("/satoshium-progress/topbar.html")
         Every release should be simple, inspectable, and real.
       </p>
       <div class="grid">
-        <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+        <div class="card" style="--card-wm:url('/assets/seal.png');">
           <h3 style="margin-top:0;">Focus</h3>
           <p class="muted">
             Build what matters. Ship what works.
           </p>
         </div>
-        <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+        <div class="card" style="--card-wm:url('/assets/seal.png');">
           <h3 style="margin-top:0;">Truth</h3>
           <p class="muted">
             Systems must be verifiable — not dependent on trust.
           </p>
         </div>
-        <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+        <div class="card" style="--card-wm:url('/assets/seal.png');">
           <h3 style="margin-top:0;">Execution</h3>
           <p class="muted">
             Every commit is forward motion.
           </p>
         </div>
-        <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+        <div class="card" style="--card-wm:url('/assets/seal.png');">
           <h3 style="margin-top:0;">Longevity</h3>
           <p class="muted">
             This is a long arc build.
@@ -297,7 +297,7 @@ fetch("/satoshium-progress/topbar.html")
     </div>
    </div>
 </section>
-    <div class="card" style="--card-wm:url('/satoshium-progress/assets/seal.png');">
+    <div class="card" style="--card-wm:url('/assets/seal.png');">
       <div class="kicker">Where this leads</div>
       <h2 style="margin-top:8px;">🚀The direction is clear, even if the final form isn’t.</h2>
       <p class="muted" style="margin:8px 0 10px;">
@@ -330,9 +330,9 @@ fetch("/satoshium-progress/topbar.html")
 
 <div id="footer-container"></div>
 
-<script src="/satoshium-progress/assets/sayings.js"></script>
+<script src="/assets/sayings.js"></script>
 <script>
-fetch("/satoshium-progress/footer.html")
+fetch("/components/footer.html")
  .then(response => response.text())
  .then(data => {
  document.getElementById("footer-container").innerHTML = data;
