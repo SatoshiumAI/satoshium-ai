@@ -443,7 +443,7 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
       <div id="domain-layers"></div>
 
       <script>
-        fetch("/components/domain-layers.html")
+        fetch("https:/satoshium.link/components/domain-layers.html")
           .then(r => r.text())
           .then(data => {
             document.getElementById("domain-layers").innerHTML = data;
