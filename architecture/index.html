@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Satoshium Architecture — Platform Systems Overview</title>
+
+<style>
+:root{
+  --card-wm: url('/assets/seal.png');
+  --bg:#07090d;
+  --panel:#0c1018;
+  --text:#e8edf7;
+  --muted:#9aa7bd;
+  --gold:#d6a34a;
+  --gold2:#f4c36a;
+  --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.55
+}
+
+body{
+ padding-top:80px;
+}
+  
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+
+/* ===== Layout ===== */
+.content{
+  padding:34px 18px 60px
+}
+
+h1,h2,h3{
+  margin:0 0 10px
+}
+
+h1{
+  font-size:30px;
+  color:var(--gold2)
+}
+
+h2{
+  font-size:20px;
+  color:var(--gold2);
+  margin-top:26px
+}
+
+h3{
+  font-size:16px;
+  color:var(--gold2);
+  margin-top:14px
+}
+
+p,li{
+  color:var(--text)
+}
+
+hr{
+  border:none;
+  border-top:1px solid var(--line);
+  margin:22px 0
+}
+
+/* ===== Cards ===== */
+.card{
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    to bottom right,
+    rgba(12,16,24,.94),
+    rgba(12,16,24,.88)
+  );
+
+  border:1px solid var(--line);
+  border-radius:16px;
+
+  padding:16px 16px;
+  margin:16px 0;
+
+  box-shadow:
+    0 0 0 1px rgba(214,163,74,.08),
+    0 20px 50px rgba(0,0,0,.45);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-60px;
+  background-image: var(--card-wm);
+  background-repeat:no-repeat;
+  background-size: min(720px, 70vw);
+  background-position: right -140px center;
+  opacity:0.028;
+  filter: blur(1px);
+  pointer-events:none;
+  z-index:0;
+}
+
+.card > *{
+  position:relative;
+  z-index:1
+}
+
+.card {
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+.card {
+ border: 1px solid rgba(214,163,74,.15);
+}
+  
+.muted{
+  color:var(--muted)
+}
+
+.footer{
+  border-top:1px solid var(--line);
+  padding:18px 0 32px;
+  color:var(--muted)
+}
+
+/* ===== Pills ===== */
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 10px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(214,163,74,.08);
+  color:var(--gold2);
+  font-size:12px;
+  font-weight:700
+}
+
+.pill.small{
+  padding:6px 10px;
+  font-size:12px
+}
+
+.pill.ok{
+  background:rgba(96, 196, 132, .10);
+  border-color:rgba(96,196,132,.25);
+  color:#bdf5d0
+}
+
+.pill.warn{
+  background:rgba(244,195,106,.10);
+  border-color:rgba(244,195,106,.25);
+  color:var(--gold2)
+}
+
+.pill.dev{
+  background:rgba(120,165,255,.10);
+  border-color:rgba(120,165,255,.22);
+  color:#cfe0ff
+}
+
+.pill.gray{
+  background:rgba(154,167,189,.08);
+  border-color:rgba(154,167,189,.20);
+  color:var(--muted)
+}
+
+/* ===== Reasoning Loop Diagram ===== */
+.loop-wrap{
+  margin-top:14px;
+}
+
+.loop-grid{
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap:10px;
+  align-items:center;
+}
+
+.loop-node{
+  border:1px solid rgba(214,163,74,.16);
+  border-radius:14px;
+  padding:14px 12px;
+  background:rgba(7,9,13,.38);
+  text-align:center;
+  min-height:92px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.loop-node .loop-title{
+  font-weight:800;
+  color:var(--gold2);
+  margin-bottom:6px;
+  font-size:14px;
+}
+
+.loop-node .loop-desc{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.45;
+}
+
+.loop-arrow{
+  text-align:center;
+  color:rgba(214,163,74,.60);
+  font-size:18px;
+  font-weight:700;
+}
+
+.loop-return{
+  margin-top:12px;
+  text-align:center;
+  color:rgba(214,163,74,.70);
+  font-size:13px;
+  letter-spacing:.2px;
+}
+
+@media (max-width: 900px){
+  .loop-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .loop-arrow{
+    transform:rotate(90deg);
+  }
+
+  .loop-node{
+    min-height:auto;
+  }
+}
+  
+/* ===== Architecture Diagram ===== */
+.stack{
+  margin-top:25px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.layer{
+  border:1px solid rgba(214,163,74,.16);
+  border-radius:14px;
+  padding:12px 12px;
+  background:rgba(7,9,13,.35);
+}
+
+.layer .row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.layer .title{
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+.layer .desc{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.arrow{
+  text-align:center;
+  color:rgba(214,163,74,.55);
+  font-size:14px;
+}
+</style>
+</head>
+
+<body id="top">
+
+<div id="topbar-container"></div>
+<script>
+fetch("/components/topbar-ai.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("topbar-container").innerHTML = data;
+
+    const path = window.location.pathname.toLowerCase();
+
+    function setActive(key){
+      const el = document.querySelector(`.topbar .nav a[data-nav="${key}"]`);
+      if (el) el.classList.add("active");
+    }
+
+    if (path.includes("/architecture")) setActive("architecture");
+    else if (path.includes("/start-here/")) setActive("start-here");
+    else if (path.includes("/systems")) setActive("systems");
+    else if (path.includes("/services")) setActive("services");
+    else if (path.includes("/education")) setActive("education");
+    else if (path.includes("/labs")) setActive("labs");
+    else if (path.includes("/build")) setActive("build");
+    else if (path.includes("/updates")) setActive("updates");
+    else if (path.includes("/repo-map")) setActive("repomap");
+    else if (path.includes("/registry")) setActive("registry");
+    else setActive("home");
+  });
+</script>
+
+
+<main class="wrap content">
+
+<div class="pill">🧱 Platform Architecture</div>
+
+<h1 style="margin-top:12px;">Satoshium Architecture</h1>
+
+<p class="muted">
+SATOSHIUM™ is designed as a layered intelligence infrastructure. Each layer serves a
+specific role in helping humans and AI systems reason about complex systems through
+shared knowledge, verifiable claims, and simulation environments. The platform brings
+together decentralized intelligence infrastructure, AI research tools, governance
+frameworks, and educational systems aligned with the Bitcoin standard.
+</p>
+
+<div class="card">
+  <h2 style="margin-top:0;">🗺️ Architectural Stack (High-Level)</h2>
+  <p class="muted">
+    The platform is organized as a layered stack. Each layer below represents a functional role within the system
+    architecture and maps directly to a public system category page.
+  </p>
+
+<div class="card">
+<h2 style="margin-top:0;">📜 Architecture Principles</h2>
+
+<p class="muted">
+Satoshium is built around a set of design principles intended to support long-term,
+Bitcoin-aligned intelligence infrastructure. These principles guide how systems are
+designed, how knowledge is structured, and how humans and AI reason about complex
+systems inside the platform.
+</p>
+
+<ul>
+<li><strong>Truth Anchoring:</strong> cryptographic verification and auditable assumptions.</li>
+<li><strong>Shared Knowledge:</strong> canonical terminology and structured definitions.</li>
+<li><strong>Reasoning Infrastructure:</strong> tools for exploring claims and system behavior.</li>
+<li><strong>Simulation-First Development:</strong> testing ideas before deploying systems.</li>
+<li><strong>Public Build Transparency:</strong> visible progress and long-horizon engineering.</li>
+</ul>
+
+<p style="margin-top:14px;">
+<a class="pill" href="./principles.html">Open Architecture Principles</a>
+</p>
+
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0;">📚 Research &amp; Papers</h2>
+
+  <p class="muted">
+    Satoshium research extends the architecture through long-form essays,
+    technical notes, and future whitepapers focused on decentralized intelligence,
+    verification systems, governance models, and Bitcoin-aligned AI infrastructure.
+  </p>
+
+  <p class="muted">
+    This section documents the deeper reasoning behind the platform and supports
+    the long-horizon design of Satoshium systems.
+  </p>
+
+  <p style="margin-top:14px;">
+    <a href="/satoshium-progress/research/" class="pill">Research &amp; Papers →</a>
+  </p>
+</div>
+  
+  <div class="stack">
+
+    <div class="layer">
+      <div class="row">
+        <div class="title">Trust Layer</div>
+        <div class="pill small warn">Foundation</div>
+      </div>
+      <div class="desc">
+        Cryptographic assumptions and auditability constraints used to guide governance and verification design.
+      </div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="layer">
+      <div class="row">
+        <div class="title">Governance & Safety Layer (Aegis)</div>
+        <div class="pill small dev">In Development</div>
+      </div>
+      <div class="desc">
+        Policy constraints and rule enforcement intended to control agent behavior and system automation boundaries.
+      </div>
+    </div>
+
+<div class="card">
+<h2 style="margin-top:0;">🔁 Reasoning Flow</h2>
+
+<p class="muted">
+Satoshium operates as a reasoning platform. Humans and AI systems interact with
+the platform through a structured cycle of shared knowledge, claims, verification,
+and simulation testing.
+</p>
+
+<ul>
+<li><strong>Knowledge:</strong> canonical terminology and definitions from the Knowledge Engine.</li>
+<li><strong>Claims:</strong> hypotheses or system ideas proposed by humans or AI systems.</li>
+<li><strong>Verification:</strong> governance rules and trust constraints evaluate claims.</li>
+<li><strong>Simulation:</strong> Labs modules explore system behavior and scenarios.</li>
+<li><strong>Learning:</strong> insights feed back into the Knowledge Engine and documentation.</li>
+</ul>
+
+<p class="muted">
+The diagram below illustrates how this cycle functions inside the platform.
+</p>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0;">🔁 Satoshium Reasoning Loop</h2>
+
+<p class="muted">
+The core reasoning cycle used by Satoshium to explore, validate, and refine
+knowledge about decentralized systems.
+</p>
+  
+  <p class="muted">
+    The platform is designed to support an ongoing reasoning cycle shared by humans and AI systems.
+    Knowledge informs claims, claims are tested through verification and simulation, and the resulting
+    insights feed back into the platform's knowledge layer.
+  </p>
+
+  <div class="loop-wrap">
+    <div class="loop-grid">
+
+      <div class="loop-node">
+        <div class="loop-title">Knowledge</div>
+        <div class="loop-desc">
+          Canonical terminology, definitions, and structured system concepts.
+        </div>
+      </div>
+
+      <div class="loop-arrow">→</div>
+
+      <div class="loop-node">
+        <div class="loop-title">Claims</div>
+        <div class="loop-desc">
+          Hypotheses, proposals, or system ideas introduced by humans or AI.
+        </div>
+      </div>
+
+      <div class="loop-arrow">→</div>
+
+      <div class="loop-node">
+        <div class="loop-title">Verification</div>
+        <div class="loop-desc">
+          Trust rules, governance logic, and constraints used to evaluate claims.
+        </div>
+      </div>
+
+      <div class="loop-arrow">→</div>
+
+      <div class="loop-node">
+        <div class="loop-title">Simulation</div>
+        <div class="loop-desc">
+          Scenario tools and Labs environments used to test behavior and outcomes.
+        </div>
+      </div>
+
+      <div class="loop-arrow">→</div>
+
+      <div class="loop-node">
+        <div class="loop-title">Learning</div>
+        <div class="loop-desc">
+          Insights, refinements, and updates returned to the documentation and knowledge layer.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="loop-return">↺ Insights return to the Knowledge Engine and refine future reasoning.</div>
+  </div>
+</div>
+    
+    <div class="arrow">↓</div>
+
+    <div class="layer">
+      <div class="row">
+        <div class="title">Knowledge Engine (Canonical Terminology + Canon/Specs)</div>
+        <div class="pill small ok">Operational</div>
+      </div>
+      <div class="desc">
+        <div class="desc">
+The shared vocabulary and specification layer used across Satoshium systems. The Knowledge Engine
+defines canonical terminology, trust models, and architectural concepts that allow humans and AI
+systems to reason about the platform consistently.
+</div>
+      </div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="layer">
+      <div class="row">
+        <div class="title">Intelligence Layer (Satoshium AI Interface)</div>
+        <div class="pill small ok">Operational</div>
+      </div>
+      <div class="desc">
+        AI research and interaction layer for querying knowledge structures and supporting platform development workflows.
+      </div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="layer">
+      <div class="row">
+        <div class="title">Simulation Layer (Satoshium Labs)</div>
+        <div class="pill small warn">Experimental</div>
+      </div>
+      <div class="desc">
+        Controlled simulation modules used to test concepts, explore scenarios, and validate assumptions in interactive form.
+      </div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="layer">
+      <div class="row">
+        <div class="title">Service Exposure Layer</div>
+        <div class="pill small gray">Documentation / Interface</div>
+      </div>
+      <div class="desc">
+        Public-facing system descriptions, platform services documentation, and user-accessible interfaces.
+      </div>
+    </div>
+
+  </div>
+
+  <hr style="opacity:.15;margin:18px 0;">
+
+  <p class="muted">
+    See full system breakdown on the <a href="../systems/">Systems</a> page.
+    Services will be defined under <a href="../services/">Services</a> as interfaces stabilize.
+  </p>
+</div>
+
+<div class="card" style="--card-wm:url('/assets/seal.png');">
+  <h2 style="margin-top:0;">🧩 System Mapping</h2>
+  <p class="muted">
+    Each platform category corresponds to a documented system area with defined status labels.
+  </p>
+
+  <ul>
+    <li><strong>Knowledge Systems:</strong> Canonical terminology system and platform definition layer.</li>
+    <li><strong>Intelligence Systems:</strong> AI research interface and structured interaction systems.</li>
+    <li><strong>Governance Systems:</strong> Policy enforcement and agent safety boundaries (Aegis).</li>
+    <li><strong>Simulation Systems:</strong> Experimental scenario tools used for concept validation (Labs).</li>
+    <li><strong>Documentation Systems:</strong> Public updates, repo map, and documentation traceability layer.</li>
+  </ul>
+
+  <p style="margin-top:14px;">
+    <a class="pill" href="../systems/">Open Systems Overview</a>
+  </p>
+</div>
+
+            <!-- Footer mission statement + links -->
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+
+<div id="footer-container"></div>
+
+<script src="/assets/sayings.js"></script>
+<script>
+fetch("/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</body>
+</html>
