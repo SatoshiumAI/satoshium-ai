@@ -120,6 +120,19 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
     font-size:14px;
   }
 
+    .wrap.content{
+  opacity:0;
+  transform:translateY(4px);
+  animation:pageEnter .22s ease forwards;
+}
+
+@keyframes pageEnter{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
   /* ===== Video Component ===== */
   .video{
     max-width:960px;
@@ -268,7 +281,7 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="/components/topbar-loader.js"></script>
 
-<main class="wrap content">
+<main class="wrap content"">
 
     <!-- 1. HERO -->
     <section class="hero">
