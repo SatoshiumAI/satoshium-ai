@@ -58,7 +58,8 @@
       }
       return;
     }
-
+    if (path.includes("/manifesto")) setActive("manifesto");
+    
     // ===== Universe topbar =====
 
     if (
