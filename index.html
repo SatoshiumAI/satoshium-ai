@@ -248,7 +248,38 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
     max-width:680px;
     font-size:18px;
   }
+    
+.hero-manifesto{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+  margin-top:18px;
+}
 
+.hero-manifesto-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 10px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(214,163,74,.08);
+  color:var(--gold2);
+  font-size:12px;
+  font-weight:700;
+}
+
+.hero-manifesto-link{
+  color:var(--gold2);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.hero-manifesto-link:hover{
+  color:var(--gold);
+}
+    
   /* ===== Responsive ===== */
   @media (max-width:900px){
     .grid-3{
@@ -306,6 +337,10 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
     <p class="muted">
       Satoshium explores how trusted systems, shared knowledge, and intelligent coordination can evolve together.
     </p>
+    <div class="hero-manifesto">
+  <span class="hero-manifesto-label">📜 Foundational Document</span>
+    <a href="/manifesto/" class="hero-manifesto-link">Read the Satoshium Manifesto →</a>
+</div>
   </div>
 </section>
 
