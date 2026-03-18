@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Satoshium — Intelligence Layer</title>
+  <style>
+    :root{
+      --card-wm:url('https://satoshium.link/assets/seal.png');
+      --bg:#07090d;
+      --panel:#0c1018;
+      --text:#e8edf7;
+      --muted:#9aa7bd;
+      --gold:#d6a34a;
+      --gold2:#f4c36a;
+      --line:rgba(214,163,74,.18);
+    }
+
+    *{box-sizing:border-box}
+
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.6;
+    }
+
+    body{
+      padding-top:80px;
+    }
+
+    a{
+      color:var(--gold2);
+      text-decoration:none;
+    }
+
+    a:hover{
+      color:var(--gold);
+    }
+
+    .wrap{
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 18px;
+    }
+
+    .content{
+      padding:34px 18px 60px;
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--gold2);
+      background:rgba(214,163,74,.06);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(214,163,74,.15);
+      border-radius:24px;
+      padding:46px 34px;
+      background:
+        radial-gradient(circle at top right, rgba(214,163,74,.09), transparent 28%),
+        radial-gradient(circle at left center, rgba(80,120,255,.07), transparent 32%),
+        linear-gradient(to bottom right, rgba(7,9,13,.98), rgba(12,16,24,.94));
+      box-shadow:
+        0 0 0 1px rgba(214,163,74,.08),
+        0 24px 70px rgba(0,0,0,.45);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:url('https://satoshium.link/assets/world-grid.jpg');
+      background-size:cover;
+      background-position:center;
+      opacity:.08;
+      filter:sepia(.35) saturate(.85) brightness(.65);
+      z-index:0;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      max-width:760px;
+    }
+
+    .hero h1{
+      margin:16px 0 10px;
+      font-size:52px;
+      line-height:1.03;
+      color:var(--gold2);
+      text-shadow:
+        0 0 18px rgba(214,163,74,.20),
+        0 0 34px rgba(214,163,74,.08);
+    }
+
+    .hero-sub{
+      margin:0 0 18px;
+      font-size:22px;
+      color:#f0f4fb;
+      font-weight:700;
+    }
+
+    .hero-copy{
+      font-size:18px;
+      color:#d7deeb;
+      max-width:720px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .section{
+      margin-top:22px;
+      padding:24px;
+      border:1px solid rgba(214,163,74,.15);
+      border-radius:18px;
+      background:linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+      box-shadow:0 0 0 1px rgba(214,163,74,.05);
+    }
+
+    .section h2{
+      margin:0 0 14px;
+      color:#f3f6fc;
+      font-size:28px;
+      line-height:1.15;
+    }
+
+    .section p{
+      margin:0 0 16px;
+      color:#d9e1ee;
+    }
+
+    .section ul{
+      margin:8px 0 16px 20px;
+      color:#d9e1ee;
+    }
+
+    .section li{
+      margin:6px 0;
+    }
+
+    .quote{
+      margin:18px 0;
+      padding:18px 20px;
+      border-left:3px solid var(--gold);
+      border-radius:0 14px 14px 0;
+      background:rgba(214,163,74,.06);
+      color:#f5f7fb;
+      font-size:18px;
+      font-weight:600;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+
+    .mini-card{
+      padding:18px;
+      border:1px solid rgba(214,163,74,.15);
+      border-radius:16px;
+      background:rgba(9,12,18,.72);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+
+    .mini-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 28px rgba(0,0,0,.35);
+    }
+
+    .mini-card h3{
+      margin:0 0 10px;
+      color:var(--gold2);
+      font-size:18px;
+    }
+
+    .mini-card p{
+      margin:0;
+      color:#d3dbea;
+      font-size:15px;
+    }
+
+    .layer-nav{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .layer-card{
+      padding:18px;
+      border:1px solid rgba(214,163,74,.15);
+      border-radius:16px;
+      background:rgba(9,12,18,.72);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+
+    .layer-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 28px rgba(0,0,0,.35);
+    }
+
+    .layer-card h3{
+      margin:0 0 10px;
+      color:#f3f6fc;
+      font-size:18px;
+    }
+
+    .layer-card p{
+      margin:0 0 12px;
+      color:#d3dbea;
+      font-size:15px;
+    }
+
+    .layer-card.current{
+      border-color:rgba(214,163,74,.28);
+      box-shadow:
+        0 0 0 1px rgba(214,163,74,.10),
+        0 12px 28px rgba(0,0,0,.28);
+    }
+
+    .footer-wrap{
+      margin-top:40px;
+    }
+
+    @media (max-width:960px){
+      .layer-nav{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+    }
+
+    @media (max-width:900px){
+      .hero{
+        padding:38px 24px;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .hero-sub{
+        font-size:18px;
+      }
+
+      .hero-copy{
+        font-size:17px;
+      }
+
+      .grid-2,
+      .layer-nav{
+        grid-template-columns:1fr;
+      }
+
+      .section h2{
+        font-size:24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="platform"></div>
+<script src="https://satoshium.link/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="pill">🧠 Core Platform Layer</span>
+      <h1>Intelligence Layer</h1>
+      <p class="hero-sub">Uses meaning.</p>
+
+      <p class="hero-copy">
+        The Intelligence Layer is where reasoning, tools, workflows, and future agents operate within the boundaries defined by the rest of the Satoshium system. It is the layer that transforms trusted inputs and structured knowledge into decisions, interpretation, and adaptive behavior.
+      </p>
+
+      <div class="hero-actions">
+        <span class="pill">Reasoning systems</span>
+        <span class="pill">Structured decision-making</span>
+        <span class="pill">Bounded intelligence</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Why the Intelligence Layer Matters</h2>
+
+    <p>
+      Intelligence is powerful, but without boundaries it can become opaque, inconsistent, or detached from reality. The Intelligence Layer exists so that Satoshium can explore useful intelligence without surrendering clarity, structure, or verifiability.
+    </p>
+
+    <div class="quote">
+      Intelligence is most useful when it operates inside trusted systems and shared meaning.
+    </div>
+
+    <p>
+      In Satoshium, intelligence is not imagined as a mystical black box. It is treated as a system capability that should work from defined inputs, intelligible concepts, and clear operational boundaries.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>What the Intelligence Layer Establishes</h2>
+
+    <div class="grid-2">
+      <div class="mini-card">
+        <h3>🧠 Reasoning</h3>
+        <p>
+          Supports interpretation, planning, and decision-making using structured knowledge and trustworthy inputs.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>🛠 Tools & Workflows</h3>
+        <p>
+          Connects intelligence to useful actions through tools, workflows, and bounded forms of automation.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>🤖 Agents</h3>
+        <p>
+          Future agents may exist within this layer, but as components inside infrastructure rather than as the platform’s central identity.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>📏 Constraints</h3>
+        <p>
+          Keeps intelligent behavior aligned with defined concepts, trust assumptions, and system goals.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Intelligence Within the Satoshium Model</h2>
+
+    <p>
+      Satoshium no longer treats intelligence as the starting point of the system. Intelligence comes after trust and knowledge.
+    </p>
+
+    <ul>
+      <li>the Trust Layer verifies what can be relied upon</li>
+      <li>the Knowledge Layer defines what terms and structures mean</li>
+      <li>the Intelligence Layer uses those foundations to reason and act</li>
+    </ul>
+
+    <p class="muted">
+      This order matters because intelligence without trustworthy foundations can drift into inconsistency, while intelligence grounded in clear systems can remain useful and understandable over time.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>What Intelligence Supports in Satoshium</h2>
+
+    <p>
+      The Intelligence Layer gives the broader ecosystem the ability to interpret, adapt, and respond while remaining tied to structure.
+    </p>
+
+    <ul>
+      <li>knowledge systems can become more navigable and interactive</li>
+      <li>simulation systems can become more dynamic and exploratory</li>
+      <li>future tools can assist with research, design, and coordination</li>
+      <li>agents can eventually operate with clearer boundaries and better accountability</li>
+    </ul>
+
+    <div class="quote">
+      Intelligence is not the foundation of Satoshium. It is a capability built on top of stronger foundations.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Current Expression of the Intelligence Layer</h2>
+
+    <p>
+      Today, the Intelligence Layer is visible more as a design direction and architectural intention than as a fully isolated public subsystem.
+    </p>
+
+    <p>
+      It is currently expressed through:
+    </p>
+
+    <ul>
+      <li>the platform’s reasoning-oriented design philosophy</li>
+      <li>AI-facing tools and experiments</li>
+      <li>future agent concepts held within a more structured framework</li>
+      <li>the shift away from agent-centrism toward infrastructure-first intelligence</li>
+    </ul>
+
+    <p class="muted">
+      Over time, this layer may expand to document reasoning models, bounded agent systems, tool integrations, and operational intelligence workflows.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Core Platform Layers</h2>
+
+    <p class="muted">
+      The Intelligence Layer is one part of a broader Satoshium system stack.
+    </p>
+
+    <div class="layer-nav">
+      <div class="layer-card">
+        <h3>🛡 Trust Layer</h3>
+        <p>
+          Verification, consensus, and cryptographic truth foundations anchored in Bitcoin.
+        </p>
+        <a href="trust.html">→ Verifies reality</a>
+      </div>
+
+      <div class="layer-card">
+        <h3>📚 Knowledge Layer</h3>
+        <p>
+          The shared language system of Satoshium — defining canonical terminology, architecture concepts, and trust models.
+        </p>
+        <a href="knowledge.html">→ Defines meaning</a>
+      </div>
+
+      <div class="layer-card current">
+        <h3>🧠 Intelligence Layer</h3>
+        <p>
+          Reasoning systems, tools, and agents that operate within Satoshium’s defined frameworks.
+        </p>
+        <span class="pill">Current Page</span>
+      </div>
+
+      <div class="layer-card">
+        <h3>🧪 Simulation / Interface Layer</h3>
+        <p>
+          Interfaces, simulations, and environments for testing systems and exploring future scenarios.
+        </p>
+        <a href="simulation.html">→ Tests outcomes</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Current Status</h2>
+
+    <p>
+      The Intelligence Layer is still early in public form, but it is already conceptually central to the platform’s long-term direction. What has changed is not its importance, but its role.
+    </p>
+
+    <p class="muted">
+      Over time, this page can expand to document:
+    </p>
+
+    <ul>
+      <li>bounded agent design within verifiable systems</li>
+      <li>reasoning and workflow architectures</li>
+      <li>tool integrations and intelligent interfaces</li>
+      <li>alignment between intelligence, trust, and knowledge</li>
+      <li>future Satoshium system behaviors and capabilities</li>
+    </ul>
+  </section>
+
+  <div class="footer-wrap" id="footer-slot"></div>
+
+</main>
+
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(r => r.text())
+.then(html => document.getElementById("footer-slot").innerHTML = html);
+</script>
+
+</body>
+</html>
