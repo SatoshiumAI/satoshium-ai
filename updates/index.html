@@ -1,105 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Satoshium Updates</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Satoshium — Updates</title>
 <style>
-body { font-family: Arial, sans-serif; background:#0b0f14; color:#e6edf3; margin:0; padding:0;}
-.wrap { max-width:1000px; margin:auto; padding:20px;}
+:root{
+ --card-wm: url('/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.55
+}
+
+body{
+  padding-top:80px;
+}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+
+  .wrap.content{
+  opacity:0;
+  transform:translateY(6px);
+  animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes pageEnter{
+ to{
+ opacity:1;
+ transform:translateY(0);
+ }
+}
+
+
+.content{
+  padding:34px 18px 60px
+}
+
+h1,h2{
+  margin:0 0 10px
+}
+
+h1{
+  font-size:30px;
+  color:var(--gold2)
+}
+
+h2{
+  font-size:20px;
+  color:var(--gold2);
+  margin-top:26px
+}
+
+p,li{
+  color:var(--text)
+}
+
+hr{
+  border:none;
+  border-top:1px solid var(--line);
+  margin:22px 0
+}
+
+.card{
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom right,
+    rgba(12,16,24,.94),
+    rgba(12,16,24,.88)
+  );
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px 16px;
+  margin:16px 0;
+  box-shadow:
+    0 0 0 1px rgba(214,163,74,.08),
+    0 20px 50px rgba(0,0,0,.45);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-60px;
+  background-image: var(--card-wm);
+  background-repeat:no-repeat;
+  background-size: min(720px, 70vw);
+  background-position: right -140px center;
+  opacity:0.028;
+  filter: blur(1px);
+  pointer-events:none;
+  z-index:0;
+}
+
+.card > *{
+  position:relative;
+  z-index:1
+}
 .card {
-  background:#111821;
-  border:1px solid rgba(214,163,74,.15);
-  border-radius:12px;
-  padding:20px;
-  margin-bottom:20px;
   transition: transform .18s ease, box-shadow .18s ease;
 }
+
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,.35);
 }
-h2 { color:#58a6ff; }
-.date { font-size:14px; color:#8b949e; margin-bottom:10px;}
-ul { margin:0; padding-left:20px;}
+
+.card {
+ border: 1px solid rgba(214,163,74,.15);
+}
+
+.muted{
+  color:var(--muted)
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 10px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(214,163,74,.08);
+  color:var(--gold2);
+  font-size:12px;
+  font-weight:700
+}
+
+ul{
+  margin:8px 0 0 18px
+}
 </style>
 </head>
-<body>
-<div class="wrap">
 
-<h1>🚀 Satoshium Updates</h1>
+<body id="top">
 
-<div class="card">
-<div class="date">March 17, 2026</div>
-<h2>Platform Expansion & Experiments</h2>
-<ul>
-<li>Converted multiple Replit experiments into standalone browser apps</li>
-<li>Built new Core Platform Layer pages (Trust, Knowledge, Intelligence, Simulation)</li>
-<li>Expanded Connect page with social + platform links</li>
-<li>Continued Labs development and demo integrations</li>
-</ul>
+<div id="topbar-slot" data-topbar="platform"></div>
+<script src="/components/topbar-loader.js"></script>
+
+
+<main class="wrap content">
+  <div class="pill">🧾 Updates</div>
+  <h1>Updates</h1>
+  <p class="muted">
+  Weekly-style platform updates focused on major structural progress, meaningful milestones,
+  and notable hurdles cleared. Daily journals remain the internal source of truth; this page
+  records the larger outward-facing story of the build as Satoshium evolves into a layered
+  platform ecosystem with public, knowledge, infrastructure, experimental, and economic surfaces.
+</p>
+
+  <div class="card">
+  <h2>Next</h2>
+  <ul>
+    <li>Continue aligning the new domain ecosystem so each public surface has a clear role within the broader Satoshium architecture.</li>
+    <li>Refine shared navigation, footer systems, and cross-domain consistency between the platform, knowledge, infrastructure, experimental, and economic layers.</li>
+    <li>Complete the current <strong>.github</strong> repository work so governance, navigation standards, and structural coordination continue to mature alongside the public sites.</li>
+    <li>Expand the new workspace model as needed while keeping the build slow, deliberate, and architecture-first.</li>
+    <li>Establish the next wave of long-horizon ecosystem layers, including future developer and U.S. operational surfaces.</li>
+  </ul>
 </div>
 
 <div class="card">
-<div class="date">March 15, 2026</div>
-<h2>System Refinements</h2>
-<ul>
-<li>Improved platform consistency and structure</li>
-<li>Enhanced navigation and page linking across domains</li>
-<li>Continued backend cleanup and organization</li>
-</ul>
+  <h2>2026-03-10 — Satoshium domain ecosystem expansion</h2>
+  <ul>
+    <li>Expanded Satoshium from a single public surface into a growing <strong>multi-domain ecosystem</strong>, with each domain now representing a different long-term layer of the platform.</li>
+    <li>Launched <strong>satoshium.info</strong> as the public knowledge and development workspace layer, including a live <strong>workspace hub</strong> for debugging, architecture, UI testing, repository mapping, and temporary development assets.</li>
+    <li>Launched <strong>satoshium.net</strong> as the future infrastructure and network layer, giving the ecosystem a dedicated home for long-horizon system visibility and technical expansion.</li>
+    <li>Launched <strong>satoshium.xyz</strong> as the experimental frontier, positioning it as the future laboratory for prototypes, simulations, and emerging decentralized intelligence concepts.</li>
+    <li>Launched <strong>satoshium.store</strong> as the future economic and merchandise layer, creating a clear place for community-facing brand expression and physical ecosystem artifacts.</li>
+    <li>Secured <strong>satoshium.link</strong> as a future gateway / routing layer and also secured <strong>satoshium.dev</strong> and <strong>satoshium.us</strong> for future developer and jurisdictional expansion.</li>
+    <li>Cleared several real-world deployment hurdles during rollout, including Git repository initialization issues, GitHub Pages publishing delays, custom domain propagation, and HTTPS certificate activation across newly deployed sites.</li>
+    <li>This milestone marked a major architectural shift: Satoshium now reads less like a single site and more like a <strong>layered digital ecosystem</strong> designed for long-term growth.</li>
+  </ul>
 </div>
 
-<div class="card">
-<div class="date">March 14, 2026</div>
-<h2>Content & Page Creation</h2>
-<ul>
-<li>Created new HTML pages and content expansions</li>
-<li>Improved educational and governance sections</li>
-<li>Expanded platform storytelling and structure</li>
-</ul>
+  <div class="card">
+  <h2>2026-03-09 to 2026-03-10 — Phase004 transition + public ecosystem structuring</h2>
+  <ul>
+    <li>Began the practical transition into <strong>Phase004</strong>, using a new branch structure to stage the next architectural evolution while preserving the stable Phase003 baseline.</li>
+    <li>Continued meaningful work inside the <strong>.github</strong> repository to improve ecosystem-wide structure, repository coordination, navigation patterns, and shared documentation standards.</li>
+    <li>Clarified the platform as a layered system rather than a collection of independent repositories, reinforcing the model of Satoshium as a coherent decentralized intelligence architecture.</li>
+    <li>Introduced the idea of a more intentional public release sequence and a clearer distinction between platform, knowledge, infrastructure, experimental, and commerce layers.</li>
+    <li>Established the new workspace pattern as a reusable public build surface that can support debugging, planning, documentation, and AI-assisted development across future domains.</li>
+  </ul>
 </div>
+  
+  <div class="card">
+    <h2>2026-03-08 — Interface hardening + site cohesion pass</h2>
+    <ul>
+      <li>Completed a major site cohesion pass across Satoshium Progress, including fixed centered topbar behavior, updated shared navigation, and route cleanup for the new <strong>/start-here/</strong> structure.</li>
+      <li>Expanded and refined the Start Here flow with an <strong>Origin Story</strong> path, improving platform onboarding without adding navigation clutter.</li>
+      <li>Balanced the Education section by creating a proper <strong>AI Foundations</strong> track, including new pages for AI basics, AI agents, AI safety, and machine reasoning.</li>
+      <li>Created and connected an <strong>AI hub page</strong> and improved discoverability for deeper concept pages across the education layer.</li>
+      <li>Added and refined a <strong>Research &amp; Papers</strong> layer, connecting it into both Architecture and Labs so deeper platform thinking is now findable from conceptual and experimental paths.</li>
+      <li>Implemented rotating <strong>Satoshium reflection sayings</strong> above the footer and continued cleaning duplicated closing language across pages.</li>
+      <li>Completed a full shared-component hardening pass: fixed topbar behavior, updated global links, stabilized footer usage, and continued cleaning page-level inconsistencies discovered during the rollout.</li>
+    </ul>
+  </div>
 
-<div class="card">
-<div class="date">March 13, 2026</div>
-<h2>Major Platform Migration</h2>
-<ul>
-<li>Launched new Satoshium.ai homepage</li>
-<li>Migrated multiple pages from satoshium-progress to live domains</li>
-<li>Unified topbar, footer, and navigation systems</li>
-</ul>
-</div>
+ <div class="card">
+    <h2>2026-03-07 — Platform architecture milestone</h2>
+    <ul>
+      <li>Rebuilt and stabilized the entire <strong>Satoshium Progress</strong> site structure from a partially flat layout into a layered platform architecture.</li>
+      <li>Standardized the topbar across all pages, eliminated duplicate semantics, renamed navigation items for clarity, and verified/fixed all internal links.</li>
+      <li>Established the final navigation structure:
+        <ul>
+          <li>Home</li>
+          <li>Architecture</li>
+          <li>Systems</li>
+          <li>Services</li>
+          <li>Education</li>
+          <li>Labs</li>
+          <li>Build</li>
+          <li>Updates</li>
+          <li>Repo Map</li>
+          <li>Registry</li>
+          <li>Main Site</li>
+        </ul>
+      </li>
+      <li>Clarified the platform into distinct layers: Architecture, Systems, Services, Labs, and Progress.</li>
+      <li>Transformed the Public Build Progress page into a clearer dashboard model organized around <strong>Build</strong>, <strong>Updates</strong>, and <strong>Repo Map</strong>.</li>
+      <li>Reached an important conceptual milestone: Satoshium now reads less like a collection of tools and more like a coherent decentralized intelligence platform with a stable architectural baseline.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h2>Week of 2026-02-28 to 2026-03-06 — Documentation hardening &amp; platform restructuring</h2>
+    <ul>
+      <li>Shifted from feature expansion into a documentation hardening phase focused on structure, trademark-aligned language, and long-term maintainability.</li>
+      <li>Recognized and formalized the separation between <strong>Systems</strong> and <strong>Services</strong>, clarifying capability vs. service provision and strengthening Class 042 alignment.</li>
+      <li>Created and expanded major platform pages including <strong>Architecture</strong>, <strong>Systems</strong>, and <strong>Services</strong>, preparing the site to function more like a coherent platform portal than a collection of pages.</li>
+      <li>Improved Labs structure and presentation through cleaner card-based layouts, consistent container usage, and stronger long-term page organization.</li>
+      <li>Standardized shared footer behavior and continued modularizing the site so navigation and branding could be maintained more efficiently across the full environment.</li>
+      <li>Integrated the Glossary Builder more explicitly as the foundation of the emerging <strong>Satoshium Knowledge Engine</strong>, with the canonical term set reaching 50 foundational definitions.</li>
+      <li>Placed the site into a more deliberate architecture-first posture: legitimacy, structure, SOU alignment, and future scalability took priority over new demos or short-term expansion.</li>
+    </ul>
+  </div>
 
-<div class="card">
-<div class="date">March 12, 2026</div>
-<h2>UI Enhancements</h2>
-<ul>
-<li>Added hover effects and visual polish across site</li>
-<li>Improved card design and layout consistency</li>
-<li>Modernized overall look and feel</li>
-</ul>
-</div>
+ <div class="card">
+    <h2>2026-02-27 — Launch: Satoshium Glossary Builder</h2>
+    <ul>
+      <li>A canonical terminology system was deployed to organize foundational vocabulary across the Satoshium ecosystem.</li>
+      <li>The Glossary Builder provides structured definitions for agents, governance systems, trust mechanisms, and decentralized intelligence architecture.</li>
+      <li>This system establishes the language layer for Satoshium and represents the early stage of the future Knowledge Engine.</li>
+      <li><a href="https://glossary-hub.replit.app/" rel="noreferrer">Satoshium Glossary Builder</a> is live.</li>
+    </ul>
+  </div>
 
-<div class="card">
-<div class="date">March 11, 2026</div>
-<h2>Foundation Improvements</h2>
-<ul>
-<li>Worked on routing, layout, and structural fixes</li>
-<li>Improved stability of components and pages</li>
-<li>Continued iterative testing and refinement</li>
-</ul>
-</div>
+  <div class="card">
+    <h2>2026-02-26 — Satoshium Labs goes live (10 apps published)</h2>
+    <ul>
+      <li>Aligned a consistent “Satoshium OS” visual theme across the Labs applications.</li>
+      <li>Published 10 Labs apps and launched the <a href="https://satoshium.xyz/labs/" target="_blank" rel="noreferrer">Satoshium Labs</a> hub.</li>
+      <li>Updated the Progress site and demos pathways to link directly into Labs.</li>
+    </ul>
+  </div>
 
-<div class="card">
-<h2>🔜 Next Focus</h2>
-<ul>
-<li>Continue porting Labs experiments from Replit</li>
-<li>Expand Core Platform Layers</li>
-<li>Update Updates page regularly</li>
-<li>Develop Satoshium: Sovereign Signal</li>
-</ul>
-</div>
+    <hr />
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Satoshium is being built slowly, in public, and with architectural discipline.
+  </div>
+  <hr />
+</main>
 
-</div>
+<div id="footer-container"></div>
+<script src="/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.ai/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+   document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+
 </body>
 </html>
