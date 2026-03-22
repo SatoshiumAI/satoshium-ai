@@ -33,7 +33,7 @@ a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold)}
 .wrap{max-width:980px;margin:0 auto;padding:0 18px}
 
-  .wrap.content{
+.wrap.content{
   opacity:0;
   transform:translateY(6px);
   animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
@@ -46,17 +46,15 @@ a:hover{color:var(--gold)}
  }
 }
 
-    /* ===== Layout ===== */
-    .content{padding:34px 18px 60px}
-    h1,h2{margin:0 0 10px}
-    h1{font-size:30px;color:var(--gold2)}
-    h2{font-size:20px;color:var(--gold2);margin:0}
-    p,li{color:var(--text)}
-    hr{border:none;border-top:1px solid var(--line);margin:22px 0}
+/* ===== Layout ===== */
+.content{padding:34px 18px 60px}
+h1,h2{margin:0 0 10px}
+h1{font-size:30px;color:var(--gold2)}
+h2{font-size:20px;color:var(--gold2);margin:0}
+p,li{color:var(--text)}
+hr{border:none;border-top:1px solid var(--line);margin:22px 0}
+.muted{color:var(--muted)}
 
-    .muted{color:var(--muted)}
-
-  
 /* ===== Pills ===== */
 .pill{
   display:inline-flex;align-items:center;gap:8px;
@@ -97,6 +95,7 @@ a:hover{color:var(--gold)}
   box-shadow:
     0 0 0 1px rgba(214,163,74,.08),
     0 20px 50px rgba(0,0,0,.45);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 .card::before{
   content:"";
@@ -112,15 +111,10 @@ a:hover{color:var(--gold)}
   z-index:0;
 }
 .card > *{position:relative;z-index:1}
-.card {
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,.35);
 }
-
 .card {
  border: 1px solid rgba(214,163,74,.15);
 }
@@ -307,6 +301,54 @@ across the Satoshium platform.
         <a class="pill" href="https://satoshium.xyz/labs/demos/ai-chat.html" target="_blank" rel="noopener">Open Interface</a>
       </div>
     </div>
+
+    <div class="registry-item">
+      <div class="registry-id">System Registry ID: SYS-INTEL-002</div>
+      <div class="registry-row">
+        <div>
+          <div class="registry-name">Prompt Wizard</div>
+          <div class="registry-meta-line">Layer: Intelligence Systems • Type: Prompt Structuring Interface</div>
+        </div>
+        <div class="pill ok">Operational</div>
+      </div>
+      <div class="registry-links">
+        <span class="pill gray">Public Interface</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COORDINATION -->
+  <section class="card registry-section" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
+    <h2>📡 Coordination Systems</h2>
+
+    <div class="registry-item">
+      <div class="registry-id">System Registry ID: SYS-SIG-001</div>
+      <div class="registry-row">
+        <div>
+          <div class="registry-name">Signal Boards</div>
+          <div class="registry-meta-line">Layer: Coordination Systems • Type: Infrastructure Signal Intake &amp; Routing Interface</div>
+        </div>
+        <div class="pill ok">Operational</div>
+      </div>
+      <div class="registry-links">
+        <span class="pill warn">Foundation</span>
+        <a class="pill" href="https://satoshium.net/signal/" target="_blank" rel="noopener">Open System</a>
+      </div>
+    </div>
+
+    <div class="registry-item">
+      <div class="registry-id">System Registry ID: SYS-SIG-002</div>
+      <div class="registry-row">
+        <div>
+          <div class="registry-name">Sovereign Signal</div>
+          <div class="registry-meta-line">Layer: Coordination Systems • Type: Strategic Scenario Signaling Environment</div>
+        </div>
+        <div class="pill warn">Experimental</div>
+      </div>
+      <div class="registry-links">
+        <a class="pill" href="https://satoshium.xyz/labs/simulations/sovereign-signal/" target="_blank" rel="noopener">Open System</a>
+      </div>
+    </div>
   </section>
 
   <!-- GOVERNANCE -->
@@ -327,6 +369,34 @@ across the Satoshium platform.
         <a class="pill" href="https://satoshium.link/repos/">Reference</a>
       </div>
     </div>
+
+    <div class="registry-item">
+      <div class="registry-id">System Registry ID: SYS-GOV-002</div>
+      <div class="registry-row">
+        <div>
+          <div class="registry-name">Agent Governance Tool</div>
+          <div class="registry-meta-line">Layer: Governance Systems • Type: Agent Policy Alignment &amp; Oversight Interface</div>
+        </div>
+        <div class="pill ok">Operational</div>
+      </div>
+      <div class="registry-links">
+        <a class="pill" href="https://satoshium.net/services/agent-governance/tool.html" target="_blank" rel="noopener">Open System</a>
+      </div>
+    </div>
+
+    <div class="registry-item">
+      <div class="registry-id">System Registry ID: SYS-GOV-003</div>
+      <div class="registry-row">
+        <div>
+          <div class="registry-name">Verification Ledger Tool</div>
+          <div class="registry-meta-line">Layer: Governance Systems • Type: Cryptographic Verification Logging Interface</div>
+        </div>
+        <div class="pill ok">Operational</div>
+      </div>
+      <div class="registry-links">
+        <a class="pill" href="https://satoshium.net/services/verification-ledger/tool.html" target="_blank" rel="noopener">Open System</a>
+      </div>
+    </div>
   </section>
 
   <!-- SIMULATION -->
@@ -343,7 +413,7 @@ across the Satoshium platform.
         <div class="pill warn">Experimental</div>
       </div>
       <div class="registry-links">
-        <a class="pill" href="https://satoshium.xyz/labs/">Open Labs</a>
+        <a class="pill" href="https://satoshium.xyz/labs/" target="_blank" rel="noopener">Open Labs</a>
       </div>
     </div>
   </section>
@@ -362,7 +432,7 @@ across the Satoshium platform.
         <div class="pill ok">Operational</div>
       </div>
       <div class="registry-links">
-        <a class="pill" href="https://satoshium.ai/updates/">Open Updates</a>
+        <a class="pill" href="https://satoshium.ai/updates/" target="_blank" rel="noopener">Open Updates</a>
       </div>
     </div>
 
