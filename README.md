@@ -79,3 +79,87 @@ Examples include:
 - Public Updates record
 
 System identifiers are documented in:
+
+/registry/system-registry.md
+
+
+
+---
+
+# ⚙ Shared Platform Components
+
+Many Satoshium domains share navigation and interface components hosted through:
+
+https://satoshium.link
+
+Examples include:
+
+/components/topbar.html
+/components/footer.html
+/components/domain-layers.html
+
+
+These maintain consistent architecture visibility across the ecosystem.
+
+
+---
+
+# 🧾 Development Status
+
+Satoshium is under active long-horizon development.
+
+This repository contains:
+
+- operational documentation systems
+- coordination interfaces
+- governance tools
+- verification infrastructure
+- experimental architecture layers
+- evolving platform structure
+
+Interfaces and systems may expand over time.
+
+
+---
+
+# 📚 Platform Philosophy
+
+Satoshium is being built:
+
+- slowly
+- publicly
+- with architectural discipline
+
+The objective is not rapid deployment, but durable infrastructure aligned with verifiable systems.
+
+
+---
+
+# 🔗 Explore the Platform
+
+- https://satoshium.ai
+- https://satoshium.info
+- https://satoshium.xyz
+- https://satoshium.net
+- https://satoshium.store
+- https://satoshium.link
+
+
+---
+
+# 🧠 Satoshium
+
+**AI governed by Bitcoin.**
+
+Satoshium explores how decentralized intelligence systems can emerge from:
+
+- cryptographic rules
+- transparent architecture
+- modular coordination systems
+- open documentation
+- long-horizon system design
+
+
+---
+
+© Christopher D. Burris — Satoshium™
