@@ -1,153 +1,81 @@
-# 🪐 Satoshium — A.I.
+# 🪐 Satoshium — AI Platform Layer
 
-Satoshium is a decentralized intelligence infrastructure project aligned with the Bitcoin standard. It is being developed as a platform where humans and AI can reason about complex systems using shared knowledge, verifiable claims, and simulation environments.
+Satoshium is a decentralized intelligence infrastructure project aligned with the Bitcoin standard.
 
-This Readme documents the public build of that platform — including its architecture, systems, knowledge layer, experimental labs, and long-horizon development progress.
+This repository contains the primary public architecture surface for the Satoshium platform and supports the development of verifiable coordination systems, governance tooling, documentation layers, and experimental intelligence interfaces.
 
-This repository is the main part of the **Satoshium platform**, an experimental system exploring how decentralized intelligence, AI agents, and cryptographic infrastructure can evolve together over long time horizons.
+It functions as the entry layer for the broader Satoshium ecosystem.
+
 
 ---
 
-# 🌐 The Satoshium Universe
+# 🌐 The Satoshium Domain Ecosystem
 
-Satoshium is expanding into a **layered domain ecosystem** where each domain serves a distinct role.
+Satoshium develops as a layered multi-domain platform where each domain supports a distinct role.
 
 | Domain | Role |
-|------|------|
-| **satoshium.ai** | Public platform layer |
-| **satoshium.info** | Knowledge & engineering layer |
-| **satoshium.xyz** | Experimental frontier |
-| **satoshium.net** | Infrastructure & network layer |
-| **satoshium.store** | Cultural & merchandise layer |
-| **satoshium.link** | Gateway & shared components |
+|-------|------|
+| **satoshium.ai** | Public platform architecture layer |
+| **satoshium.info** | Knowledge and engineering workspace layer |
+| **satoshium.xyz** | Experimental simulation and prototype frontier |
+| **satoshium.net** | Infrastructure and coordination network layer |
+| **satoshium.store** | Cultural and economic surface |
+| **satoshium.link** | Shared component gateway |
 | **satoshium.dev** | Developer ecosystem (planned) |
 | **satoshium.us** | Jurisdictional / operational layer (planned) |
 
-Together these domains form the **Satoshium Universe**.
+Together these domains form the **Satoshium platform architecture**.
+
 
 ---
 
 # 🧭 Role of This Repository
 
-This repository supports the **[layer / system]** of the Satoshium platform.
+This repository serves as the **public architecture layer** of the Satoshium platform.
 
-Its responsibilities may include:
+It maintains:
 
-- [primary responsibility]
-- [secondary responsibility]
-- [supporting systems]
-- [documentation / infrastructure / experimentation]
+- platform structure documentation
+- system registry references
+- governance interface surfaces
+- verification infrastructure entry points
+- updates and milestone tracking
+- architecture navigation layers
+- ecosystem coordination visibility
 
-Each repository exists to support **structured growth of the ecosystem**, not isolated projects.
 
 ---
 
-# 🧠 Platform Layers
+# 🧠 Platform Architecture Layers
 
-Satoshium architecture generally follows several conceptual layers.
+Satoshium is structured as a layered coordination system.
 
 | Layer | Purpose |
-|------|------|
-| **Trust Layer** | Verification, safety, and governance logic |
-| **Knowledge Layer** | Documentation, terminology, and structured knowledge |
-| **Intelligence Layer** | Agents, reasoning systems, and coordination |
-| **Simulation Layer** | Experimental modeling environments |
-| **Interface Layer** | Public platform and application surfaces |
+|------|---------|
+| **Trust Layer** | Verification systems and governance tooling |
+| **Knowledge Layer** | Terminology, Canon, and specifications |
+| **Intelligence Layer** | Agents and reasoning interfaces |
+| **Simulation Layer** | Scenario modeling environments |
+| **Interface Layer** | Public platform surfaces |
 
-This repository primarily contributes to the:
+This repository primarily supports the:
 
-**➡ [Insert layer here]**
+➡ **Interface Layer**
+
 
 ---
 
-# ⚙ Shared Platform Components
+# 🧩 Key Platform Systems Referenced Here
 
-Many Satoshium domains use shared components hosted through:
+Examples include:
 
-https://satoshium.link
+- Glossary Hub (Canonical Terminology System)
+- Agent Governance Tool
+- Verification Ledger Tool
+- Signal Boards
+- Sovereign Signal
+- Canon & Specs documentation layer
+- Repository Map
+- Public Updates record
 
-Shared UI infrastructure may include:
-
-/components/topbar.html
-/components/footer.html
-/components/domain-layers.html
-
-
-These components help maintain consistent navigation and architecture visibility across the Satoshium ecosystem.
-
----
-
-# 🧩 Relationship to Other Repositories
-
-This repository interacts with several other Satoshium repositories.
-
-Examples may include:
-
-- **satoshium-core** — shared platform logic
-- **satoshium-specs** — architecture definitions
-- **satoshium-progress** — public build documentation
-- **satoshium-simulations** — experimental modeling environments
-- **satoshium-demos** — prototype demonstrations
-- **satoshium-registry** — system indexing and structure
-
-Repositories within the ecosystem function as **coordinated modules rather than isolated projects**.
-
----
-
-# 🚧 Development Status
-
-Satoshium repositories are under **active long-horizon development**.
-
-Some repositories may contain:
-
-- working systems
-- experimental prototypes
-- early architectural structures
-- documentation in progress
-- conceptual groundwork
-
-Tools and modules may evolve significantly over time.
-
----
-
-# 📚 Philosophy
-
-Satoshium is being built:
-
-- slowly  
-- transparently  
-- with architectural discipline  
-
-The goal is not rapid hype-driven development, but **durable systems thinking over decades**.
-
----
-
-# 🔗 Explore the Ecosystem
-
-- https://satoshium.ai  
-- https://satoshium.info  
-- https://satoshium.xyz  
-- https://satoshium.net  
-- https://satoshium.store  
-- https://satoshium.link  
-
----
-
-# 🧠 Satoshium
-
-**AI governed by Bitcoin.**
-
-Satoshium explores how decentralized intelligence systems can be built using:
-
-- cryptographic rules
-- transparent architecture
-- open documentation
-- long-horizon design
-
----
-
-© Satoshium  
-Experimental platform under active development.
-
-<img width="647" height="2743" alt="image" src="https://github.com/user-attachments/assets/16dd6ed3-d892-4f52-95fe-1856f62fe06e" />
-minutes**.
+System identifiers are documented in:
