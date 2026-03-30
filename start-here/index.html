@@ -82,6 +82,14 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
   display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);
   border-radius:999px;background:rgba(214,163,74,.08);color:var(--gold2);font-size:12px;font-weight:700
 }
+
+<style>
+.badge-status {
+  display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);
+  border-radius:999px;background:rgba(214,163,74,.08);color:var(--gold2);font-size:12px;font-weight:700
+}
+</style>
+  
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 ul{margin:8px 0 0 18px}
 @media (max-width:760px){.grid-2{grid-template-columns:1fr}}
@@ -157,9 +165,11 @@ systems, knowledge layer, experimental labs, and long-horizon development progre
   </div>
 
 <div class="card aegis-card">
-  <div class="pill">AGENT GOVERNANCE LAYER</div>
-
-  <h2>🛡️ Aegis — The Agent Firewall</h2>
+  
+<h3>
+  🛡️ Aegis
+  <span class="badge badge-status">Coming Soon</span>
+</h3>
 
   <p>
     Aegis is a containment-lifecycle evaluation system designed to determine
