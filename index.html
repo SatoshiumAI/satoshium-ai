@@ -98,6 +98,17 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
     margin-bottom:28px;
   }
 
+.badge-status {
+  font-size: 11px;
+  padding: 3px 10px;
+  margin-left: 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+    
   .hero-actions{
     display:flex;
     flex-wrap:wrap;
@@ -542,7 +553,10 @@ Enables experimentation, visualization, and interaction with Satoshium systems b
           <p><a href="/architecture/">View Architecture →</a></p>
         </div>
 <div class="card">
-    <h3>🛡️ Aegis </h3><div class="pill">Coming Soon</div>
+<h3>
+  🛡️ Aegis 
+  <span class="badge badge-status">Coming Soon</span>
+</h3>
   <p>
     Agent firewall and governance layer for evaluating whether autonomous agents
     are safe, unstable, or hostile before they are allowed to act.
