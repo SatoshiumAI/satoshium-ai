@@ -33,8 +33,12 @@
         setActive("home");
       } else if (pathStarts("/start-here/")) {
         setActive("start-here");
-      } else if (pathStarts("/mentor/")) {
-        setActive("mentor");
+      } else if (
+  pathStarts("/mentor") ||
+  pathStarts("/start-here/onboarding-mentor")
+) {
+  setActive("mentor");
+}
       } else if (pathStarts("/manifesto/")) {
         setActive("manifesto");
       } else if (pathStarts("/architecture/")) {
