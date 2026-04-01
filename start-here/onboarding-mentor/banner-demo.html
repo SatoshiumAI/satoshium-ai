@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+  banner-demo.html
+  ─────────────────────────────────────────────────────────────────────────────
+  A minimal standalone Satoshium page that demonstrates how mentor-return-banner.js
+  is adopted on any destination page (satoshium.ai, satoshium.dev, etc.).
+
+  How to test:
+    Open this file with any of these query strings to see the banner in action:
+
+    ?mentor_source=onboarding-mentor&mentor_stage=systems&mentor_path=track-whats-happening-in-satoshium
+    ?mentor_source=onboarding-mentor&mentor_stage=dev&mentor_path=find-your-entry-point-as-a-contributor
+    ?mentor_source=onboarding-mentor&mentor_stage=foundations&mentor_path=start-with-the-foundations
+
+  Without mentor_source=onboarding-mentor the banner does not render.
+
+  How destination pages adopt this banner:
+    Copy the single <script> tag below into the <head> or top of <body> of any
+    Satoshium page. Nothing else needs to change.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satoshium — Mentor Return Banner Demo</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #08080d;
+      color: #e8e0cc;
+      font-family: 'Sora', 'Inter', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── Page header (simulates a typical Satoshium page header) ── */
+    .site-header {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .site-logo {
+      width: 18px;
+      height: 18px;
+      background: #c9a84c;
+      border-radius: 3px;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+    .site-name {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #e8e0cc;
+    }
+
+    /* ── Page body ── */
+    .page-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 28px;
+    }
+    .page-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(201,168,76,0.7);
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+    .page-title {
+      font-size: 38px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      color: #f0e8d6;
+      margin-bottom: 22px;
+    }
+    .page-body p {
+      color: rgba(232,224,204,0.55);
+      font-size: 16px;
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 18px;
+      max-width: 600px;
+    }
+    .page-divider {
+      width: 48px;
+      height: 1px;
+      background: rgba(201,168,76,0.3);
+      margin: 36px 0;
+    }
+
+    /* ── Adoption instructions ── */
+    .adoption-block {
+      background: #0d0d12;
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-top: 40px;
+    }
+    .adoption-block h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(201,168,76,0.6);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+    .adoption-block code {
+      display: block;
+      background: #07070c;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 4px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: rgba(232,224,204,0.7);
+      white-space: pre;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      line-height: 1.6;
+    }
+    .adoption-block p {
+      font-size: 13px;
+      color: rgba(232,224,204,0.4);
+      margin-top: 12px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+    ═══════════════════════════════════════════════════════════════════════════
+    ADOPTION POINT — Copy this single script tag to any Satoshium page.
+    The banner renders automatically when mentor_source=onboarding-mentor is
+    present in the URL. No markup changes, no layout work.
+    ═══════════════════════════════════════════════════════════════════════════
+  -->
+  <script src="/mentor-return-banner.js" defer></script>
+
+  <!-- ── Simulated page header ── -->
+  <header class="site-header">
+    <div class="site-logo"></div>
+    <span class="site-name">Satoshium</span>
+  </header>
+
+  <!-- ── Simulated page content ── -->
+  <main class="page-body">
+    <p class="page-eyebrow">Systems Layer</p>
+    <h1 class="page-title">What's Happening in Satoshium</h1>
+
+    <p>
+      Satoshium is a long-horizon public build exploring decentralized intelligence,
+      verifiable systems, knowledge infrastructure, and cryptographic governance.
+      This page tracks the current state of active work across the ecosystem.
+    </p>
+    <p>
+      New dispatches, lab experiments, and system status updates are added regularly.
+      Everything here is part of an open, ongoing build — not a polished product launch.
+    </p>
+
+    <div class="page-divider"></div>
+
+    <p style="color: rgba(201,168,76,0.45); font-size:13px;">
+      This is a demonstration page for the Mentor Return Banner.
+      Visit this URL with <code style="font-size:11px; background:#0d0d12; padding:2px 6px; border-radius:3px; color:#c9a84c;">?mentor_source=onboarding-mentor&amp;mentor_stage=systems&amp;mentor_path=track-whats-happening-in-satoshium</code>
+      appended to see the banner in action.
+    </p>
+
+    <div class="adoption-block">
+      <h3>How to adopt this banner on any Satoshium page</h3>
+      <code>&lt;!-- Add this one line to &lt;head&gt; or top of &lt;body&gt; --&gt;
+&lt;script src="https://mentor.satoshium.ai/mentor-return-banner.js" defer&gt;&lt;/script&gt;</code>
+      <p>
+        The banner only renders when <code>mentor_source=onboarding-mentor</code> is present in the URL.
+        Pages without that parameter are completely unaffected — no DOM changes, zero overhead.
+      </p>
+    </div>
+  </main>
+
+</body>
+</html>
