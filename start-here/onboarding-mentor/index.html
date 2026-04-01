@@ -2,6 +2,202 @@
 <html lang="en">
 <head>
 
+<style>
+:root{
+  --card-wm: url('https://satoshium.ai/assets/seal.png');
+  --bg:#07090d;
+  --panel:#0c1018;
+  --text:#e8edf7;
+  --muted:#9aa7bd;
+  --gold:#d6a34a;
+  --gold2:#f4c36a;
+  --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.55;
+}
+body{
+ padding-top:80px;
+}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+
+.wrap.content{
+  opacity:0;
+  transform:translateY(6px);
+  animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes pageEnter{
+ to{
+ opacity:1;
+ transform:translateY(0);
+ }
+}
+
+/* ===== Layout ===== */
+.content{padding:34px 18px 60px}
+h1,h2{margin:0 0 10px}
+h1{font-size:30px;color:var(--gold2)}
+h2{font-size:20px;color:var(--gold2);margin:0}
+p,li{color:var(--text)}
+hr{border:none;border-top:1px solid var(--line);margin:22px 0}
+.muted{color:var(--muted)}
+
+/* ===== Pills ===== */
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 10px;border:1px solid var(--line);border-radius:999px;
+  background:rgba(214,163,74,.08);color:var(--gold2);
+  font-size:12px;font-weight:700
+}
+.pill.ok{
+  background:rgba(96,196,132,.10);
+  border-color:rgba(96,196,132,.25);
+  color:#bdf5d0;
+}
+.pill.warn{
+  background:rgba(244,195,106,.10);
+  border-color:rgba(244,195,106,.25);
+  color:var(--gold2);
+}
+.pill.dev{
+  background:rgba(120,165,255,.10);
+  border-color:rgba(120,165,255,.22);
+  color:#cfe0ff;
+}
+.pill.gray{
+  background:rgba(154,167,189,.08);
+  border-color:rgba(154,167,189,.20);
+  color:var(--muted);
+}
+
+/* ===== Cards ===== */
+.card{
+  position:relative;
+  overflow:hidden;
+  background: linear-gradient(to bottom right, rgba(12,16,24,.94), rgba(12,16,24,.88));
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px 16px;
+  margin:16px 0;
+  box-shadow:
+    0 0 0 1px rgba(214,163,74,.08),
+    0 20px 50px rgba(0,0,0,.45);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-60px;
+  background-image: var(--card-wm);
+  background-repeat:no-repeat;
+  background-size: min(720px, 70vw);
+  background-position: right -140px center;
+  opacity:0.028;
+  filter: blur(1px);
+  pointer-events:none;
+  z-index:0;
+}
+.card > *{position:relative;z-index:1}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+.card {
+ border: 1px solid rgba(214,163,74,.15);
+}
+
+/* ===== Registry Layout ===== */
+.registry-intro{
+  margin-top:22px;
+  margin-bottom:24px;
+  padding:16px 18px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:linear-gradient(to bottom right, rgba(12,16,24,.92), rgba(12,16,24,.86));
+  box-shadow:0 0 0 1px rgba(214,163,74,.06), 0 10px 30px rgba(0,0,0,.35);
+}
+.registry-title{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold2);
+  margin-bottom:6px;
+}
+.registry-description{
+  font-size:14px;
+  color:var(--text);
+  margin-bottom:10px;
+}
+.registry-meta{
+  font-size:12px;
+  color:var(--muted);
+  letter-spacing:.04em;
+}
+
+.registry-section{
+  margin-top:18px;
+}
+
+.registry-item{
+  border-top:1px solid rgba(214,163,74,.10);
+  padding-top:14px;
+  margin-top:14px;
+}
+.registry-item:first-of-type{
+  border-top:none;
+  padding-top:0;
+  margin-top:0;
+}
+
+.registry-id{
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+
+.registry-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.registry-name{
+  font-weight:700;
+  color:var(--text);
+}
+
+.registry-meta-line{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.registry-links{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.footer-note{
+  font-size:12px;
+  color:var(--muted);
+}
+</style>
+  
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
