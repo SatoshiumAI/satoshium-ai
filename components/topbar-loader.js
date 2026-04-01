@@ -29,41 +29,42 @@
 
   function applyActiveState() {
     if (isPlatform) {
-      if (path === "/" || path === "/index.html") {
-        setActive("home");
-      } else if (pathStarts("/start-here/")) {
-        setActive("start-here");
-      } else if (
-  pathStarts("/mentor") ||
-  pathStarts("/start-here/onboarding-mentor")
-) {
-  setActive("mentor");
+  if (path === "/" || path === "/index.html") {
+    setActive("home");
+  } else if (
+    pathStarts("/mentor") ||
+    pathStarts("/start-here/onboarding-mentor")
+  ) {
+    setActive("mentor");
+  } else if (pathStarts("/start-here/")) {
+    setActive("start-here");
+  } else if (pathStarts("/manifesto/")) {
+    setActive("manifesto");
+  } else if (pathStarts("/architecture/")) {
+    setActive("architecture");
+  } else if (pathStarts("/systems/")) {
+    setActive("systems");
+  } else if (pathStarts("/services/")) {
+    setActive("services");
+  } else if (pathStarts("/education/")) {
+    setActive("education");
+  } else if (pathStarts("/labs/")) {
+    setActive("labs");
+  } else if (pathStarts("/build/")) {
+    setActive("build");
+  } else if (pathStarts("/updates/")) {
+    setActive("updates");
+  } else if (pathStarts("/repo-map/") || pathStarts("/repos/")) {
+    setActive("repomap");
+  } else if (pathStarts("/registry/")) {
+    setActive("registry");
+  } else if (pathStarts("/connect/")) {
+    setActive("connect");
+  } else {
+    setActive("home");
+  }
+  return;
 }
-      } else if (pathStarts("/manifesto/")) {
-        setActive("manifesto");
-      } else if (pathStarts("/architecture/")) {
-        setActive("architecture");
-      } else if (pathStarts("/systems/")) {
-        setActive("systems");
-      } else if (pathStarts("/services/")) {
-        setActive("services");
-      } else if (pathStarts("/education/")) {
-        setActive("education");
-      } else if (pathStarts("/labs/")) {
-        setActive("labs");
-      } else if (pathStarts("/build/")) {
-        setActive("build");
-      } else if (pathStarts("/updates/")) {
-        setActive("updates");
-      } else if (pathStarts("/repo-map/") || pathStarts("/repos/")) {
-        setActive("repomap");
-      } else if (pathStarts("/registry/")) {
-        setActive("registry");
-      } else if (pathStarts("/connect/")) {
-        setActive("connect");        
-      } else {
-        setActive("home");
-      }
       return;
     }
     if (path.includes("/manifesto")) setActive("manifesto");
