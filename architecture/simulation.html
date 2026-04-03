@@ -243,6 +243,73 @@
         0 12px 28px rgba(0,0,0,.28);
     }
 
+    .simulation-feature-card{
+  position:relative;
+  overflow:hidden;
+  margin-top:18px;
+  padding:22px;
+  border:1px solid rgba(214,163,74,.18);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at top right, rgba(214,163,74,.08), transparent 28%),
+    linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+  box-shadow:
+    0 0 0 1px rgba(214,163,74,.05),
+    0 18px 44px rgba(0,0,0,.35);
+}
+
+.simulation-feature-card::before{
+  content:"";
+  position:absolute;
+  inset:-60px;
+  background-image:var(--card-wm);
+  background-repeat:no-repeat;
+  background-size:min(720px,70vw);
+  background-position:right -140px center;
+  opacity:.03;
+  filter:blur(1px);
+  pointer-events:none;
+}
+
+.simulation-feature-card > *{
+  position:relative;
+  z-index:1;
+}
+
+.simulation-feature-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.simulation-feature-card h3{
+  margin:0 0 12px;
+  color:var(--gold2);
+  font-size:26px;
+  line-height:1.15;
+}
+
+.simulation-feature-card p{
+  margin:0 0 14px;
+  color:#d9e1ee;
+}
+
+.simulation-feature-card ul{
+  margin:8px 0 18px 20px;
+  color:#d9e1ee;
+}
+
+.simulation-feature-card li{
+  margin:6px 0;
+}
+
+.simulation-feature-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
     .footer-wrap{
       margin-top:40px;
     }
@@ -401,7 +468,9 @@
     <p>
       Today, this layer is most visible through Satoshium’s public labs, interface experiments, and exploratory design surfaces.
     </p>
-
+    <p>
+  A current live example of this layer is <a href="https://satoshium.games/apps/chess-signal/"><strong>Chess Signal</strong></a>, now available through <a href="https://satoshium.games/"><strong>Satoshium Games</strong></a>.
+</p>
     <p>
       It is currently expressed through:
     </p>
@@ -422,6 +491,43 @@
     </p>
   </section>
 
+<section class="section">
+  <h2>Live Simulation Example</h2>
+
+  <p>
+    Chess Signal is the first live browser-based module currently expressing the
+    Simulation / Interface Layer in practice.
+  </p>
+
+  <div class="simulation-feature-card">
+    <div class="simulation-feature-meta">
+      <span class="pill">♟️ Live Module</span>
+      <span class="pill">Satoshium Games</span>
+    </div>
+
+    <h3>Chess Signal</h3>
+
+    <p>
+      Chess Signal is a signal-aware chess learning environment that surfaces
+      positional, tactical, and developmental signals during play. Instead of
+      relying only on opaque engine scoring, it helps make structured move
+      intelligence visible in real time.
+    </p>
+
+    <ul>
+      <li>browser-native interactive environment</li>
+      <li>explainable move commentary</li>
+      <li>signal-based learning feedback</li>
+      <li>live example of simulation as platform expression</li>
+    </ul>
+
+    <div class="simulation-feature-actions">
+      <a href="https://satoshium.games/apps/chess-signal/" class="pill">→ Open Chess Signal</a>
+      <a href="https://satoshium.games/" class="pill">→ Visit Satoshium Games</a>
+    </div>
+  </div>
+</section>
+  
   <section class="section">
     <h2>Core Platform Layers</h2>
 
