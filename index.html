@@ -78,32 +78,7 @@
   width: fit-content;
 }
 
-/* --- Hero Signal --- */
-
-.hero-signal-btn{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:10px 16px;
-border:1px solid rgba(214,163,74,.28);
-border-radius:999px;
-background:rgba(214,163,74,.08);
-color:#f4c36a;
-font-weight:700;
-cursor:pointer;
-transition:all .18s ease;
-margin-top:18px;
-}
-
-.hero-signal-btn:hover{
-background:rgba(214,163,74,.14);
-transform:translateY(-1px);
-}
-
-.hero-signal-btn.is-on{
-background:rgba(214,163,74,.22);
-}
-    
+   
   .grid-3{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -438,7 +413,7 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
 
 <body>
 
-<script src="/assets/js/signal-toggle.js"></script>
+<script src="https://satoshium.ai/assets/js/signal-toggle.js"></script>
   
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="/components/topbar-loader.js"></script>
@@ -468,9 +443,8 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
       📡 Signal Layer Live — Participate in infrastructure proposals →
     </a>
     <p></p>
-    <button id="heroSignalToggle" class="hero-signal-btn">
+    <button id="signalToggle" type="button" aria-pressed="false">Signal: OFF</button>
 📡 Enable Signal Layer
-</button>
   </div>
 </section>
 
