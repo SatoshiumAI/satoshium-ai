@@ -440,6 +440,56 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
     0 0 0 1px rgba(214,163,74,.08),
     0 0 18px rgba(214,163,74,.12);
 }
+
+.hero-signal-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  width:fit-content;
+
+  padding:8px 16px;
+
+  border:1px solid rgba(214,163,74,.28);
+  border-radius:999px;
+
+  background:rgba(214,163,74,.08);
+  color:#f4c36a;
+
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  box-shadow:0 0 12px rgba(214,163,74,.08);
+
+  transition:
+    transform .16s ease,
+    background .16s ease,
+    border-color .16s ease,
+    box-shadow .16s ease;
+}
+
+.hero-signal-btn:hover{
+  transform:translateY(-1px);
+  background:rgba(214,163,74,.14);
+  border-color:rgba(214,163,74,.42);
+  box-shadow:
+    0 0 0 1px rgba(214,163,74,.12),
+    0 10px 28px rgba(0,0,0,.18);
+}
+
+.hero-signal-btn.is-on{
+  background:rgba(214,163,74,.18);
+  border-color:rgba(214,163,74,.45);
+  color:#ffd166;
+}
+
+if (ready)
+  label = "📡 Signal Layer READY — Enable →"
+
+if (on)
+  label = "📡 Signal Layer ACTIVE"
     
 </style>
 
