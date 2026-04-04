@@ -390,22 +390,56 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
     }
   }
 
-      /* ===== Signal Toggle ===== */
- #signalToggle:hover{
-      transform:translateY(-1px);
-      box-shadow:0 0 0 1px rgba(214,163,74,.12), 0 8px 24px rgba(0,0,0,.18);
-    }
+/* ===== Signal Toggle (Hero + Footer compatible) ===== */
 
-    #signalToggle:active{
-      transform:translateY(0);
-    }
+#signalToggle{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 
-    #signalToggle.is-on{
-      background:rgba(214,163,74,.12);
-      color:var(--gold2);
-      border-color:rgba(214,163,74,.34);
-      box-shadow:0 0 0 1px rgba(214,163,74,.08), 0 0 18px rgba(214,163,74,.12);
-    }
+  width:fit-content;
+  max-width:100%;
+
+  padding:8px 14px;
+
+  border:1px solid rgba(214,163,74,.18);
+  border-radius:999px;
+
+  background:rgba(214,163,74,.06);
+  color:var(--gold2);
+
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:
+    transform .16s ease,
+    box-shadow .16s ease,
+    background .16s ease,
+    border-color .16s ease,
+    opacity .16s ease;
+}
+
+#signalToggle:hover{
+  transform:translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(214,163,74,.12),
+    0 8px 24px rgba(0,0,0,.18);
+}
+
+#signalToggle:active{
+  transform:translateY(0);
+}
+
+#signalToggle.is-on{
+  background:rgba(214,163,74,.12);
+  color:var(--gold2);
+  border-color:rgba(214,163,74,.34);
+  box-shadow:
+    0 0 0 1px rgba(214,163,74,.08),
+    0 0 18px rgba(214,163,74,.12);
+}
     
 </style>
 
