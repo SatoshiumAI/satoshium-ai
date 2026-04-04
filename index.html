@@ -388,6 +388,24 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
       min-height:auto;
     }
   }
+
+      /* ===== Signal Toggle ===== */
+ #signalToggle:hover{
+      transform:translateY(-1px);
+      box-shadow:0 0 0 1px rgba(214,163,74,.12), 0 8px 24px rgba(0,0,0,.18);
+    }
+
+    #signalToggle:active{
+      transform:translateY(0);
+    }
+
+    #signalToggle.is-on{
+      background:rgba(214,163,74,.12);
+      color:var(--gold2);
+      border-color:rgba(214,163,74,.34);
+      box-shadow:0 0 0 1px rgba(214,163,74,.08), 0 0 18px rgba(214,163,74,.12);
+    }
+    
 </style>
 
 </head>
@@ -424,6 +442,8 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
       📡 Signal Layer Live — Participate in infrastructure proposals →
     </a>
   </div>
+<p></p>
+ <button id="signalToggle" type="button" aria-pressed="false">Signal: OFF</button>
 </section>
 
 <!-- FILM INTRO -->
