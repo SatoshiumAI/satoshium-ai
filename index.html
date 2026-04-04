@@ -716,10 +716,10 @@ Enables experimentation, visualization, and interaction with Satoshium systems b
 
 <div id="footer-container"></div>
 
-<script src="/assets/sayings.js"></script>
-<script src="/assets/signal-toggle.js"></script>
+<script src="https://satoshium.ai/assets/sayings.js"></script>
+<script src="https://satoshium.ai/assets/signal-toggle.js"></script>
 <script>
-fetch("/components/footer.html")
+fetch("https://satoshium.ai/components/footer.html")
  .then(response => response.text())
  .then(data => {
  document.getElementById("footer-container").innerHTML = data;
