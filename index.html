@@ -394,6 +394,8 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
 
 <body>
 
+<script src="/assets/js/signal-toggle.js"></script>
+  
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="/components/topbar-loader.js"></script>
 
@@ -715,13 +717,19 @@ Enables experimentation, visualization, and interaction with Satoshium systems b
 <div id="footer-container"></div>
 
 <script src="/assets/sayings.js"></script>
+<script src="/assets/signal-toggle.js"></script>
 <script>
 fetch("/components/footer.html")
  .then(response => response.text())
  .then(data => {
  document.getElementById("footer-container").innerHTML = data;
+
+ if (window.initSatoshiumSignal) {
+ window.initSatoshiumSignal();
+ }
  });
 </script>
+
 <script type="module">
 import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
 
