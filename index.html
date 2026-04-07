@@ -362,17 +362,42 @@ box-shadow: 0 10px 25px rgba(0,0,0,.35);
   }
 
 .hero-signal-link {
-  display: inline-block;
-  margin: 10px 0 18px 0;
-  padding: 8px 14px;
-  border: 1px solid rgba(242, 169, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  width: fit-content;
+  max-width: 100%;
+
+  margin: 6px 0;
+
+  padding: 6px 14px;
+
+  border: 1px solid rgba(214,163,74,.28);
   border-radius: 999px;
-  background: rgba(242, 169, 0, 0.08);
-  color: #f2a900;
+
+  background: rgba(214,163,74,.08);
+  color: #f4c36a;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 0 10px rgba(242, 169, 0, 0.08);
+
+  box-shadow: 0 0 10px rgba(214,163,74,.08);
+
+  transition:
+    transform .16s ease,
+    background .16s ease,
+    border-color .16s ease,
+    box-shadow .16s ease;
+}
+
+.hero-signal-link:hover {
+  transform: translateY(-1px);
+  background: rgba(214,163,74,.14);
+  border-color: rgba(214,163,74,.42);
+  color: #ffd166;
 }
 
 .hero-signal-link:hover {
@@ -531,11 +556,9 @@ if (on)
     <a href="https://satoshium.net/services/aegis" class="hero-signal-link">
       🛡️ Aegis — a lifecycle-aware agent firewall —  is Live →
     </a>
-    <p></p>
     <a href="https://satoshium.net/signal/" class="hero-signal-link">
       📡 Signal Layer Live — Participate in infrastructure proposals →
     </a>
-    <p></p>
     <button id="signalToggle" type="button" aria-pressed="false">Signal: OFF</button>
 📡 Enable Signal Layer
   </div>
