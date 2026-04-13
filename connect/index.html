@@ -1,291 +1,380 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#00eaff">
-<title>Satoshium — Connect</title>
-<style>
-:root{
- --card-wm: url('https://satoshium.link/assets/seal.png');
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
- --line:rgba(214,163,74,.18);
-}
-*{box-sizing:border-box}
-html,body{
-  margin:0;
-  padding:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.55;
-}
-body{
-  padding-top:80px;
-}
-a{color:var(--gold2);text-decoration:none}
-a:hover{color:var(--gold)}
-.wrap{max-width:980px;margin:0 auto;padding:0 18px}
-.content{padding:34px 18px 60px}
-h1,h2,h3{margin:0 0 10px}
-h1{font-size:30px;color:var(--gold2)}
-h2{font-size:20px;color:var(--gold2);margin-top:0}
-h3{font-size:15px;color:var(--text)}
-p,li{color:var(--text)}
-hr{border:none;border-top:1px solid var(--line);margin:22px 0}
-
-.card{
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:16px 16px;
-  margin:16px 0;
-  box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-.card::before{
-  content:"";
-  position:absolute;
-  inset:-60px;
-  background-image:var(--card-wm);
-  background-repeat:no-repeat;
-  background-size:min(720px,70vw);
-  background-position:right -140px center;
-  opacity:0.028;
-  filter:blur(1px);
-  pointer-events:none;
-  z-index:0;
-}
-.card > *{position:relative;z-index:1}
-.card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(0,0,0,.35);
-}
-.card{
-  border:1px solid rgba(214,163,74,.15);
-}
-
-.muted{color:var(--muted)}
-.pill{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 10px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:rgba(214,163,74,.08);
-  color:var(--gold2);
-  font-size:12px;
-  font-weight:700;
-}
-.pill-link{
-  display:inline-flex;
-  margin-right:8px;
-  margin-bottom:10px;
-}
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:14px;
-}
-.grid-2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:16px;
-}
-.mini{font-size:13px}
-
-.social-card{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  min-height:160px;
-}
-.social-label{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--muted);
-  font-weight:700;
-}
-.social-link{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin-top:auto;
-  font-weight:700;
-}
-.hero-note{
-  max-width:820px;
-}
-@media (max-width:960px){
-  .grid-3{grid-template-columns:1fr 1fr}
-}
-@media (max-width:760px){
-  .grid-2,
-  .grid-3{grid-template-columns:1fr}
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="alternate icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#00eaff">
+  <title>Satoshium — Connect</title>
+ 
+  <!-- TIER 3 — SEO: meta description -->
+  <meta name="description" content="Connect with the Satoshium ecosystem — follow the public build, explore social channels, and reach the project's key platforms including GitHub, X, YouTube, and Signal Boards.">
+ 
+  <!-- TIER 3 — SEO: canonical URL -->
+  <link rel="canonical" href="https://satoshium.ai/connect/">
+ 
+  <!-- TIER 3 — SEO: Open Graph -->
+  <meta property="og:title" content="Satoshium — Connect">
+  <meta property="og:description" content="Follow the public build, explore the platform, and reach the key public channels connected to the Satoshium ecosystem.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://satoshium.ai/connect/">
+  <meta property="og:image" content="https://satoshium.link/assets/og-connect.png">
+  <meta property="og:site_name" content="Satoshium">
+ 
+  <!-- TIER 3 — SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satoshium — Connect">
+  <meta name="twitter:description" content="Follow the public build and reach the key public channels connected to the Satoshium ecosystem.">
+  <meta name="twitter:image" content="https://satoshium.link/assets/og-connect.png">
+ 
+  <!-- TIER 3 — PERFORMANCE: preconnect to asset origin -->
+  <link rel="preconnect" href="https://satoshium.link" crossorigin>
+  <link rel="dns-prefetch" href="https://satoshium.link">
+ 
+  <style>
+    /* === RESET & TOKENS === */
+    :root{
+      --card-wm:url('https://satoshium.link/assets/seal.png');
+      --bg:#07090d;
+      --panel:#0c1018;
+      --text:#e8edf7;
+      --muted:#9aa7bd;
+      --gold:#d6a34a;
+      --gold2:#f4c36a;
+      --line:rgba(214,163,74,.18);
+    }
+ 
+    *{box-sizing:border-box}
+ 
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.55;
+      /* TIER 3 — UX: smooth in-page scrolling */
+      scroll-behavior:smooth;
+    }
+ 
+    body{
+      padding-top:80px;
+    }
+ 
+    /* TIER 3 — ACCESSIBILITY: keyboard focus ring */
+    :focus-visible{
+      outline:2px solid var(--gold2);
+      outline-offset:3px;
+    }
+ 
+    a{color:var(--gold2);text-decoration:none}
+    a:hover{color:var(--gold)}
+ 
+    .wrap{max-width:980px;margin:0 auto;padding:0 18px}
+    .content{padding:34px 18px 60px}
+ 
+    h1,h2,h3{margin:0 0 10px}
+    h1{font-size:30px;color:var(--gold2)}
+    h2{font-size:20px;color:var(--gold2);margin-top:0}
+    h3{font-size:15px;color:var(--text)}
+    p,li{color:var(--text)}
+    hr{border:none;border-top:1px solid var(--line);margin:22px 0}
+ 
+    /* === CARD — consolidated from duplicate declarations === */
+    .card{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+      border:1px solid rgba(214,163,74,.15);
+      border-radius:16px;
+      padding:16px 16px;
+      margin:16px 0;
+      box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+ 
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-60px;
+      background-image:var(--card-wm);
+      background-repeat:no-repeat;
+      background-size:min(720px,70vw);
+      background-position:right -140px center;
+      opacity:0.028;
+      filter:blur(1px);
+      pointer-events:none;
+      z-index:0;
+    }
+ 
+    .card > *{position:relative;z-index:1}
+ 
+    .card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 25px rgba(0,0,0,.35);
+    }
+ 
+    .muted{color:var(--muted)}
+ 
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(214,163,74,.08);
+      color:var(--gold2);
+      font-size:12px;
+      font-weight:700;
+    }
+ 
+    .pill-link{
+      display:inline-flex;
+      margin-right:8px;
+      margin-bottom:10px;
+    }
+ 
+    /* TIER 3 — SEMANTIC: list reset for hero-actions nav */
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+      list-style:none;
+      padding:0;
+    }
+ 
+    /* === GRIDS === */
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+ 
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+ 
+    .mini{font-size:13px}
+ 
+    /* === SOCIAL CARDS === */
+    .social-card{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height:160px;
+    }
+ 
+    .social-label{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:700;
+    }
+ 
+    .social-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:auto;
+      font-weight:700;
+    }
+ 
+    .hero-note{
+      max-width:820px;
+    }
+ 
+    /* === PAGE ENTRANCE ANIMATION === */
+    @keyframes pageFade{
+      from{opacity:0;transform:translateY(12px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+ 
+    .content{
+      animation:pageFade .45s ease both;
+    }
+ 
+    /* === RESPONSIVE === */
+    @media (max-width:960px){
+      .grid-3{grid-template-columns:1fr 1fr}
+    }
+ 
+    @media (max-width:760px){
+      .grid-2,
+      .grid-3{grid-template-columns:1fr}
+    }
+ 
+    /* TIER 3 — ACCESSIBILITY: respect reduced-motion preference */
+    @media (prefers-reduced-motion:reduce){
+      .content{
+        animation:none;
+      }
+ 
+      .card{
+        transition:none;
+      }
+ 
+      .card:hover{
+        transform:none;
+      }
+ 
+      html,body{
+        scroll-behavior:auto;
+      }
+    }
+  </style>
 </head>
 <body id="top">
-
+ 
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="https://satoshium.link/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-
-<div class="pill">🔗 Connect</div>
-
-<h1 style="margin-top:12px;">Connect with Satoshium</h1>
-<p class="muted hero-note">
-Follow the public build, explore the platform, and reach the key public channels connected to the Satoshium ecosystem.
-This page serves as the central social and contact hub for the project.
-</p>
-
-<div class="hero-actions">
-  <a href="https://satoshium.ai/" target="_blank" rel="noopener" class="pill pill-link">🌐 Main Site</a>
-  <a href="https://satoshium.ai/start-here/" target="_blank" rel="noopener" class="pill pill-link">🚀 Start Here</a>
-  <a href="https://satoshium.ai/manifesto/" target="_blank" rel="noopener" class="pill pill-link">📜 Manifesto</a>
-  <a href="https://satoshium.xyz/labs/knowledge/glossary/" target="_blank" rel="noopener" class="pill pill-link">📖 Glossary Hub</a>
-</div>
-
-<div class="card">
-  <h2>Why This Page Exists</h2>
-  <p>
-    Satoshium now lives across a broader domain architecture, but people still need a simple place to find the project's public-facing channels.
-    This page gathers those links in one place so visitors can quickly follow the build, explore the ecosystem, and connect to the right platform.
-  </p>
-  </div>
-
-<div class="card">
-  <h2>🛰 Social & Public Channels</h2>
-  <div class="grid-3">
-
-    <div class="card social-card">
-      <div class="social-label">🐙 Development</div>
-      <h3>GitHub</h3>
-      <p class="muted">
-        Public repositories, architecture, and development history across the Satoshium ecosystem.
-      </p>
-      <a class="social-link" href="https://github.com/SatoshiumAI" target="_blank" rel="noopener">Open GitHub →</a>
-    </div>
-
-    <div class="card social-card">
-      <div class="social-label">𝕏 Social</div>
-      <h3>X (formerly Twitter)</h3>
-      <p class="muted">
-        Public signal, project updates, and outward-facing communication.
-      </p>
-      <a class="social-link" href="https://x.com/SatoshiumAI" target="_blank" rel="noopener">Open X →</a>
-    </div>
-
-    <div class="card social-card">
-      <div class="social-label">▶ Video</div>
-      <h3>YouTube</h3>
-      <p class="muted">
-        Public-facing videos, platform explanations, and cinematic documentation of the build.
-      </p>
-      <a class="social-link" href="https://www.youtube.com/@Satoshium" target="_blank" rel="noopener">Open YouTube →</a>
-    </div>
-
-    <div class="card social-card">
-      <div class="social-label">👽 Community</div>
-      <h3>Reddit</h3>
-      <p class="muted">
-        Public discussion, platform awareness, and future community participation.
-      </p>
-      <a class="social-link" href="https://www.reddit.com/user/SatoshiumAI/" target="_blank" rel="noopener">Open Reddit →</a>
-    </div>
-
-    <div class="card social-card">
-      <div class="social-label">📘 Network</div>
-      <h3>Facebook</h3>
-      <p class="muted">
-        Legacy social reach and public visibility for broader audiences.
-      </p>
-      <a class="social-link" href="https://www.facebook.com/groups/satoshium" target="_blank" rel="noopener">Open Facebook →</a>
-    </div>
-
-    <div class="card social-card">
-      <div class="social-label">💼 Professional</div>
-      <h3>LinkedIn</h3>
-      <p class="muted">
-        Professional visibility and future business-facing or collaboration-oriented presence.
-      </p>
-      <a class="social-link" href="https://www.linkedin.com/in/satoshium/" target="_blank" rel="noopener">Open LinkedIn →</a>
-    </div>
-
-  </div>
-</div>
-
-<div class="card social-card">
-  <div class="social-label">📡 Coordination</div>
-  <h2>Signal Boards</h2>
-  <p class="muted">
-Structured coordination layer for infrastructure signals across the decentralized intelligence stack.
-</p>
-  <a class="social-link" href="https://satoshium.net/signal/">Open Signal Boards →</a>
-</div>
  
-  <div class="card social-card">
+<main id="main-content" class="wrap content">
+ 
+  <span class="pill" aria-label="Connect section">🔗 Connect</span>
+ 
+  <h1 style="margin-top:12px;">Connect with Satoshium</h1>
+  <p class="muted hero-note">
+    Follow the public build, explore the platform, and reach the key public channels connected to the Satoshium ecosystem.
+    This page serves as the central social and contact hub for the project.
+  </p>
+ 
+  <!-- TIER 3 — SEMANTIC: hero-actions as nav with list -->
+  <nav aria-label="Quick links">
+    <ul class="hero-actions">
+      <li><a href="https://satoshium.ai/" target="_blank" rel="noopener noreferrer" class="pill pill-link">🌐 Main Site</a></li>
+      <li><a href="https://satoshium.ai/start-here/" target="_blank" rel="noopener noreferrer" class="pill pill-link">🚀 Start Here</a></li>
+      <li><a href="https://satoshium.ai/manifesto/" target="_blank" rel="noopener noreferrer" class="pill pill-link">📜 Manifesto</a></li>
+      <li><a href="https://satoshium.xyz/labs/knowledge/glossary/" target="_blank" rel="noopener noreferrer" class="pill pill-link" aria-label="Glossary Hub on Satoshium Labs">📖 Glossary Hub</a></li>
+    </ul>
+  </nav>
+ 
+  <section class="card" aria-labelledby="heading-why">
+    <h2 id="heading-why">Why This Page Exists</h2>
+    <p>
+      Satoshium now lives across a broader domain architecture, but people still need a simple place to find the project's public-facing channels.
+      This page gathers those links in one place so visitors can quickly follow the build, explore the ecosystem, and connect to the right platform.
+    </p>
+  </section>
+ 
+  <section class="card" aria-labelledby="heading-social">
+    <h2 id="heading-social">🛰 Social & Public Channels</h2>
+    <div class="grid-3">
+ 
+      <div class="card social-card">
+        <div class="social-label">🐙 Development</div>
+        <h3>GitHub</h3>
+        <p class="muted">
+          Public repositories, architecture, and development history across the Satoshium ecosystem.
+        </p>
+        <a class="social-link" href="https://github.com/SatoshiumAI" target="_blank" rel="noopener noreferrer" aria-label="Open Satoshium on GitHub">Open GitHub →</a>
+      </div>
+ 
+      <div class="card social-card">
+        <div class="social-label">𝕏 Social</div>
+        <h3>X (formerly Twitter)</h3>
+        <p class="muted">
+          Public signal, project updates, and outward-facing communication.
+        </p>
+        <a class="social-link" href="https://x.com/SatoshiumAI" target="_blank" rel="noopener noreferrer" aria-label="Open Satoshium on X">Open X →</a>
+      </div>
+ 
+      <div class="card social-card">
+        <div class="social-label">▶ Video</div>
+        <h3>YouTube</h3>
+        <p class="muted">
+          Public-facing videos, platform explanations, and cinematic documentation of the build.
+        </p>
+        <a class="social-link" href="https://www.youtube.com/@Satoshium" target="_blank" rel="noopener noreferrer" aria-label="Open Satoshium on YouTube">Open YouTube →</a>
+      </div>
+ 
+      <div class="card social-card">
+        <div class="social-label">👽 Community</div>
+        <h3>Reddit</h3>
+        <p class="muted">
+          Public discussion, platform awareness, and future community participation.
+        </p>
+        <a class="social-link" href="https://www.reddit.com/user/SatoshiumAI/" target="_blank" rel="noopener noreferrer" aria-label="Open Satoshium on Reddit">Open Reddit →</a>
+      </div>
+ 
+      <div class="card social-card">
+        <div class="social-label">📘 Network</div>
+        <h3>Facebook</h3>
+        <p class="muted">
+          Legacy social reach and public visibility for broader audiences.
+        </p>
+        <a class="social-link" href="https://www.facebook.com/groups/satoshium" target="_blank" rel="noopener noreferrer" aria-label="Open Satoshium on Facebook">Open Facebook →</a>
+      </div>
+ 
+      <div class="card social-card">
+        <div class="social-label">💼 Professional</div>
+        <h3>LinkedIn</h3>
+        <p class="muted">
+          Professional visibility and future business-facing or collaboration-oriented presence.
+        </p>
+        <a class="social-link" href="https://www.linkedin.com/in/satoshium/" target="_blank" rel="noopener noreferrer" aria-label="Open Satoshium on LinkedIn">Open LinkedIn →</a>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <div class="card social-card" aria-labelledby="heading-signal">
+    <div class="social-label">📡 Coordination</div>
+    <h2 id="heading-signal">Signal Boards</h2>
+    <p class="muted">
+      Structured coordination layer for infrastructure signals across the decentralized intelligence stack.
+    </p>
+    <a class="social-link" href="https://satoshium.net/signal/" target="_blank" rel="noopener noreferrer" aria-label="Open Signal Boards on Satoshium">Open Signal Boards →</a>
+  </div>
+ 
+  <div class="card social-card" aria-labelledby="heading-email">
     <div class="social-label">✉ Contact</div>
-    <h2>Email Us</h2>
+    <h2 id="heading-email">Email Us</h2>
     <p class="muted">
       Direct contact channel for questions, collaboration, or public-facing inquiries.
     </p>
-    <a class="social-link" href="mailto:contact@satoshium.ai">Email contact@satoshium.ai →</a>
+    <a class="social-link" href="mailto:contact@satoshium.ai" aria-label="Email Satoshium at contact@satoshium.ai">Email contact@satoshium.ai →</a>
   </div>
-</div>
-
-<div class="card">
-  <h2>🧭 Notes for Future Expansion</h2>
-  <p class="muted">
-    This page can later expand to include:
-  </p>
-  <ul>
-    <li>official handle badges</li>
-    <li>embedded social previews</li>
-    <li>community platforms and forums</li>
-    <li>developer onboarding links</li>
-    <li>newsletter or public updates channel</li>
-  </ul>
-</div>
-
-<hr />
+ 
+  <section class="card" aria-labelledby="heading-expansion">
+    <h2 id="heading-expansion">🧭 Notes for Future Expansion</h2>
+    <p class="muted">
+      This page can later expand to include:
+    </p>
+    <ul>
+      <li>official handle badges</li>
+      <li>embedded social previews</li>
+      <li>community platforms and forums</li>
+      <li>developer onboarding links</li>
+      <li>newsletter or public updates channel</li>
+    </ul>
+  </section>
+ 
+  <hr />
 <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
   Satoshium is being built slowly, in public, and with architectural discipline.
 </div>
 <hr />
-<div id="footer-container"></div>
-
-<script src="https://satoshium.link/assets/sayings.js"></script>
-<script>
-fetch("https://satoshium.link/components/footer.html")
- .then(response => response.text())
- .then(data => {
-   document.getElementById("footer-container").innerHTML = data;
- });
-</script>
-
+  <div id="footer-container"></div>
+ 
+  <script src="https://satoshium.link/assets/sayings.js"></script>
+  <script>
+  fetch("https://satoshium.link/components/footer.html")
+   .then(response => response.text())
+   .then(data => {
+     document.getElementById("footer-container").innerHTML = data;
+   });
+  </script>
+ 
 </main>
 </body>
 </html>
