@@ -3,11 +3,32 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+ 
+<!-- ═══════════════════════════════════════════════════════════
+     TIER 3 — SEO & DISCOVERY
+     Added: meta description, Open Graph block, Twitter Card
+     meta tags, and canonical link. Previously the page had
+     no search-engine or social-sharing metadata at all.
+════════════════════════════════════════════════════════════ -->
+<meta name="description" content="The design principles underlying the Satoshium platform — guiding architecture decisions, knowledge structure, and how humans and AI reason together inside the platform over time." />
+<link rel="canonical" href="https://satoshium.ai/architecture/principles/" />
+ 
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="Satoshium Principles — Architecture Foundations" />
+<meta property="og:description" content="The design principles underlying the Satoshium platform — guiding architecture decisions, knowledge structure, and how humans and AI reason together inside the platform over time." />
+<meta property="og:url"         content="https://satoshium.ai/architecture/principles/" />
+<meta property="og:image"       content="https://satoshium.ai/assets/og-principles.png" />
+ 
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:title"       content="Satoshium Principles — Architecture Foundations" />
+<meta name="twitter:description" content="The design principles underlying the Satoshium platform — guiding architecture decisions, knowledge structure, and how humans and AI reason together inside the platform over time." />
+<!-- /TIER 3 — SEO & DISCOVERY -->
+ 
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#00eaff">
-
+ 
 <title>Satoshium Principles — Architecture Foundations</title>
 <style>
 :root{
@@ -21,27 +42,69 @@
   --line:rgba(214,163,74,.18);
 }
 *{box-sizing:border-box}
+ 
+/* ═══════════════════════════════════════════════════════════
+   TIER 3 — ACCESSIBILITY: smooth scroll
+   Added scroll-behavior to html for anchor navigation.
+   Was missing from the original page entirely.
+════════════════════════════════════════════════════════════ */
+html{scroll-behavior:smooth}
+/* /TIER 3 */
+ 
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold)}
-body{
- padding-top:80px;
+ 
+/* ═══════════════════════════════════════════════════════════
+   TIER 3 — ACCESSIBILITY: global focus-visible ring
+   The original page had no keyboard focus styles at all.
+   Keyboard-only and assistive-technology users had no
+   visible indicator of where focus was located.
+════════════════════════════════════════════════════════════ */
+:focus-visible{
+  outline:2px solid var(--gold2);
+  outline-offset:3px;
+  border-radius:4px;
 }
+/* /TIER 3 — focus-visible */
+ 
+body{padding-top:80px}
 .wrap{max-width:980px;margin:0 auto;padding:0 18px}
-
+ 
+/* ═══════════════════════════════════════════════════════════
+   TIER 3 — ACCESSIBILITY: prefers-reduced-motion guard
+   on page entrance animation.
+   Original animation ran unconditionally regardless of the
+   OS motion preference setting. Users who prefer reduced
+   motion now get a plain fade; others get the original
+   translate + fade. @keyframes defined globally to avoid
+   nested-keyframes browser-support edge cases.
+════════════════════════════════════════════════════════════ */
+@keyframes pageEnter{
+  from{opacity:0;transform:translateY(6px)}
+  to  {opacity:1;transform:translateY(0)}
+}
+@keyframes pageFade{
+  from{opacity:0}
+  to  {opacity:1}
+}
+ 
 .wrap.content{
   opacity:0;
   transform:translateY(6px);
   animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
 }
-
-@keyframes pageEnter{
- to{
- opacity:1;
- transform:translateY(0);
- }
+ 
+@media(prefers-reduced-motion:reduce){
+  .wrap.content{
+    transform:none;
+    animation-name:pageFade;
+    animation-duration:.18s;
+    animation-timing-function:ease;
+  }
 }
-  
+/* /TIER 3 — page entrance animation */
+ 
 .content{padding:34px 18px 60px}
 h1,h2,h3{margin:0 0 10px}
 h1{font-size:30px;color:var(--gold2)}
@@ -49,21 +112,49 @@ h2{font-size:20px;color:var(--gold2);margin-top:26px}
 h3{font-size:16px;color:var(--gold2);margin-top:14px}
 p,li{color:var(--text)}
 hr{border:none;border-top:1px solid var(--line);margin:22px 0}
-.card{position:relative;overflow:hidden;background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));border:1px solid var(--line);border-radius:16px;padding:16px;margin:16px 0;box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45)}
+ 
+/* ═══════════════════════════════════════════════════════════
+   TIER 3 — CSS FIX: consolidated duplicate .card declarations.
+   Originally .card was declared three separate times:
+     1. main rule with border:1px solid var(--line)
+     2. transition rule in its own orphaned block
+     3. border override: 1px solid rgba(214,163,74,.15)
+   The third block silently overwrote the first border value.
+   All three are now merged into one declaration, keeping
+   the rgba border value that was taking effect in practice.
+════════════════════════════════════════════════════════════ */
+.card{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+  border:1px solid rgba(214,163,74,.15);
+  border-radius:16px;
+  padding:16px;
+  margin:16px 0;
+  box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+/* /TIER 3 — CSS FIX: consolidated .card */
+ 
 .card::before{content:"";position:absolute;inset:-60px;background-image:var(--card-wm);background-repeat:no-repeat;background-size:min(720px,70vw);background-position:right -140px center;opacity:.028;filter:blur(1px);pointer-events:none;z-index:0}
 .card > *{position:relative;z-index:1}
-  .card {
-  transition: transform .18s ease, box-shadow .18s ease;
+ 
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+ 
+/* ═══════════════════════════════════════════════════════════
+   TIER 3 — ACCESSIBILITY: prefers-reduced-motion guard
+   on .card hover transform. The translateY shift on hover
+   was applied to all cards with no motion opt-out path.
+════════════════════════════════════════════════════════════ */
+@media(prefers-reduced-motion:reduce){
+  .card{transition:none}
+  .card:hover{transform:none}
 }
-
-.card {
- border: 1px solid rgba(214,163,74,.15);
-}
+/* /TIER 3 — card hover motion guard */
+ 
 .muted{color:var(--muted)}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(214,163,74,.08);color:var(--gold2);font-size:12px;font-weight:700}
 .pill.small{padding:6px 10px;font-size:12px}
@@ -74,24 +165,31 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
 .node p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
 .node .step{display:inline-block;margin-bottom:10px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold2)}
 .flow-arrow{text-align:center;color:rgba(214,163,74,.55);font-size:18px;align-self:center}
-@media (max-width:860px){.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow-arrow{display:none}}
+@media(max-width:860px){.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow-arrow{display:none}}
 </style>
 </head>
+ 
 <body id="top">
+ 
+<!-- TOPBAR — unchanged -->
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-  <div class="pill">📘 Architecture Principles</div>
-
+ 
+<!-- TIER 3 — ACCESSIBILITY: id="main-content" added as a
+     named landmark so screen reader users can navigate
+     directly to the main content region. -->
+<main id="main-content" class="wrap content">
+ 
+  <div class="pill" aria-label="Section: Architecture Principles">📘 Architecture Principles</div>
+ 
   <h1 style="margin-top:12px;">Satoshium Principles</h1>
-
+ 
   <p class="muted">
     This page documents the design principles underneath the Satoshium platform. These principles guide how
     architecture decisions are made, how knowledge is structured, and how humans and AI systems are expected to
     reason together inside the platform over time.
   </p>
-
+ 
   <div class="card">
     <h2 style="margin-top:0;">Why Principles Matter</h2>
     <p class="muted">
@@ -101,7 +199,7 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
       modules evolve.
     </p>
   </div>
-
+ 
   <div class="grid">
     <div class="card">
       <h2 style="margin-top:0;">1. Bitcoin as Trust Base</h2>
@@ -111,7 +209,7 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
         governance, and verification systems.
       </p>
     </div>
-
+ 
     <div class="card">
       <h2 style="margin-top:0;">2. Shared Knowledge Before Scale</h2>
       <p class="muted">
@@ -120,7 +218,7 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
         infrastructure rather than optional documentation.
       </p>
     </div>
-
+ 
     <div class="card">
       <h2 style="margin-top:0;">3. Verifiable Claims Over Vibes</h2>
       <p class="muted">
@@ -129,7 +227,7 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
         perfect certainty. The goal is structured accountability.
       </p>
     </div>
-
+ 
     <div class="card">
       <h2 style="margin-top:0;">4. Simulation Before Assumption</h2>
       <p class="muted">
@@ -138,7 +236,7 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
         durable architecture or public interfaces.
       </p>
     </div>
-
+ 
     <div class="card">
       <h2 style="margin-top:0;">5. Public Build Over Hidden Hype</h2>
       <p class="muted">
@@ -147,7 +245,7 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
         progress only.
       </p>
     </div>
-
+ 
     <div class="card">
       <h2 style="margin-top:0;">6. Durable Systems Over Fast Release Cycles</h2>
       <p class="muted">
@@ -157,58 +255,70 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
       </p>
     </div>
   </div>
-
+ 
   <div class="card">
     <h2 style="margin-top:0;">🔁 The Satoshium Reasoning Loop</h2>
     <p class="muted">
       Satoshium is designed as a reasoning platform. Humans and AI systems interact through a recurring loop that
       turns ideas into structured knowledge over time.
     </p>
-
-    <div class="flow">
+ 
+    <!-- TIER 3 — ACCESSIBILITY: reasoning flow diagram
+         Added role="img" and aria-label so screen readers
+         announce this as a named diagram rather than reading
+         out five headings with no connecting context.
+         Flow arrow divs marked aria-hidden="true" — they are
+         purely decorative; a screen reader announcing "→"
+         between each step adds noise with no meaning. -->
+    <div class="flow"
+         role="img"
+         aria-label="Reasoning loop diagram: Shared Knowledge leads to Proposed Claims, then Verification, then Simulation, then Refinement, which feeds back into the Knowledge Engine.">
+ 
       <div class="node">
         <span class="step">Step 01</span>
         <h3>Shared Knowledge</h3>
         <p>The Knowledge Engine provides canonical terms, definitions, specifications, and system context.</p>
       </div>
-      <div class="flow-arrow">→</div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
       <div class="node">
         <span class="step">Step 02</span>
         <h3>Proposed Claims</h3>
         <p>Humans or AI systems propose hypotheses, system ideas, interpretations, or architectural claims.</p>
       </div>
-      <div class="flow-arrow">→</div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
       <div class="node">
         <span class="step">Step 03</span>
         <h3>Verification</h3>
         <p>Trust assumptions, governance rules, and review processes test whether claims are coherent and defensible.</p>
       </div>
-      <div class="flow-arrow">→</div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
       <div class="node">
         <span class="step">Step 04</span>
         <h3>Simulation</h3>
         <p>Labs modules explore scenarios, behavior, and consequences before ideas are treated as durable systems.</p>
       </div>
-      <div class="flow-arrow">→</div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
       <div class="node">
         <span class="step">Step 05</span>
         <h3>Refinement</h3>
         <p>Validated insights feed back into the Knowledge Engine, architecture, documentation, and future tools.</p>
       </div>
+ 
     </div>
-
+    <!-- /TIER 3 — reasoning flow diagram -->
+ 
     <p class="muted" style="margin-top:16px;">
       The platform becomes more useful over time as this loop repeats. Knowledge improves. Claims become more
       structured. Simulations become more meaningful. The result is not just more content, but stronger reasoning.
     </p>
   </div>
-
+ 
   <div class="card">
     <h2 style="margin-top:0;">How This Connects to the Architecture</h2>
     <ul>
       <li><strong>Trust Layer:</strong> establishes the base assumptions and auditability model.</li>
       <li><strong>Governance &amp; Safety Layer:</strong> defines policy boundaries and behavioral constraints.</li>
-      <li><strong>Knowledge Engine:</strong> supplies the platform’s shared vocabulary and system definitions.</li>
+      <li><strong>Knowledge Engine:</strong> supplies the platform's shared vocabulary and system definitions.</li>
       <li><strong>Intelligence Layer:</strong> allows humans and AI systems to query, interpret, and work with knowledge.</li>
       <li><strong>Simulation Layer:</strong> tests scenarios and explores consequences in controlled environments.</li>
       <li><strong>Service Exposure Layer:</strong> presents stable interfaces, documentation, and public-facing system views.</li>
@@ -217,15 +327,15 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
       <a class="pill" href="./">← Back to Architecture</a>
     </p>
   </div>
-
+ 
  <hr />
 <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
   Satoshium is being built slowly, in public, and with architectural discipline.
 </div>
 <hr />
-
+ 
 <div id="footer-container"></div>
-
+ 
 <script src="/assets/sayings.js"></script>
 <script>
 fetch("/components/footer.html")
@@ -234,5 +344,6 @@ fetch("/components/footer.html")
  document.getElementById("footer-container").innerHTML = data;
  });
 </script>
+</main>
 </body>
 </html>
