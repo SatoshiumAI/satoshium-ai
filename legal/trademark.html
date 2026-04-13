@@ -1,348 +1,365 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#00eaff">
-
-<title>Satoshium — Trademark Notice</title>
-
-<style>
-
-/* ===== Core Theme ===== */
-
-:root{
- --card-wm: url('https://satoshium.ai/assets/seal.png');
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
- --line:rgba(214,163,74,.18);
-}
-
-*{box-sizing:border-box}
-
-html,body{
-margin:0;
-padding:0;
-background:var(--bg);
-color:var(--text);
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-line-height:1.55
-}
-
-body{
- padding-top:80px;
-}
-
-a{color:var(--gold2);text-decoration:none}
-a:hover{color:var(--gold)}
-
-.wrap{max-width:980px;margin:0 auto;padding:0 18px}
-
- .wrap.content{
-  opacity:0;
-  transform:translateY(6px);
-  animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
-}
-
-@keyframes pageEnter{
- to{
- opacity:1;
- transform:translateY(0);
- }
-}
-
-/* ===== Layout ===== */
-
-.content{
-padding:34px 18px 60px
-}
-
-h1,h2{
-margin:0 0 10px
-}
-
-h1{
-font-size:30px;
-color:var(--gold2)
-}
-
-h2{
-font-size:20px;
-color:var(--gold2);
-margin-top:26px
-}
-
-p,li{
-color:var(--text)
-}
-
-hr{
-border:none;
-border-top:1px solid var(--line);
-margin:22px 0
-}
-
-/* ===== Cards ===== */
-
-.card{
-position:relative;
-overflow:hidden;
-
-background: linear-gradient(
-to bottom right,
-rgba(12,16,24,.94),
-rgba(12,16,24,.88)
-);
-
-border:1px solid var(--line);
-border-radius:16px;
-
-padding:16px 16px;
-margin:16px 0;
-
-box-shadow:
-0 0 0 1px rgba(214,163,74,.08),
-0 20px 50px rgba(0,0,0,.45);
-}
-
-.card::before{
-content:"";
-position:absolute;
-inset:-60px;
-background-image: var(--card-wm);
-background-repeat:no-repeat;
-background-size: min(720px, 70vw);
-background-position: right -140px center;
-opacity:0.028;
-filter: blur(1px);
-pointer-events:none;
-z-index:0;
-}
-
-.card > *{
-position:relative;
-z-index:1
-}
-
-.card{
-transition: transform .18s ease, box-shadow .18s ease;
-}
-
-.card:hover{
-transform: translateY(-3px);
-box-shadow:0 10px 25px rgba(0,0,0,.35);
-}
-
-.card{
-border:1px solid rgba(214,163,74,.15);
-}
-
-.muted{
-color:var(--muted)
-}
-
-/* ===== Pills ===== */
-
-.pill{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:8px 10px;
-border:1px solid var(--line);
-border-radius:999px;
-background:rgba(214,163,74,.08);
-color:var(--gold2);
-font-size:12px;
-font-weight:700
-}
-
-ul{
-margin:8px 0 0 18px
-}
-
-.legal-links{
-display:flex;
-flex-wrap:wrap;
-gap:10px 14px;
-margin-top:10px
-}
-
-.legal-links a{
-font-weight:600
-}
-
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="alternate icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#00eaff">
+  <title>Satoshium — Trademark Notice</title>
+ 
+  <!-- TIER 3 — SEO: meta description -->
+  <meta name="description" content="Trademark Notice for Satoshium™ — ownership, permitted reference, prohibited use, and reservation of rights for the Satoshium name and brand identifiers.">
+ 
+  <!-- TIER 3 — SEO: canonical URL -->
+  <link rel="canonical" href="https://satoshium.ai/legal/trademark.html">
+ 
+  <!-- TIER 3 — SEO: Open Graph -->
+  <meta property="og:title" content="Satoshium — Trademark Notice">
+  <meta property="og:description" content="Ownership, permitted reference, and prohibited use of the Satoshium™ name and associated brand identifiers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://satoshium.ai/legal/trademark.html">
+  <meta property="og:image" content="https://satoshium.ai/assets/og-legal.png">
+  <meta property="og:site_name" content="Satoshium">
+ 
+  <!-- TIER 3 — SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satoshium — Trademark Notice">
+  <meta name="twitter:description" content="Trademark Notice for the Satoshium™ platform.">
+  <meta name="twitter:image" content="https://satoshium.ai/assets/og-legal.png">
+ 
+  <!-- TIER 3 — PERFORMANCE: preconnect to asset origin -->
+  <link rel="preconnect" href="https://satoshium.ai" crossorigin>
+  <link rel="dns-prefetch" href="https://satoshium.ai">
+ 
+  <style>
+ 
+    /* ===== Core Theme ===== */
+ 
+    :root{
+      --card-wm:url('https://satoshium.ai/assets/seal.png');
+      --bg:#07090d;
+      --panel:#0c1018;
+      --text:#e8edf7;
+      --muted:#9aa7bd;
+      --gold:#d6a34a;
+      --gold2:#f4c36a;
+      --line:rgba(214,163,74,.18);
+    }
+ 
+    *{box-sizing:border-box}
+ 
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.55;
+      /* TIER 3 — UX: smooth in-page scrolling */
+      scroll-behavior:smooth;
+    }
+ 
+    body{
+      padding-top:80px;
+    }
+ 
+    /* TIER 3 — ACCESSIBILITY: keyboard focus ring */
+    :focus-visible{
+      outline:2px solid var(--gold2);
+      outline-offset:3px;
+    }
+ 
+    a{color:var(--gold2);text-decoration:none}
+    a:hover{color:var(--gold)}
+ 
+    .wrap{max-width:980px;margin:0 auto;padding:0 18px}
+ 
+    .wrap.content{
+      opacity:0;
+      transform:translateY(6px);
+      animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+    }
+ 
+    @keyframes pageEnter{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+ 
+    /* ===== Layout ===== */
+ 
+    .content{
+      padding:34px 18px 60px;
+    }
+ 
+    h1,h2{
+      margin:0 0 10px;
+    }
+ 
+    h1{
+      font-size:30px;
+      color:var(--gold2);
+    }
+ 
+    h2{
+      font-size:20px;
+      color:var(--gold2);
+      margin-top:26px;
+    }
+ 
+    p,li{
+      color:var(--text);
+    }
+ 
+    hr{
+      border:none;
+      border-top:1px solid var(--line);
+      margin:22px 0;
+    }
+ 
+    /* ===== Cards — consolidated from three declarations ===== */
+ 
+    .card{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(
+        to bottom right,
+        rgba(12,16,24,.94),
+        rgba(12,16,24,.88)
+      );
+      border:1px solid rgba(214,163,74,.15);
+      border-radius:16px;
+      padding:16px 16px;
+      margin:16px 0;
+      box-shadow:
+        0 0 0 1px rgba(214,163,74,.08),
+        0 20px 50px rgba(0,0,0,.45);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+ 
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-60px;
+      background-image:var(--card-wm);
+      background-repeat:no-repeat;
+      background-size:min(720px, 70vw);
+      background-position:right -140px center;
+      opacity:0.028;
+      filter:blur(1px);
+      pointer-events:none;
+      z-index:0;
+    }
+ 
+    .card > *{
+      position:relative;
+      z-index:1;
+    }
+ 
+    .card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 25px rgba(0,0,0,.35);
+    }
+ 
+    .muted{
+      color:var(--muted);
+    }
+ 
+    /* ===== Pills ===== */
+ 
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(214,163,74,.08);
+      color:var(--gold2);
+      font-size:12px;
+      font-weight:700;
+    }
+ 
+    ul{
+      margin:8px 0 0 18px;
+    }
+ 
+    /* TIER 3 — SEMANTIC: legal-links as nav list */
+    .legal-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      margin-top:10px;
+      list-style:none;
+      padding:0;
+    }
+ 
+    .legal-links a{
+      font-weight:600;
+    }
+ 
+    /* TIER 3 — ACCESSIBILITY: respect reduced-motion preference */
+    @media (prefers-reduced-motion:reduce){
+      .wrap.content{
+        animation:none;
+        opacity:1;
+        transform:none;
+      }
+ 
+      .card{
+        transition:none;
+      }
+ 
+      .card:hover{
+        transform:none;
+      }
+ 
+      html,body{
+        scroll-behavior:auto;
+      }
+    }
+ 
+  </style>
 </head>
-
+ 
 <body id="top">
-
+ 
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-
-<div class="pill">™ Trademark</div>
-
-<h1>Trademark Notice</h1>
-
-<p class="muted">
-This page describes the ownership and permitted use of the Satoshium™ name, brand identifiers, and associated platform marks.
-</p>
-
-
-<section class="card">
-
-<h2>Legal Navigation</h2>
-
-<div class="legal-links">
-<a href="https://satoshium.ai/legal/">Legal Home</a>
-<a href="https://satoshium.ai/legal/privacy.html">Privacy Policy</a>
-<a href="https://satoshium.ai/legal/terms.html">Terms of Use</a>
-<a href="https://satoshium.ai/legal/trademark.html">Trademark Notice</a>
-<a href="https://satoshium.ai/legal/disclaimer.html">Disclaimer</a>
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>Trademark Ownership</h2>
-
-<p>
-SATOSHIUM™ is a trademark owned by <strong>Christopher D. Burris</strong>.
-</p>
-
-<p>
-The mark is used in connection with software development, decentralized intelligence systems, cryptographic automation protocols, educational infrastructure, public research platforms, and related technical services associated with the Satoshium platform.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Scope of the Mark</h2>
-
-<p>
-The Satoshium™ name and related identifiers may appear across the public Satoshium ecosystem including, but not limited to:
-</p>
-
-<ul>
-<li>Satoshium websites and public domains</li>
-<li>software tools and technical infrastructure</li>
-<li>documentation and educational resources</li>
-<li>public research environments</li>
-<li>design systems and user interfaces</li>
-<li>development platforms and code repositories</li>
-<li>associated services, experiments, and platform architecture</li>
-</ul>
-
-</section>
-
-
-<section class="card">
-
-<h2>Permitted Reference</h2>
-
-<p>
-Reasonable reference to the Satoshium™ platform for informational, journalistic, academic, or descriptive purposes is generally permitted provided such use does not create confusion regarding ownership, endorsement, or affiliation.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Prohibited Use</h2>
-
-<p>
-The Satoshium™ name, branding, or identifiers may not be used in ways that:
-</p>
-
-<ul>
-<li>create confusion regarding the origin of services or software</li>
-<li>misrepresent affiliation with the Satoshium platform</li>
-<li>impersonate or falsely represent official Satoshium infrastructure</li>
-<li>mislead users regarding authority or governance</li>
-<li>exploit the mark for fraudulent or deceptive purposes</li>
-</ul>
-
-</section>
-
-
-<section class="card">
-
-<h2>Brand and Platform Development</h2>
-
-<p>
-Satoshium is an evolving public software platform exploring decentralized intelligence systems and long-horizon digital infrastructure.
-Brand structure, platform architecture, and associated services may expand over time across multiple public domains and development environments.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Reservation of Rights</h2>
-
-<p>
-All rights relating to the Satoshium™ trademark and associated brand identifiers are reserved.
-Nothing on this site should be interpreted as granting a license to use the mark beyond normal informational reference unless explicit permission has been granted.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Contact</h2>
-
-<p>
-Questions regarding trademark use or brand inquiries may be directed to:
-</p>
-
-<p>
-<a href="mailto:contact@satoshium.ai">contact@satoshium.ai</a>
-</p>
-
-</section>
-
-
-<hr />
-
-<div class="wrap reflection">
-
-<hr />
-
-<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-Satoshium is being built slowly, in public, and with architectural discipline.
-</div>
-
-<hr />
-
-<div id="footer-container"></div>
-
-</div>
-
-<script src="https://satoshium.ai/assets/sayings.js"></script>
-
-<script>
-fetch("https://satoshium.ai/components/footer.html")
-.then(response => response.text())
-.then(data => {
-document.getElementById("footer-container").innerHTML = data;
-});
-</script>
-
+ 
+<main id="main-content" class="wrap content">
+ 
+  <span class="pill" aria-label="Trademark section">™ Trademark</span>
+ 
+  <h1>Trademark Notice</h1>
+ 
+  <p class="muted">
+    This page describes the ownership and permitted use of the Satoshium™ name, brand identifiers, and associated platform marks.
+  </p>
+ 
+  <section class="card" aria-labelledby="heading-legal-nav">
+    <h2 id="heading-legal-nav">Legal Navigation</h2>
+ 
+    <!-- TIER 3 — SEMANTIC: legal-links as nav with list -->
+    <nav aria-label="Legal pages">
+      <ul class="legal-links">
+        <li><a href="https://satoshium.ai/legal/" target="_blank" rel="noopener noreferrer">Legal Home</a></li>
+        <li><a href="https://satoshium.ai/legal/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+        <li><a href="https://satoshium.ai/legal/terms.html" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+        <li><a href="https://satoshium.ai/legal/trademark.html" target="_blank" rel="noopener noreferrer" aria-current="page">Trademark Notice</a></li>
+        <li><a href="https://satoshium.ai/legal/disclaimer.html" target="_blank" rel="noopener noreferrer">Disclaimer</a></li>
+      </ul>
+    </nav>
+  </section>
+ 
+  <section class="card" aria-labelledby="heading-ownership">
+    <h2 id="heading-ownership">Trademark Ownership</h2>
+ 
+    <p>
+      SATOSHIUM™ is a trademark owned by <strong>Christopher D. Burris</strong>.
+    </p>
+ 
+    <p>
+      The mark is used in connection with software development, decentralized intelligence systems, cryptographic automation protocols, educational infrastructure, public research platforms, and related technical services associated with the Satoshium platform.
+    </p>
+  </section>
+ 
+  <section class="card" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">Scope of the Mark</h2>
+ 
+    <p>
+      The Satoshium™ name and related identifiers may appear across the public Satoshium ecosystem including, but not limited to:
+    </p>
+ 
+    <ul>
+      <li>Satoshium websites and public domains</li>
+      <li>software tools and technical infrastructure</li>
+      <li>documentation and educational resources</li>
+      <li>public research environments</li>
+      <li>design systems and user interfaces</li>
+      <li>development platforms and code repositories</li>
+      <li>associated services, experiments, and platform architecture</li>
+    </ul>
+  </section>
+ 
+  <section class="card" aria-labelledby="heading-permitted">
+    <h2 id="heading-permitted">Permitted Reference</h2>
+ 
+    <p>
+      Reasonable reference to the Satoshium™ platform for informational, journalistic, academic, or descriptive purposes is generally permitted provided such use does not create confusion regarding ownership, endorsement, or affiliation.
+    </p>
+  </section>
+ 
+  <section class="card" aria-labelledby="heading-prohibited">
+    <h2 id="heading-prohibited">Prohibited Use</h2>
+ 
+    <p>
+      The Satoshium™ name, branding, or identifiers may not be used in ways that:
+    </p>
+ 
+    <ul>
+      <li>create confusion regarding the origin of services or software</li>
+      <li>misrepresent affiliation with the Satoshium platform</li>
+      <li>impersonate or falsely represent official Satoshium infrastructure</li>
+      <li>mislead users regarding authority or governance</li>
+      <li>exploit the mark for fraudulent or deceptive purposes</li>
+    </ul>
+  </section>
+ 
+  <section class="card" aria-labelledby="heading-development">
+    <h2 id="heading-development">Brand and Platform Development</h2>
+ 
+    <p>
+      Satoshium is an evolving public software platform exploring decentralized intelligence systems and long-horizon digital infrastructure.
+      Brand structure, platform architecture, and associated services may expand over time across multiple public domains and development environments.
+    </p>
+  </section>
+ 
+  <section class="card" aria-labelledby="heading-rights">
+    <h2 id="heading-rights">Reservation of Rights</h2>
+ 
+    <p>
+      All rights relating to the Satoshium™ trademark and associated brand identifiers are reserved.
+      Nothing on this site should be interpreted as granting a license to use the mark beyond normal informational reference unless explicit permission has been granted.
+    </p>
+  </section>
+ 
+  <section class="card" aria-labelledby="heading-contact">
+    <h2 id="heading-contact">Contact</h2>
+ 
+    <p>
+      Questions regarding trademark use or brand inquiries may be directed to:
+    </p>
+ 
+    <p>
+      <a href="mailto:contact@satoshium.ai" aria-label="Email Satoshium at contact@satoshium.ai">contact@satoshium.ai</a>
+    </p>
+  </section>
+ 
+  <hr />
+ 
+  <div class="wrap reflection">
+    <hr />
+    <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+      Satoshium is being built slowly, in public, and with architectural discipline.
+    </div>
+    <hr />
+ 
+    <div id="footer-container"></div>
+  </div>
+ 
+  <script src="https://satoshium.ai/assets/sayings.js"></script>
+  <script>
+  fetch("https://satoshium.ai/components/footer.html")
+   .then(response => response.text())
+   .then(data => {
+     document.getElementById("footer-container").innerHTML = data;
+   });
+  </script>
+ 
 </main>
 </body>
 </html>
