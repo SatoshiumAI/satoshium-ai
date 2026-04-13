@@ -3,11 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#00eaff">
+ 
+  <!-- ═══════════════════════════════════════════════════════════
+       TIER 3 — SEO & DISCOVERY
+       Added: meta description, Open Graph block, and canonical
+       link. Previously the page had no meta description and no
+       social-sharing metadata at all.
+  ════════════════════════════════════════════════════════════ -->
+  <meta name="description" content="The Intelligence Layer is where reasoning, tools, workflows, and future agents operate within the boundaries defined by the Satoshium system — transforming trusted inputs into decisions and adaptive behavior." />
+  <link rel="canonical" href="https://satoshium.ai/architecture/intelligence/" />
+ 
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Satoshium — Intelligence Layer" />
+  <meta property="og:description" content="The Intelligence Layer transforms trusted inputs and structured knowledge into decisions, interpretation, and adaptive behavior within the Satoshium platform." />
+  <meta property="og:url"         content="https://satoshium.ai/architecture/intelligence/" />
+  <meta property="og:image"       content="https://satoshium.ai/assets/og-intelligence.png" />
+ 
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Satoshium — Intelligence Layer" />
+  <meta name="twitter:description" content="The Intelligence Layer transforms trusted inputs and structured knowledge into decisions, interpretation, and adaptive behavior within the Satoshium platform." />
+  <!-- /TIER 3 — SEO & DISCOVERY -->
+ 
+  <!-- ═══════════════════════════════════════════════════════════
+       TIER 3 — PERFORMANCE: preconnect + dns-prefetch
+       All external assets (seal.png, world-grid.jpg, topbar,
+       footer) are served from satoshium.link. Adding preconnect
+       eliminates the full TCP + TLS handshake cost on first
+       asset fetch. dns-prefetch is a lightweight fallback for
+       browsers that don't support preconnect.
+  ════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://satoshium.link" crossorigin />
+  <link rel="dns-prefetch" href="//satoshium.link" />
+  <!-- /TIER 3 — PERFORMANCE -->
+ 
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="alternate icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#00eaff">
+ 
   <title>Satoshium — Intelligence Layer</title>
+ 
   <style>
     :root{
       --card-wm:url('https://satoshium.link/assets/seal.png');
@@ -19,9 +54,19 @@
       --gold2:#f4c36a;
       --line:rgba(214,163,74,.18);
     }
-
+ 
     *{box-sizing:border-box}
-
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — ACCESSIBILITY: smooth scroll
+       Added scroll-behavior to html element for anchor
+       navigation. Missing from original.
+    ════════════════════════════════════════════════════════════ */
+    html{
+      scroll-behavior:smooth;
+    }
+    /* /TIER 3 */
+ 
     html,body{
       margin:0;
       padding:0;
@@ -30,34 +75,100 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       line-height:1.6;
     }
-
+ 
     body{
       padding-top:80px;
     }
-
+ 
     a{
       color:var(--gold2);
       text-decoration:none;
     }
-
+ 
     a:hover{
       color:var(--gold);
     }
-
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — ACCESSIBILITY: global focus-visible ring
+       The original page had zero keyboard focus styles.
+       Keyboard-only and assistive-technology users had no
+       visible indicator of where focus was located.
+    ════════════════════════════════════════════════════════════ */
+    :focus-visible{
+      outline:2px solid var(--gold2);
+      outline-offset:3px;
+      border-radius:4px;
+    }
+    /* /TIER 3 — focus-visible */
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — ACCESSIBILITY: skip-to-content link styles
+       Renders off-screen until keyboard-focused so it doesn't
+       affect the visual layout for mouse users.
+    ════════════════════════════════════════════════════════════ -->
+    .skip-link{
+      position:absolute;
+      top:-100%;
+      left:12px;
+      z-index:9999;
+      padding:10px 18px;
+      background:var(--gold2);
+      color:#07090d;
+      font-weight:700;
+      border-radius:0 0 8px 8px;
+      transition:top .15s ease;
+    }
+    .skip-link:focus{
+      top:0;
+    }
+    /* /TIER 3 — skip-to-content */
+ 
     .wrap{
       max-width:1120px;
       margin:0 auto;
       padding:0 18px;
     }
-
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — UX CONSISTENCY: page entrance animation
+       Other platform pages (e.g. architecture index) use a
+       subtle fade-in + translateY entrance. This page had none,
+       creating an inconsistent jump-in feel. Added here with a
+       full prefers-reduced-motion guard.
+    ════════════════════════════════════════════════════════════ -->
+    @media (prefers-reduced-motion: no-preference){
+      @keyframes pageEnter{
+        from{ opacity:0; transform:translateY(7px); }
+        to  { opacity:1; transform:translateY(0);   }
+      }
+      .content{
+        opacity:0;
+        transform:translateY(7px);
+        animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+      }
+    }
+ 
+    @media (prefers-reduced-motion: reduce){
+      @keyframes pageEnterReduced{
+        from{ opacity:0; }
+        to  { opacity:1; }
+      }
+      .content{
+        opacity:0;
+        animation:pageEnterReduced .18s ease forwards;
+      }
+    }
+    /* /TIER 3 — page entrance animation */
+ 
     .content{
       padding:34px 18px 60px;
     }
-
+ 
     .muted{
       color:var(--muted);
     }
-
+ 
     .pill{
       display:inline-flex;
       align-items:center;
@@ -71,7 +182,7 @@
       font-weight:700;
       letter-spacing:.04em;
     }
-
+ 
     .hero{
       position:relative;
       overflow:hidden;
@@ -86,7 +197,7 @@
         0 0 0 1px rgba(214,163,74,.08),
         0 24px 70px rgba(0,0,0,.45);
     }
-
+ 
     .hero::before{
       content:"";
       position:absolute;
@@ -98,13 +209,13 @@
       filter:sepia(.35) saturate(.85) brightness(.65);
       z-index:0;
     }
-
+ 
     .hero-inner{
       position:relative;
       z-index:1;
       max-width:760px;
     }
-
+ 
     .hero h1{
       margin:16px 0 10px;
       font-size:52px;
@@ -114,27 +225,27 @@
         0 0 18px rgba(214,163,74,.20),
         0 0 34px rgba(214,163,74,.08);
     }
-
+ 
     .hero-sub{
       margin:0 0 18px;
       font-size:22px;
       color:#f0f4fb;
       font-weight:700;
     }
-
+ 
     .hero-copy{
       font-size:18px;
       color:#d7deeb;
       max-width:720px;
     }
-
+ 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       margin-top:20px;
     }
-
+ 
     .section{
       margin-top:22px;
       padding:24px;
@@ -143,29 +254,35 @@
       background:linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
       box-shadow:0 0 0 1px rgba(214,163,74,.05);
     }
-
+ 
     .section h2{
       margin:0 0 14px;
       color:#f3f6fc;
       font-size:28px;
       line-height:1.15;
     }
-
+ 
     .section p{
       margin:0 0 16px;
       color:#d9e1ee;
     }
-
+ 
     .section ul{
       margin:8px 0 16px 20px;
       color:#d9e1ee;
     }
-
+ 
     .section li{
       margin:6px 0;
     }
-
-    .quote{
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — SEMANTIC FIX: .quote is now applied to <blockquote>
+       The original used <div class="quote"> for pull-quote
+       callouts. <blockquote> is the correct semantic element for
+       standalone quoted or callout statements. Styles unchanged.
+    ════════════════════════════════════════════════════════════ -->
+    blockquote.quote{
       margin:18px 0;
       padding:18px 20px;
       border-left:3px solid var(--gold);
@@ -175,46 +292,53 @@
       font-size:18px;
       font-weight:600;
     }
-
+    /* /TIER 3 — semantic blockquote */
+ 
     .grid-2{
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:16px;
       margin-top:16px;
     }
-
+ 
     .mini-card{
       padding:18px;
       border:1px solid rgba(214,163,74,.15);
       border-radius:16px;
       background:rgba(9,12,18,.72);
+      /* ═══════════════════════════════════════════════════════
+         TIER 3 — ACCESSIBILITY: transition conditioned on
+         prefers-reduced-motion via @media below. The transform
+         and box-shadow transition is kept for users who have not
+         opted out of motion; reduced-motion users get no shift.
+      ════════════════════════════════════════════════════════ -->
       transition:transform .18s ease, box-shadow .18s ease;
     }
-
+ 
     .mini-card:hover{
       transform:translateY(-3px);
       box-shadow:0 12px 28px rgba(0,0,0,.35);
     }
-
+ 
     .mini-card h3{
       margin:0 0 10px;
       color:var(--gold2);
       font-size:18px;
     }
-
+ 
     .mini-card p{
       margin:0;
       color:#d3dbea;
       font-size:15px;
     }
-
+ 
     .layer-nav{
       display:grid;
       grid-template-columns:repeat(4, minmax(0,1fr));
       gap:16px;
       margin-top:18px;
     }
-
+ 
     .layer-card{
       padding:18px;
       border:1px solid rgba(214,163,74,.15);
@@ -222,114 +346,160 @@
       background:rgba(9,12,18,.72);
       transition:transform .18s ease, box-shadow .18s ease;
     }
-
+ 
     .layer-card:hover{
       transform:translateY(-3px);
       box-shadow:0 12px 28px rgba(0,0,0,.35);
     }
-
+ 
     .layer-card h3{
       margin:0 0 10px;
       color:#f3f6fc;
       font-size:18px;
     }
-
+ 
     .layer-card p{
       margin:0 0 12px;
       color:#d3dbea;
       font-size:15px;
     }
-
+ 
     .layer-card.current{
       border-color:rgba(214,163,74,.28);
       box-shadow:
         0 0 0 1px rgba(214,163,74,.10),
         0 12px 28px rgba(0,0,0,.28);
     }
-
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — ACCESSIBILITY: prefers-reduced-motion guard
+       Disable hover transforms for users who prefer reduced
+       motion. Applied to all interactive card types at once.
+    ════════════════════════════════════════════════════════════ -->
+    @media (prefers-reduced-motion: reduce){
+      .mini-card,
+      .layer-card{
+        transition:none;
+      }
+      .mini-card:hover,
+      .layer-card:hover{
+        transform:none;
+      }
+    }
+    /* /TIER 3 — prefers-reduced-motion */
+ 
     .footer-wrap{
       margin-top:40px;
     }
-
+ 
     @media (max-width:960px){
       .layer-nav{
         grid-template-columns:repeat(2, minmax(0,1fr));
       }
     }
-
+ 
     @media (max-width:900px){
       .hero{
         padding:38px 24px;
       }
-
+ 
       .hero h1{
         font-size:40px;
       }
-
+ 
       .hero-sub{
         font-size:18px;
       }
-
+ 
       .hero-copy{
         font-size:17px;
       }
-
+ 
       .grid-2,
       .layer-nav{
         grid-template-columns:1fr;
       }
-
+ 
       .section h2{
         font-size:24px;
       }
     }
   </style>
 </head>
-
+ 
 <body>
-
+ 
+<!-- TIER 3 — ACCESSIBILITY: skip-to-content link
+     Invisible to mouse users; jumps keyboard users directly
+     past the topbar/nav to the main content region. -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+ 
+<!-- TOPBAR — unchanged -->
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="https://satoshium.link/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-
-  <section class="hero">
+ 
+<!-- TIER 3 — ACCESSIBILITY: added id="main-content" as skip-link target -->
+<main id="main-content" class="wrap content">
+ 
+  <!-- ═══════════════════════════════════════════════════════════
+       TIER 3 — SEMANTIC: aria-labelledby on all <section> elements
+       Associates each section with its visible heading so
+       screen readers announce the section name in landmark
+       navigation (e.g. "region: Why the Intelligence Layer Matters").
+  ════════════════════════════════════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-heading">
     <div class="hero-inner">
-      <span class="pill">🧠 Core Platform Layer</span>
-      <h1>Intelligence Layer</h1>
+      <span class="pill" aria-label="Section label: Core Platform Layer">🧠 Core Platform Layer</span>
+      <h1 id="hero-heading">Intelligence Layer</h1>
       <p class="hero-sub">Uses meaning.</p>
-
+ 
       <p class="hero-copy">
         The Intelligence Layer is where reasoning, tools, workflows, and future agents operate within the boundaries defined by the rest of the Satoshium system. It is the layer that transforms trusted inputs and structured knowledge into decisions, interpretation, and adaptive behavior.
       </p>
-
-      <div class="hero-actions">
-        <span class="pill">Reasoning systems</span>
-        <span class="pill">Structured decision-making</span>
-        <span class="pill">Bounded intelligence</span>
-      </div>
+ 
+      <!-- ═══════════════════════════════════════════════════
+           TIER 3 — SEMANTIC: hero feature tags
+           Previously three bare <span class="pill"> elements
+           with no group label. Wrapped in a <ul role="list">
+           with a visually hidden label so assistive technology
+           announces them as "Key capabilities: Reasoning
+           systems, Structured decision-making, Bounded
+           intelligence" rather than three isolated fragments.
+      ════════════════════════════════════════════════════ -->
+      <ul class="hero-actions" role="list" aria-label="Key capabilities">
+        <li><span class="pill">Reasoning systems</span></li>
+        <li><span class="pill">Structured decision-making</span></li>
+        <li><span class="pill">Bounded intelligence</span></li>
+      </ul>
+      <!-- /TIER 3 — hero feature tags -->
     </div>
   </section>
-
-  <section class="section">
-    <h2>Why the Intelligence Layer Matters</h2>
-
+ 
+  <section class="section" aria-labelledby="why-heading">
+    <h2 id="why-heading">Why the Intelligence Layer Matters</h2>
+ 
     <p>
       Intelligence is powerful, but without boundaries it can become opaque, inconsistent, or detached from reality. The Intelligence Layer exists so that Satoshium can explore useful intelligence without surrendering clarity, structure, or verifiability.
     </p>
-
-    <div class="quote">
+ 
+    <!-- TIER 3 — SEMANTIC: <div class="quote"> → <blockquote class="quote">
+         Both callout blocks were <div> elements. <blockquote>
+         is the correct element for standalone quoted or
+         highlighted statements; screen readers announce it as
+         a blockquote and users navigating by landmark can
+         identify it. Visual appearance is unchanged. -->
+    <blockquote class="quote">
       Intelligence is most useful when it operates inside trusted systems and shared meaning.
-    </div>
-
+    </blockquote>
+ 
     <p>
       In Satoshium, intelligence is not imagined as a mystical black box. It is treated as a system capability that should work from defined inputs, intelligible concepts, and clear operational boundaries.
     </p>
   </section>
-
-  <section class="section">
-    <h2>What the Intelligence Layer Establishes</h2>
-
+ 
+  <section class="section" aria-labelledby="establishes-heading">
+    <h2 id="establishes-heading">What the Intelligence Layer Establishes</h2>
+ 
     <div class="grid-2">
       <div class="mini-card">
         <h3>🧠 Reasoning</h3>
@@ -337,21 +507,21 @@
           Supports interpretation, planning, and decision-making using structured knowledge and trustworthy inputs.
         </p>
       </div>
-
+ 
       <div class="mini-card">
-        <h3>🛠 Tools & Workflows</h3>
+        <h3>🛠 Tools &amp; Workflows</h3>
         <p>
           Connects intelligence to useful actions through tools, workflows, and bounded forms of automation.
         </p>
       </div>
-
+ 
       <div class="mini-card">
         <h3>🤖 Agents</h3>
         <p>
-          Future agents may exist within this layer, but as components inside infrastructure rather than as the platform’s central identity.
+          Future agents may exist within this layer, but as components inside infrastructure rather than as the platform's central identity.
         </p>
       </div>
-
+ 
       <div class="mini-card">
         <h3>📏 Constraints</h3>
         <p>
@@ -360,74 +530,74 @@
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <h2>Intelligence Within the Satoshium Model</h2>
-
+ 
+  <section class="section" aria-labelledby="model-heading">
+    <h2 id="model-heading">Intelligence Within the Satoshium Model</h2>
+ 
     <p>
       Satoshium no longer treats intelligence as the starting point of the system. Intelligence comes after trust and knowledge.
     </p>
-
+ 
     <ul>
       <li>the Trust Layer verifies what can be relied upon</li>
       <li>the Knowledge Layer defines what terms and structures mean</li>
       <li>the Intelligence Layer uses those foundations to reason and act</li>
     </ul>
-
+ 
     <p class="muted">
       This order matters because intelligence without trustworthy foundations can drift into inconsistency, while intelligence grounded in clear systems can remain useful and understandable over time.
     </p>
   </section>
-
-  <section class="section">
-    <h2>What Intelligence Supports in Satoshium</h2>
-
+ 
+  <section class="section" aria-labelledby="supports-heading">
+    <h2 id="supports-heading">What Intelligence Supports in Satoshium</h2>
+ 
     <p>
       The Intelligence Layer gives the broader ecosystem the ability to interpret, adapt, and respond while remaining tied to structure.
     </p>
-
+ 
     <ul>
       <li>knowledge systems can become more navigable and interactive</li>
       <li>simulation systems can become more dynamic and exploratory</li>
       <li>future tools can assist with research, design, and coordination</li>
       <li>agents can eventually operate with clearer boundaries and better accountability</li>
     </ul>
-
-    <div class="quote">
+ 
+    <blockquote class="quote">
       Intelligence is not the foundation of Satoshium. It is a capability built on top of stronger foundations.
-    </div>
+    </blockquote>
   </section>
-
-  <section class="section">
-    <h2>Current Expression of the Intelligence Layer</h2>
-
+ 
+  <section class="section" aria-labelledby="expression-heading">
+    <h2 id="expression-heading">Current Expression of the Intelligence Layer</h2>
+ 
     <p>
       Today, the Intelligence Layer is visible more as a design direction and architectural intention than as a fully isolated public subsystem.
     </p>
-
+ 
     <p>
       It is currently expressed through:
     </p>
-
+ 
     <ul>
-      <li>the platform’s reasoning-oriented design philosophy</li>
+      <li>the platform's reasoning-oriented design philosophy</li>
       <li>AI-facing tools and experiments</li>
       <li>future agent concepts held within a more structured framework</li>
       <li>the shift away from agent-centrism toward infrastructure-first intelligence</li>
     </ul>
-
+ 
     <p class="muted">
       Over time, this layer may expand to document reasoning models, bounded agent systems, tool integrations, and operational intelligence workflows.
     </p>
   </section>
-
-  <section class="section">
-    <h2>Core Platform Layers</h2>
-
+ 
+  <section class="section" aria-labelledby="layers-heading">
+    <h2 id="layers-heading">Core Platform Layers</h2>
+ 
     <p class="muted">
       The Intelligence Layer is one part of a broader Satoshium system stack.
     </p>
-
+ 
     <div class="layer-nav">
       <div class="layer-card">
         <h3>🛡 Trust Layer</h3>
@@ -436,7 +606,7 @@
         </p>
         <a href="trust.html">→ Verifies reality</a>
       </div>
-
+ 
       <div class="layer-card">
         <h3>📚 Knowledge Layer</h3>
         <p>
@@ -444,15 +614,19 @@
         </p>
         <a href="knowledge.html">→ Defines meaning</a>
       </div>
-
-      <div class="layer-card current">
+ 
+      <!-- TIER 3 — ACCESSIBILITY: aria-current="page" on the
+           active layer card. Screen readers and assistive tools
+           announce this as the current page in the nav group,
+           matching the visual "Current Page" pill indicator. -->
+      <div class="layer-card current" aria-current="page">
         <h3>🧠 Intelligence Layer</h3>
         <p>
-          Reasoning systems, tools, and agents that operate within Satoshium’s defined frameworks.
+          Reasoning systems, tools, and agents that operate within Satoshium's defined frameworks.
         </p>
         <span class="pill">Current Page</span>
       </div>
-
+ 
       <div class="layer-card">
         <h3>🧪 Simulation / Interface Layer</h3>
         <p>
@@ -462,18 +636,18 @@
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <h2>Current Status</h2>
-
+ 
+  <section class="section" aria-labelledby="status-heading">
+    <h2 id="status-heading">Current Status</h2>
+ 
     <p>
-      The Intelligence Layer is still early in public form, but it is already conceptually central to the platform’s long-term direction. What has changed is not its importance, but its role.
+      The Intelligence Layer is still early in public form, but it is already conceptually central to the platform's long-term direction. What has changed is not its importance, but its role.
     </p>
-
+ 
     <p class="muted">
       Over time, this page can expand to document:
     </p>
-
+ 
     <ul>
       <li>bounded agent design within verifiable systems</li>
       <li>reasoning and workflow architectures</li>
@@ -482,16 +656,17 @@
       <li>future Satoshium system behaviors and capabilities</li>
     </ul>
   </section>
-
+ 
+  <!-- FOOTER — unchanged -->
   <div class="footer-wrap" id="footer-slot"></div>
-
+ 
 </main>
-
+ 
 <script>
 fetch("https://satoshium.link/components/footer.html")
 .then(r => r.text())
 .then(html => document.getElementById("footer-slot").innerHTML = html);
 </script>
-
+ 
 </body>
 </html>
