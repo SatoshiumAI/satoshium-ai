@@ -7,8 +7,40 @@
   <link rel="alternate icon" href="/assets/favicon.ico">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta name="theme-color" content="#00eaff">
-
+ 
+  <!-- TIER 3 — SEO: meta description -->
+  <meta name="description" content="Start here to explore Satoshium — a decentralized intelligence infrastructure project aligned with the Bitcoin standard, featuring architecture, systems, knowledge layers, and experimental labs.">
+ 
+  <!-- TIER 3 — SEO: Open Graph -->
+  <meta property="og:title" content="Satoshium — Start Here">
+  <meta property="og:description" content="Your orientation point for the Satoshium platform — architecture, systems, knowledge layers, experimental labs, and long-horizon development progress.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://satoshium.ai/start-here/">
+  <meta property="og:image" content="https://satoshium.ai/assets/og-start-here.png">
+  <meta property="og:site_name" content="Satoshium">
+  <meta property="og:locale" content="en_US">
+ 
+  <!-- TIER 3 — SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satoshium — Start Here">
+  <meta name="twitter:description" content="Your orientation point for the Satoshium platform — architecture, systems, knowledge layers, experimental labs, and long-horizon development progress.">
+  <meta name="twitter:image" content="https://satoshium.ai/assets/og-start-here.png">
+  <meta name="twitter:site" content="@SatoshiumAI">
+ 
+  <!-- TIER 3 — SEO: canonical URL -->
+  <link rel="canonical" href="https://satoshium.ai/start-here/">
+ 
+  <!-- TIER 3 — PERFORMANCE: dns-prefetch for external domains -->
+  <link rel="dns-prefetch" href="https://satoshium.ai">
+  <link rel="dns-prefetch" href="https://satoshium.link">
+  <link rel="dns-prefetch" href="https://satoshium.net">
+  <link rel="dns-prefetch" href="https://satoshium.xyz">
+  <link rel="dns-prefetch" href="https://satoshium.info">
+  <link rel="dns-prefetch" href="https://satoshium.store">
+  <link rel="dns-prefetch" href="https://satoshium.games">
+ 
   <title>Satoshium — Start Here</title>
+ 
 <style>
 :root{
  --card-wm: url('/assets/seal.png');
@@ -23,28 +55,37 @@
 *{box-sizing:border-box}
 html,body{
   margin:0;padding:0;background:var(--bg);color:var(--text);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;
+  /* TIER 3 — UX: smooth scroll for in-page anchors */
+  scroll-behavior:smooth;
 }
-  body{
+body{
  padding-top:80px;
 }
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold)}
+ 
+/* TIER 3 — ACCESSIBILITY: visible keyboard focus ring */
+:focus-visible{
+  outline:2px solid var(--gold2);
+  outline-offset:3px;
+}
+ 
 .wrap{max-width:980px;margin:0 auto;padding:0 18px}
-
-  .wrap.content{
+ 
+.wrap.content{
   opacity:0;
   transform:translateY(6px);
   animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
 }
-
+ 
 @keyframes pageEnter{
  to{
  opacity:1;
  transform:translateY(0);
  }
 }
-
+ 
 .ecosystem-card{
   background:linear-gradient(to bottom right, rgba(12,16,24,.94), rgba(12,16,24,.88));
   border:1px solid rgba(214,163,74,.18);
@@ -78,18 +119,23 @@ a:hover{color:var(--gold)}
 .ecosystem-link:hover{
   text-decoration:underline;
 }
-  
+ 
 .content{padding:34px 18px 60px}
 h1,h2{margin:0 0 10px}
 h1{font-size:30px;color:var(--gold2)}
 h2{font-size:20px;color:var(--gold2);margin-top:0}
 p,li{color:var(--text)}
 hr{border:none;border-top:1px solid var(--line);margin:22px 0}
+ 
+/* ===== Cards — consolidated from three declarations ===== */
 .card{
   position:relative;overflow:hidden;
   background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
-  border:1px solid var(--line);border-radius:16px;padding:16px 16px;margin:16px 0;
+  /* TIER 3 — CSS FIX: merged duplicate border (was .18 then overridden to .15) */
+  border:1px solid rgba(214,163,74,.15);
+  border-radius:16px;padding:16px 16px;margin:16px 0;
   box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 .card::before{
   content:"";position:absolute;inset:-60px;background-image:var(--card-wm);background-repeat:no-repeat;
@@ -97,48 +143,65 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
   pointer-events:none;z-index:0;
 }
 .card > *{position:relative;z-index:1}
-  .card {
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,.35);
 }
-
-.card {
- border: 1px solid rgba(214,163,74,.15);
-}
-
+ 
+/* TIER 3 — CSS FIX: removed duplicate .grid-2 (was declared twice) */
 .grid-2{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px
+  gap:16px;
 }
-  
+ 
 .muted{color:var(--muted)}
 .pill{
   display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);
   border-radius:999px;background:rgba(214,163,74,.08);color:var(--gold2);font-size:12px;font-weight:700
 }
-
+ 
 .badge-status {
   display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);
   border-radius:999px;background:rgba(214,163,74,.08);color:var(--gold2);font-size:12px;font-weight:700
 }
-  
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+ 
 ul{margin:8px 0 0 18px}
 @media (max-width:760px){.grid-2{grid-template-columns:1fr}}
+ 
+/* TIER 3 — ACCESSIBILITY: reduced-motion guard */
+@media (prefers-reduced-motion:reduce){
+  html,body{
+    scroll-behavior:auto;
+  }
+ 
+  .wrap.content{
+    animation:none;
+    opacity:1;
+    transform:none;
+  }
+ 
+  .card{
+    transition:none;
+  }
+ 
+  .card:hover{
+    transform:none;
+  }
+}
 </style>
 </head>
-  
+ 
+<!-- TIER 3 — HTML FIX: added missing <body> tag (was absent in original) -->
+<body>
+ 
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="/components/topbar-loader.js"></script>
-  
-<main class="wrap content">
-  <div class="pill">🚀 Start Here</div>
-
+ 
+<!-- TIER 3 — ACCESSIBILITY: id="main-content" for landmark targeting -->
+<main id="main-content" class="wrap content">
+  <span class="pill" aria-label="Start Here">🚀 Start Here</span>
+ 
   <h1 style="margin-top:12px;">Welcome to Satoshium</h1>
  
 <p>
@@ -146,49 +209,51 @@ Satoshium is a decentralized intelligence infrastructure project aligned with th
 It is being developed as a platform where humans and AI can reason about complex systems using
 shared knowledge, verifiable claims, and simulation environments.
 </p>
-
+ 
 <p>
 This progress site documents the public build of that platform — including its architecture,
 systems, knowledge layer, experimental labs, and long-horizon development progress.
 </p>
-  <div class="card">
-    <h2>What Satoshium Is</h2>
+ 
+  <!-- TIER 3 — ACCESSIBILITY: aria-labelledby on content sections -->
+  <div class="card" aria-labelledby="heading-what">
+    <h2 id="heading-what">What Satoshium Is</h2>
     <p>
       Satoshium is a long-term effort to build decentralized intelligence systems, trust frameworks,
       verification models, knowledge infrastructure, and experimental tools designed to evolve slowly,
       transparently, and in public.
     </p>
-    <div class="card">
-  <h2>Onboarding Mentor</h2>
+    <div class="card" aria-labelledby="heading-mentor">
+  <h2 id="heading-mentor">Onboarding Mentor</h2>
   <p>
     New to Satoshium? Follow a structured orientation path through the Satoshium platform — introducing its architecture, systems, knowledge layers, and experimental infrastructure step by step.
   </p>
   <p>
     <a href="/mentor">Start your journey →</a>
   </p>
-</div>  
+</div>
     <p class="muted">
       Satoshium is designed to be explored step by step through its architecture, systems, knowledge layers, and experimental tools.
     </p>
   </div>
-
-<div class="card">
-  <h2>🧭 The Origin of Satoshium</h2>
-
+ 
+<div class="card" aria-labelledby="heading-origin">
+  <h2 id="heading-origin">🧭 The Origin of Satoshium</h2>
+ 
   <p>
   Satoshium began with a simple insight:
   Bitcoin provides a system for verifiable truth, and AI provides the ability to build complex systems quickly. When those two forces combine, a new possibility emerges —
   intelligence systems that are transparent, inspectable, and built in the open.
   </p>
-
+ 
   <p>
   <a href="./origins.html">Read the origin story →</a>
   </p>
 </div>
-  
+ 
   <div class="grid-2">
-    <div class="card">
-      <h2>Where to Start</h2>
+    <div class="card" aria-labelledby="heading-where">
+      <h2 id="heading-where">Where to Start</h2>
       <ul>
         <li><strong>Home:</strong> Get the high-level platform overview</li>
         <li><strong>Architecture:</strong> Understand the layered system design</li>
@@ -197,9 +262,9 @@ systems, knowledge layer, experimental labs, and long-horizon development progre
         <li><strong>Updates:</strong> Track visible progress and milestones</li>
       </ul>
     </div>
-
-    <div class="card">
-      <h2>How the Ecosystem Fits Together</h2>
+ 
+    <div class="card" aria-labelledby="heading-ecosystem">
+      <h2 id="heading-ecosystem">How the Ecosystem Fits Together</h2>
       <ul>
         <li><strong>Carrd</strong> acts as a lightweight link hub</li>
         <li><strong>Main site</strong> carries the public narrative and vision</li>
@@ -208,59 +273,63 @@ systems, knowledge layer, experimental labs, and long-horizon development progre
       </ul>
     </div>
   </div>
-
-<div class="card aegis-card">
-  
-<h3>
-  🛡️ Aegis 
+ 
+<div class="card aegis-card" aria-labelledby="heading-aegis">
+ 
+<h3 id="heading-aegis">
+  🛡️ Aegis
   <span class="badge badge-status">Lifecycle Verification Engine</span>
 </h3>
-
+ 
   <p>
     Aegis is a containment-lifecycle evaluation engine designed to determine
     whether autonomous agents remain <strong>safe</strong>, <strong>unstable</strong>,
     or <strong>hostile</strong> across time.
   </p>
-
+ 
   <p class="muted">
     Instead of reacting after incidents occur, Aegis provides a structured way
     to inspect agent stability and explore whether agents qualify for participation
     in higher-trust coordination systems.
   </p>
-
+ 
   <div class="card-actions">
+    <!-- TIER 3 — SECURITY: added target="_blank" rel="noopener noreferrer" -->
     <a href="https://satoshium.net/services/aegis/"
-       class="btn-gold">
+       class="btn-gold"
+       target="_blank" rel="noopener noreferrer">
        Explore Aegis →
     </a>
   </div>
 </div>
-  
-  <div class="card aegis-card">
-  <h3>♟️ Chess Signal <span class="badge badge-status">Simulation Layer</span>
+ 
+  <div class="card aegis-card" aria-labelledby="heading-chess">
+  <h3 id="heading-chess">♟️ Chess Signal <span class="badge badge-status">Simulation Layer</span>
   </h3><p>
     A live Satoshium Games module demonstrating explainable move intelligence
     through browser-based chess play.
   </p>
-  <a href="https://satoshium.games/apps/chess-signal/" class="ecosystem-link">Explore Module →</a>
+  <!-- TIER 3 — SECURITY: added target="_blank" rel="noopener noreferrer" -->
+  <a href="https://satoshium.games/apps/chess-signal/" class="ecosystem-link" target="_blank" rel="noopener noreferrer">Explore Module →</a>
 </div>
-  
-  <div class="card">
-    <h2>Suggested Path</h2>
+ 
+  <div class="card" aria-labelledby="heading-path">
+    <h2 id="heading-path">Suggested Path</h2>
     <p>
-      New visitor: <a href="https://satoshium.ai/" target="_blank" rel="noopener">Main Site</a> →
-      <a href="https://satoshium.link/progress/">Progress Home</a> →
-      <a href="https://satoshium.ai/architecture/">Architecture</a> →
-      <a href="https://satoshium.net/systems/">Systems</a> →
-      <a href="https://satoshium.ai/updates/">Updates</a>
+      <!-- TIER 3 — SECURITY: added noreferrer to all; added target="_blank" + rel where missing -->
+      New visitor: <a href="https://satoshium.ai/" target="_blank" rel="noopener noreferrer">Main Site</a> →
+      <a href="https://satoshium.link/progress/" target="_blank" rel="noopener noreferrer">Progress Home</a> →
+      <a href="https://satoshium.ai/architecture/" target="_blank" rel="noopener noreferrer">Architecture</a> →
+      <a href="https://satoshium.net/systems/" target="_blank" rel="noopener noreferrer">Systems</a> →
+      <a href="https://satoshium.ai/updates/" target="_blank" rel="noopener noreferrer">Updates</a>
     </p>
     <p class="muted">
       This path moves from vision to orientation to structure to evidence of actual progress.
     </p>
   </div>
-
-  <div class="card">
-    <h2>Build Philosophy</h2>
+ 
+  <div class="card" aria-labelledby="heading-philosophy">
+    <h2 id="heading-philosophy">Build Philosophy</h2>
     <p>
       Built in public. No hype. No vapor. Visible progress only.
     </p>
@@ -269,72 +338,75 @@ systems, knowledge layer, experimental labs, and long-horizon development progre
       Every commit = forward motion.
     </p>
   </div>
-
-  <p></p>
-<div class="card">
-
-<h2>🌐 Explore the Satoshium Universe</h2>
-
-Explore the different layers of Satoshium — from platform and knowledge to experimentation, infrastructure, and real-world expression.
-
+ 
+  <!-- TIER 3 — HTML FIX: removed empty <p></p> -->
+ 
+<div class="card" aria-labelledby="heading-universe">
+ 
+<h2 id="heading-universe">🌐 Explore the Satoshium Universe</h2>
+ 
+<!-- TIER 3 — HTML FIX: wrapped bare text node in <p> -->
+<p>Explore the different layers of Satoshium — from platform and knowledge to experimentation, infrastructure, and real-world expression.</p>
+ 
 <p class="muted">
 The Satoshium ecosystem is organized across multiple domains that represent different layers of the platform.
 </p>
-
+ 
 <div class="grid-2">
-
+ 
 <div class="card">
 <h3>🌐 satoshium.ai</h3>
 <p class="muted">
 Main public platform and primary introduction to the Satoshium ecosystem.
 </p>
-<p><a href="https://satoshium.ai/" target="_blank">Visit →</a></p>
+<!-- TIER 3 — SECURITY: added rel="noopener noreferrer" to all universe links -->
+<p><a href="https://satoshium.ai/" target="_blank" rel="noopener noreferrer">Visit →</a></p>
 </div>
-
+ 
 <div class="card">
 <h3>📚 satoshium.info</h3>
 <p class="muted">
 Knowledge library, education resources, documentation, and long-form reference materials.
 </p>
-<p><a href="https://satoshium.info/" target="_blank">Visit →</a></p>
+<p><a href="https://satoshium.info/" target="_blank" rel="noopener noreferrer">Visit →</a></p>
 </div>
-
+ 
 <div class="card">
 <h3>🧪 satoshium.xyz</h3>
 <p class="muted">
 Experimental labs, prototypes, and exploratory system concepts.
 </p>
-<p><a href="https://satoshium.xyz/" target="_blank">Visit →</a></p>
+<p><a href="https://satoshium.xyz/" target="_blank" rel="noopener noreferrer">Visit →</a></p>
 </div>
-
+ 
 <div class="card">
 <h3>🛰️ satoshium.net</h3>
 <p class="muted">
 Infrastructure layer for network architecture, systems, and service topology.
 </p>
-<p><a href="https://satoshium.net/" target="_blank">Visit →</a></p>
+<p><a href="https://satoshium.net/" target="_blank" rel="noopener noreferrer">Visit →</a></p>
 </div>
-
+ 
 <div class="card">
 <h3>🛍️ satoshium.store</h3>
 <p class="muted">
 Merchandise and cultural layer for symbolic artifacts representing the Satoshium ecosystem.
 </p>
-<p><a href="https://satoshium.store/" target="_blank">Visit →</a></p>
+<p><a href="https://satoshium.store/" target="_blank" rel="noopener noreferrer">Visit →</a></p>
 </div>
-
+ 
 <div class="card">
 <h3>🔗 satoshium.link</h3>
 <p class="muted">
 Navigation and routing layer used for directories, entry points, and platform references.
 </p>
-<p><a href="https://satoshium.link/" target="_blank">Visit →</a></p>
+<p><a href="https://satoshium.link/" target="_blank" rel="noopener noreferrer">Visit →</a></p>
 </div>
-
+ 
 </div>
-
+ 
 </div>
-
+ 
  <hr />
 <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
   Satoshium is being built slowly, in public, and with architectural discipline.
