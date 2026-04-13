@@ -3,10 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+ 
+  <!-- ═══════════════════════════════════════════════════════════
+       TIER 3 — SEO & DISCOVERY
+       Added: meta description, Open Graph block, Twitter Card
+       meta tags, and canonical link. Previously the page had
+       no search-engine or social-sharing metadata at all.
+  ════════════════════════════════════════════════════════════ -->
+  <meta name="description" content="The Simulation / Interface Layer is where Satoshium becomes explorable and testable — providing environments, interfaces, and experimental surfaces through which systems can be observed, challenged, and refined." />
+  <link rel="canonical" href="https://satoshium.ai/architecture/simulation/" />
+ 
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Satoshium — Simulation / Interface Layer" />
+  <meta property="og:description" content="The Simulation / Interface Layer turns Satoshium's structure into interaction — giving the platform environments and experimental surfaces through which systems can be observed, challenged, and refined." />
+  <meta property="og:url"         content="https://satoshium.ai/architecture/simulation/" />
+  <meta property="og:image"       content="https://satoshium.ai/assets/og-simulation.png" />
+ 
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Satoshium — Simulation / Interface Layer" />
+  <meta name="twitter:description" content="The Simulation / Interface Layer turns Satoshium's structure into interaction — giving the platform environments and experimental surfaces through which systems can be observed, challenged, and refined." />
+  <!-- /TIER 3 — SEO & DISCOVERY -->
+ 
+  <!-- ═══════════════════════════════════════════════════════════
+       TIER 3 — PERFORMANCE: preconnect + dns-prefetch
+       All external assets (seal.png, world-grid.jpg, topbar
+       loader, footer fetch) are served from satoshium.link.
+       preconnect eliminates the TCP + TLS handshake cost on
+       the first request. dns-prefetch is a lightweight fallback
+       for browsers that don't support preconnect.
+  ════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://satoshium.link" crossorigin />
+  <link rel="dns-prefetch" href="//satoshium.link" />
+  <!-- /TIER 3 — PERFORMANCE -->
+ 
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#00eaff">
+  <link rel="alternate icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#00eaff">
+ 
   <title>Satoshium — Simulation / Interface Layer</title>
   <style>
     :root{
@@ -19,9 +53,17 @@
       --gold2:#f4c36a;
       --line:rgba(214,163,74,.18);
     }
-
+ 
     *{box-sizing:border-box}
-
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — ACCESSIBILITY: smooth scroll
+       Added scroll-behavior to html for anchor navigation.
+       Was missing from the original page entirely.
+    ════════════════════════════════════════════════════════════ */
+    html{scroll-behavior:smooth}
+    /* /TIER 3 */
+ 
     html,body{
       margin:0;
       padding:0;
@@ -30,34 +72,76 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       line-height:1.6;
     }
-
+ 
     body{
       padding-top:80px;
     }
-
+ 
     a{
       color:var(--gold2);
       text-decoration:none;
     }
-
+ 
     a:hover{
       color:var(--gold);
     }
-
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — ACCESSIBILITY: global focus-visible ring
+       The original page had no keyboard focus styles at all.
+       Keyboard-only and assistive-technology users had no
+       visible indicator of where focus was located.
+    ════════════════════════════════════════════════════════════ */
+    :focus-visible{
+      outline:2px solid var(--gold2);
+      outline-offset:3px;
+      border-radius:4px;
+    }
+    /* /TIER 3 — focus-visible */
+ 
     .wrap{
       max-width:1120px;
       margin:0 auto;
       padding:0 18px;
     }
-
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — UX CONSISTENCY: page entrance animation
+       Other platform pages use a subtle fade-in + translateY
+       entrance. This page had none. Added with a full
+       prefers-reduced-motion guard — @keyframes defined globally
+       to avoid nested-keyframe browser-support edge cases.
+    ════════════════════════════════════════════════════════════ */
+    @keyframes pageEnter{
+      from{opacity:0;transform:translateY(7px)}
+      to  {opacity:1;transform:translateY(0)}
+    }
+    @keyframes pageFade{
+      from{opacity:0}
+      to  {opacity:1}
+    }
+ 
     .content{
       padding:34px 18px 60px;
+      opacity:0;
+      transform:translateY(7px);
+      animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
     }
-
+ 
+    @media(prefers-reduced-motion:reduce){
+      .content{
+        transform:none;
+        animation-name:pageFade;
+        animation-duration:.18s;
+        animation-timing-function:ease;
+      }
+    }
+    /* /TIER 3 — page entrance animation */
+ 
     .muted{
       color:var(--muted);
     }
-
+ 
     .pill{
       display:inline-flex;
       align-items:center;
@@ -71,7 +155,7 @@
       font-weight:700;
       letter-spacing:.04em;
     }
-
+ 
     .hero{
       position:relative;
       overflow:hidden;
@@ -86,7 +170,7 @@
         0 0 0 1px rgba(214,163,74,.08),
         0 24px 70px rgba(0,0,0,.45);
     }
-
+ 
     .hero::before{
       content:"";
       position:absolute;
@@ -98,13 +182,13 @@
       filter:sepia(.35) saturate(.85) brightness(.65);
       z-index:0;
     }
-
+ 
     .hero-inner{
       position:relative;
       z-index:1;
       max-width:760px;
     }
-
+ 
     .hero h1{
       margin:16px 0 10px;
       font-size:52px;
@@ -114,27 +198,36 @@
         0 0 18px rgba(214,163,74,.20),
         0 0 34px rgba(214,163,74,.08);
     }
-
+ 
     .hero-sub{
       margin:0 0 18px;
       font-size:22px;
       color:#f0f4fb;
       font-weight:700;
     }
-
+ 
     .hero-copy{
       font-size:18px;
       color:#d7deeb;
       max-width:720px;
     }
-
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — SEMANTIC: hero-actions list reset
+       The hero feature tags are now a semantic <ul>. list-style
+       and padding reset so the <ul> renders flush like the
+       original <div> layout.
+    ════════════════════════════════════════════════════════════ */
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       margin-top:20px;
+      list-style:none;
+      padding:0;
     }
-
+    /* /TIER 3 */
+ 
     .section{
       margin-top:22px;
       padding:24px;
@@ -143,29 +236,35 @@
       background:linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
       box-shadow:0 0 0 1px rgba(214,163,74,.05);
     }
-
+ 
     .section h2{
       margin:0 0 14px;
       color:#f3f6fc;
       font-size:28px;
       line-height:1.15;
     }
-
+ 
     .section p{
       margin:0 0 16px;
       color:#d9e1ee;
     }
-
+ 
     .section ul{
       margin:8px 0 16px 20px;
       color:#d9e1ee;
     }
-
+ 
     .section li{
       margin:6px 0;
     }
-
-    .quote{
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — SEMANTIC FIX: .quote applied to <blockquote>
+       Both callout blocks used <div class="quote">. <blockquote>
+       is the correct semantic element; screen readers announce it
+       as a quote. Visual appearance is unchanged.
+    ════════════════════════════════════════════════════════════ */
+    blockquote.quote{
       margin:18px 0;
       padding:18px 20px;
       border-left:3px solid var(--gold);
@@ -175,14 +274,15 @@
       font-size:18px;
       font-weight:600;
     }
-
+    /* /TIER 3 — semantic blockquote */
+ 
     .grid-2{
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:16px;
       margin-top:16px;
     }
-
+ 
     .mini-card{
       padding:18px;
       border:1px solid rgba(214,163,74,.15);
@@ -190,31 +290,31 @@
       background:rgba(9,12,18,.72);
       transition:transform .18s ease, box-shadow .18s ease;
     }
-
+ 
     .mini-card:hover{
       transform:translateY(-3px);
       box-shadow:0 12px 28px rgba(0,0,0,.35);
     }
-
+ 
     .mini-card h3{
       margin:0 0 10px;
       color:var(--gold2);
       font-size:18px;
     }
-
+ 
     .mini-card p{
       margin:0;
       color:#d3dbea;
       font-size:15px;
     }
-
+ 
     .layer-nav{
       display:grid;
       grid-template-columns:repeat(4, minmax(0,1fr));
       gap:16px;
       margin-top:18px;
     }
-
+ 
     .layer-card{
       padding:18px;
       border:1px solid rgba(214,163,74,.15);
@@ -222,181 +322,223 @@
       background:rgba(9,12,18,.72);
       transition:transform .18s ease, box-shadow .18s ease;
     }
-
+ 
     .layer-card:hover{
       transform:translateY(-3px);
       box-shadow:0 12px 28px rgba(0,0,0,.35);
     }
-
+ 
     .layer-card h3{
       margin:0 0 10px;
       color:#f3f6fc;
       font-size:18px;
     }
-
+ 
     .layer-card p{
       margin:0 0 12px;
       color:#d3dbea;
       font-size:15px;
     }
-
+ 
     .layer-card.current{
       border-color:rgba(214,163,74,.28);
       box-shadow:
         0 0 0 1px rgba(214,163,74,.10),
         0 12px 28px rgba(0,0,0,.28);
     }
-
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — ACCESSIBILITY: prefers-reduced-motion guard
+       Disables the translateY hover transforms on interactive
+       cards for users who have opted out of motion effects.
+       Both mini-card and layer-card are covered together.
+    ════════════════════════════════════════════════════════════ */
+    @media(prefers-reduced-motion:reduce){
+      .mini-card,
+      .layer-card{
+        transition:none;
+      }
+      .mini-card:hover,
+      .layer-card:hover{
+        transform:none;
+      }
+    }
+    /* /TIER 3 — card hover motion guard */
+ 
+    /* ═══════════════════════════════════════════════════════════
+       TIER 3 — CSS FIX: simulation-feature-card indentation
+       The original .simulation-feature-card block and all its
+       related rules were unindented (column 0), inconsistent
+       with the 4-space indent used throughout the rest of the
+       stylesheet. Corrected to match.
+    ════════════════════════════════════════════════════════════ */
     .simulation-feature-card{
-  position:relative;
-  overflow:hidden;
-  margin-top:18px;
-  padding:22px;
-  border:1px solid rgba(214,163,74,.18);
-  border-radius:18px;
-  background:
-    radial-gradient(circle at top right, rgba(214,163,74,.08), transparent 28%),
-    linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
-  box-shadow:
-    0 0 0 1px rgba(214,163,74,.05),
-    0 18px 44px rgba(0,0,0,.35);
-}
-
-.simulation-feature-card::before{
-  content:"";
-  position:absolute;
-  inset:-60px;
-  background-image:var(--card-wm);
-  background-repeat:no-repeat;
-  background-size:min(720px,70vw);
-  background-position:right -140px center;
-  opacity:.03;
-  filter:blur(1px);
-  pointer-events:none;
-}
-
-.simulation-feature-card > *{
-  position:relative;
-  z-index:1;
-}
-
-.simulation-feature-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-bottom:12px;
-}
-
-.simulation-feature-card h3{
-  margin:0 0 12px;
-  color:var(--gold2);
-  font-size:26px;
-  line-height:1.15;
-}
-
-.simulation-feature-card p{
-  margin:0 0 14px;
-  color:#d9e1ee;
-}
-
-.simulation-feature-card ul{
-  margin:8px 0 18px 20px;
-  color:#d9e1ee;
-}
-
-.simulation-feature-card li{
-  margin:6px 0;
-}
-
-.simulation-feature-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
+      position:relative;
+      overflow:hidden;
+      margin-top:18px;
+      padding:22px;
+      border:1px solid rgba(214,163,74,.18);
+      border-radius:18px;
+      background:
+        radial-gradient(circle at top right, rgba(214,163,74,.08), transparent 28%),
+        linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+      box-shadow:
+        0 0 0 1px rgba(214,163,74,.05),
+        0 18px 44px rgba(0,0,0,.35);
+    }
+ 
+    .simulation-feature-card::before{
+      content:"";
+      position:absolute;
+      inset:-60px;
+      background-image:var(--card-wm);
+      background-repeat:no-repeat;
+      background-size:min(720px,70vw);
+      background-position:right -140px center;
+      opacity:.03;
+      filter:blur(1px);
+      pointer-events:none;
+    }
+ 
+    .simulation-feature-card > *{
+      position:relative;
+      z-index:1;
+    }
+ 
+    .simulation-feature-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:12px;
+    }
+ 
+    .simulation-feature-card h3{
+      margin:0 0 12px;
+      color:var(--gold2);
+      font-size:26px;
+      line-height:1.15;
+    }
+ 
+    .simulation-feature-card p{
+      margin:0 0 14px;
+      color:#d9e1ee;
+    }
+ 
+    .simulation-feature-card ul{
+      margin:8px 0 18px 20px;
+      color:#d9e1ee;
+    }
+ 
+    .simulation-feature-card li{
+      margin:6px 0;
+    }
+ 
+    .simulation-feature-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    /* /TIER 3 — simulation-feature-card indentation */
+ 
     .footer-wrap{
       margin-top:40px;
     }
-
+ 
     @media (max-width:960px){
       .layer-nav{
         grid-template-columns:repeat(2, minmax(0,1fr));
       }
     }
-
+ 
     @media (max-width:900px){
       .hero{
         padding:38px 24px;
       }
-
+ 
       .hero h1{
         font-size:40px;
       }
-
+ 
       .hero-sub{
         font-size:18px;
       }
-
+ 
       .hero-copy{
         font-size:17px;
       }
-
+ 
       .grid-2,
       .layer-nav{
         grid-template-columns:1fr;
       }
-
+ 
       .section h2{
         font-size:24px;
       }
     }
   </style>
 </head>
-
+ 
 <body>
-
+ 
+<!-- TOPBAR — unchanged -->
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="https://satoshium.link/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-
-  <section class="hero">
+ 
+<!-- TIER 3 — ACCESSIBILITY: id="main-content" added as a
+     named landmark for screen-reader navigation. -->
+<main id="main-content" class="wrap content">
+ 
+  <!-- ═══════════════════════════════════════════════════════════
+       TIER 3 — SEMANTIC: aria-labelledby on all <section> elements
+       Associates each section with its heading so screen readers
+       announce the section name when navigating by landmark.
+  ════════════════════════════════════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-heading">
     <div class="hero-inner">
-      <span class="pill">🧪 Core Platform Layer</span>
-      <h1>Simulation / Interface Layer</h1>
+      <span class="pill" aria-label="Section label: Core Platform Layer">🧪 Core Platform Layer</span>
+      <h1 id="hero-heading">Simulation / Interface Layer</h1>
       <p class="hero-sub">Tests outcomes.</p>
-
+ 
       <p class="hero-copy">
         The Simulation / Interface Layer is where Satoshium becomes explorable, testable, and visible. It is the layer that turns structure into interaction — giving the platform environments, interfaces, and experimental surfaces through which systems can be observed, challenged, and refined.
       </p>
-
-      <div class="hero-actions">
-        <span class="pill">Experiments</span>
-        <span class="pill">Interfaces</span>
-        <span class="pill">Scenario testing</span>
-      </div>
+ 
+      <!-- TIER 3 — SEMANTIC: hero feature tags wrapped in <ul>
+           Previously three bare <span> elements with no group
+           context. Wrapped so assistive technology reads them as
+           "Key capabilities: Experiments, Interfaces, Scenario testing"
+           rather than three isolated text fragments. -->
+      <ul class="hero-actions" role="list" aria-label="Key capabilities">
+        <li><span class="pill">Experiments</span></li>
+        <li><span class="pill">Interfaces</span></li>
+        <li><span class="pill">Scenario testing</span></li>
+      </ul>
     </div>
   </section>
-
-  <section class="section">
-    <h2>Why the Simulation Layer Matters</h2>
-
+ 
+  <section class="section" aria-labelledby="why-heading">
+    <h2 id="why-heading">Why the Simulation Layer Matters</h2>
+ 
     <p>
       A platform can have sound philosophy, clear knowledge, and intelligent systems, but without environments for testing and interaction, much of its value remains abstract. The Simulation / Interface Layer exists so that Satoshium can be explored in motion rather than only described in theory.
     </p>
-
-    <div class="quote">
+ 
+    <!-- TIER 3 — SEMANTIC: <div class="quote"> → <blockquote class="quote">
+         Callout blocks were plain <div> elements. <blockquote> is
+         the correct semantic element. Visual appearance unchanged. -->
+    <blockquote class="quote">
       Simulation is where structure meets experience.
-    </div>
-
+    </blockquote>
+ 
     <p>
       In Satoshium, this layer is where ideas become observable through interfaces, controlled experiments, and future-facing scenario environments. It gives the platform a way to test assumptions before they become fixed systems.
     </p>
   </section>
-
-  <section class="section">
-    <h2>What the Simulation / Interface Layer Establishes</h2>
-
+ 
+  <section class="section" aria-labelledby="establishes-heading">
+    <h2 id="establishes-heading">What the Simulation / Interface Layer Establishes</h2>
+ 
     <div class="grid-2">
       <div class="mini-card">
         <h3>🧪 Experiments</h3>
@@ -404,175 +546,194 @@
           Provides a space for testing ideas, workflows, and future system concepts before they mature into more permanent structures.
         </p>
       </div>
-
+ 
       <div class="mini-card">
         <h3>🖥 Interfaces</h3>
         <p>
           Gives users a way to see, explore, and interact with the architecture of the platform rather than only reading about it.
         </p>
       </div>
-
+ 
       <div class="mini-card">
         <h3>🔮 Scenario Models</h3>
         <p>
           Creates environments for examining possible outcomes, system behavior, and long-horizon platform directions.
         </p>
       </div>
-
+ 
       <div class="mini-card">
-        <h3>🧭 Feedback & Refinement</h3>
+        <h3>🧭 Feedback &amp; Refinement</h3>
         <p>
           Helps identify what works, what breaks, and what should evolve before a concept is treated as durable infrastructure.
         </p>
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <h2>Simulation Within the Satoshium Model</h2>
-
+ 
+  <section class="section" aria-labelledby="model-heading">
+    <h2 id="model-heading">Simulation Within the Satoshium Model</h2>
+ 
     <p>
       The Simulation / Interface Layer comes after trust, knowledge, and intelligence. It relies on those deeper layers, but gives them a public and experimental surface.
     </p>
-
+ 
     <ul>
       <li>the Trust Layer provides reliable foundations</li>
       <li>the Knowledge Layer gives systems a shared language</li>
       <li>the Intelligence Layer interprets and acts within those structures</li>
       <li>the Simulation / Interface Layer allows those systems to be explored, tested, and experienced</li>
     </ul>
-
+ 
     <p class="muted">
       This matters because platforms become stronger when they can be examined in action, not just described on paper.
     </p>
   </section>
-
-  <section class="section">
-    <h2>What Simulation Supports in Satoshium</h2>
-
+ 
+  <section class="section" aria-labelledby="supports-heading">
+    <h2 id="supports-heading">What Simulation Supports in Satoshium</h2>
+ 
     <p>
       The Simulation / Interface Layer makes the platform visible and interactive.
     </p>
-
+ 
     <ul>
       <li>future scenario tools can test long-horizon ideas</li>
       <li>interfaces can make complex systems understandable to the public</li>
       <li>experiments can expose weak assumptions before they scale</li>
       <li>labs can provide a safe frontier for trying new concepts</li>
     </ul>
-
-    <div class="quote">
+ 
+    <blockquote class="quote">
       Simulation is where the ecosystem learns by seeing itself in motion.
-    </div>
+    </blockquote>
   </section>
-
-  <section class="section">
-    <h2>Current Expression of the Simulation / Interface Layer</h2>
-
+ 
+  <section class="section" aria-labelledby="expression-heading">
+    <h2 id="expression-heading">Current Expression of the Simulation / Interface Layer</h2>
+ 
     <p>
-      Today, this layer is most visible through Satoshium’s public labs, interface experiments, and exploratory design surfaces.
+      Today, this layer is most visible through Satoshium's public labs, interface experiments, and exploratory design surfaces.
     </p>
     <p>
-  A current live expression of this layer is <a href="https://satoshium.games/"><strong>Satoshium Games</strong></a>, which hosts interactive simulation modules.
-</p>
+      <!-- TIER 3 — SECURITY: added target="_blank" and rel="noopener noreferrer"
+           to all external-domain links. Previously these linked to outside domains
+           with no rel attributes and no new-tab behaviour. -->
+      A current live expression of this layer is <a href="https://satoshium.games/" target="_blank" rel="noopener noreferrer" aria-label="Visit Satoshium Games (opens in new tab)"><strong>Satoshium Games</strong></a>, which hosts interactive simulation modules.
+    </p>
     <p>
       It is currently expressed through:
     </p>
-
+ 
     <ul>
       <li>labs and experiments on the public platform</li>
       <li>interactive tool concepts</li>
       <li>future intelligence simulations</li>
       <li>scenario-based explorations and visual environments</li>
     </ul>
-
+ 
     <p style="margin-top:14px;">
-      <a href="https://satoshium.xyz/labs/" class="pill">→ Explore Labs</a>
+      <a href="https://satoshium.xyz/labs/"
+         class="pill"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Explore Labs on satoshium.xyz (opens in new tab)">→ Explore Labs</a>
     </p>
-
+ 
     <p class="muted">
       Over time, this layer may expand into richer interactive environments, system consoles, public simulations, and long-horizon exploratory tools.
     </p>
   </section>
-
-<section class="section">
-  <h2>Satoshium Games</h2>
-
-  <p>
-    <strong>Satoshium Games</strong> is the primary public interface environment
-    for the Simulation / Interface Layer. It provides browser-native interactive
-    modules where users can explore coordination systems, signal interpretation,
-    and agent-alignment dynamics in motion rather than only in theory.
-  </p>
-
-  <p>
-    These environments function as structured simulation surfaces for testing how
-    intelligence behaves inside shared rule systems — making alignment, stability,
-    and signal interpretation visible through interaction.
-  </p>
-
-  <ul>
-    <li>browser-based simulation environments</li>
-    <li>multi-agent coordination experiments</li>
-    <li>signal-aware learning interfaces</li>
-    <li>scenario-driven system exploration tools</li>
-  </ul>
-
-  <div style="margin-top:14px;">
-    <a href="https://satoshium.games/" class="pill">→ Visit Satoshium Games</a>
-  </div>
-<p></p>
-  <p class="muted">
-    Over time, Satoshium Games will expand into a broader suite of coordination
-    simulators, alignment experiments, and interactive learning environments
-    expressing the Simulation Layer across the platform.
-  </p>
-</section>
-  
-<section class="section">
-  <h2>Live Simulation Example</h2>
-
-  <p>
-    Chess Signal is the first live browser-based module currently expressing the
-    Simulation / Interface Layer in practice.
-  </p>
-
-  <div class="simulation-feature-card">
-    <div class="simulation-feature-meta">
-      <span class="pill">♟️ Live Module</span>
-      <span class="pill">Satoshium Games</span>
-    </div>
-
-    <h3>Chess Signal</h3>
-
+ 
+  <section class="section" aria-labelledby="games-heading">
+    <h2 id="games-heading">Satoshium Games</h2>
+ 
     <p>
-      Chess Signal is a signal-aware chess learning environment that surfaces
-      positional, tactical, and developmental signals during play. Instead of
-      relying only on opaque engine scoring, it helps make structured move
-      intelligence visible in real time.
+      <strong>Satoshium Games</strong> is the primary public interface environment
+      for the Simulation / Interface Layer. It provides browser-native interactive
+      modules where users can explore coordination systems, signal interpretation,
+      and agent-alignment dynamics in motion rather than only in theory.
     </p>
-
+ 
+    <p>
+      These environments function as structured simulation surfaces for testing how
+      intelligence behaves inside shared rule systems — making alignment, stability,
+      and signal interpretation visible through interaction.
+    </p>
+ 
     <ul>
-      <li>browser-native interactive environment</li>
-      <li>explainable move commentary</li>
-      <li>signal-based learning feedback</li>
-      <li>live example of simulation as platform expression</li>
+      <li>browser-based simulation environments</li>
+      <li>multi-agent coordination experiments</li>
+      <li>signal-aware learning interfaces</li>
+      <li>scenario-driven system exploration tools</li>
     </ul>
-
-    <div class="simulation-feature-actions">
-      <a href="https://satoshium.games/apps/chess-signal/" class="pill">→ Open Chess Signal</a>
-      <a href="https://satoshium.games/" class="pill">→ Visit Satoshium Games</a>
+ 
+    <div style="margin-top:14px;">
+      <a href="https://satoshium.games/"
+         class="pill"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Visit Satoshium Games (opens in new tab)">→ Visit Satoshium Games</a>
     </div>
-  </div>
-</section>
-  
-  <section class="section">
-    <h2>Core Platform Layers</h2>
-
+    <p></p>
+    <p class="muted">
+      Over time, Satoshium Games will expand into a broader suite of coordination
+      simulators, alignment experiments, and interactive learning environments
+      expressing the Simulation Layer across the platform.
+    </p>
+  </section>
+ 
+  <section class="section" aria-labelledby="example-heading">
+    <h2 id="example-heading">Live Simulation Example</h2>
+ 
+    <p>
+      Chess Signal is the first live browser-based module currently expressing the
+      Simulation / Interface Layer in practice.
+    </p>
+ 
+    <div class="simulation-feature-card">
+      <div class="simulation-feature-meta">
+        <span class="pill">♟️ Live Module</span>
+        <span class="pill">Satoshium Games</span>
+      </div>
+ 
+      <h3>Chess Signal</h3>
+ 
+      <p>
+        Chess Signal is a signal-aware chess learning environment that surfaces
+        positional, tactical, and developmental signals during play. Instead of
+        relying only on opaque engine scoring, it helps make structured move
+        intelligence visible in real time.
+      </p>
+ 
+      <ul>
+        <li>browser-native interactive environment</li>
+        <li>explainable move commentary</li>
+        <li>signal-based learning feedback</li>
+        <li>live example of simulation as platform expression</li>
+      </ul>
+ 
+      <div class="simulation-feature-actions">
+        <a href="https://satoshium.games/apps/chess-signal/"
+           class="pill"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Open Chess Signal on satoshium.games (opens in new tab)">→ Open Chess Signal</a>
+        <a href="https://satoshium.games/"
+           class="pill"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visit Satoshium Games (opens in new tab)">→ Visit Satoshium Games</a>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section" aria-labelledby="layers-heading">
+    <h2 id="layers-heading">Core Platform Layers</h2>
+ 
     <p class="muted">
       The Simulation / Interface Layer is one part of a broader Satoshium system stack.
     </p>
-
+ 
     <div class="layer-nav">
       <div class="layer-card">
         <h3>🛡 Trust Layer</h3>
@@ -581,7 +742,7 @@
         </p>
         <a href="trust.html">→ Verifies reality</a>
       </div>
-
+ 
       <div class="layer-card">
         <h3>📚 Knowledge Layer</h3>
         <p>
@@ -589,16 +750,19 @@
         </p>
         <a href="knowledge.html">→ Defines meaning</a>
       </div>
-
+ 
       <div class="layer-card">
         <h3>🧠 Intelligence Layer</h3>
         <p>
-          Reasoning systems, tools, and agents that operate within Satoshium’s defined frameworks.
+          Reasoning systems, tools, and agents that operate within Satoshium's defined frameworks.
         </p>
         <a href="intelligence.html">→ Uses meaning</a>
       </div>
-
-      <div class="layer-card current">
+ 
+      <!-- TIER 3 — ACCESSIBILITY: aria-current="page" added to the
+           active layer card so screen readers announce it as the
+           current page, matching the visual "Current Page" pill. -->
+      <div class="layer-card current" aria-current="page">
         <h3>🧪 Simulation / Interface Layer</h3>
         <p>
           Interfaces, simulations, and environments for testing systems and exploring future scenarios.
@@ -607,18 +771,18 @@
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <h2>Current Status</h2>
-
+ 
+  <section class="section" aria-labelledby="status-heading">
+    <h2 id="status-heading">Current Status</h2>
+ 
     <p>
       The Simulation / Interface Layer is one of the most publicly visible parts of Satoshium because it provides the experimental frontier of the ecosystem.
     </p>
-
+ 
     <p class="muted">
       Over time, this page can expand to document:
     </p>
-
+ 
     <ul>
       <li>public simulation environments</li>
       <li>interface design principles</li>
@@ -627,23 +791,23 @@
       <li>the relationship between testing, learning, and platform evolution</li>
     </ul>
   </section>
-
+ 
   <hr />
 <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
   Satoshium is being built slowly, in public, and with architectural discipline.
 </div>
 <hr />
-
-
+ 
+  <!-- FOOTER — unchanged -->
   <div class="footer-wrap" id="footer-slot"></div>
-
+ 
 </main>
-
+ 
 <script>
 fetch("https://satoshium.link/components/footer.html")
 .then(r => r.text())
 .then(html => document.getElementById("footer-slot").innerHTML = html);
 </script>
-
+ 
 </body>
 </html>
