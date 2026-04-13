@@ -8,7 +8,33 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta name="theme-color" content="#00eaff">
   <title>Satoshium — Trust Layer</title>
+ 
+  <!-- TIER 3 — SEO: meta description -->
+  <meta name="description" content="The Trust Layer provides Satoshium's verification, consensus, and cryptographic foundations anchored in Bitcoin — ensuring systems, data, and intelligent workflows can be checked, traced, and relied upon.">
+ 
+  <!-- TIER 3 — SEO: canonical URL -->
+  <link rel="canonical" href="https://satoshium.ai/architecture/trust.html">
+ 
+  <!-- TIER 3 — SEO: Open Graph -->
+  <meta property="og:title" content="Satoshium — Trust Layer">
+  <meta property="og:description" content="Verification, consensus, and cryptographic truth foundations anchored in Bitcoin. The layer that ensures Satoshium is not merely intelligent, but dependable.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://satoshium.ai/architecture/trust.html">
+  <meta property="og:image" content="https://satoshium.link/assets/og-trust.png">
+  <meta property="og:site_name" content="Satoshium">
+ 
+  <!-- TIER 3 — SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satoshium — Trust Layer">
+  <meta name="twitter:description" content="Verification, consensus, and cryptographic truth foundations anchored in Bitcoin.">
+  <meta name="twitter:image" content="https://satoshium.link/assets/og-trust.png">
+ 
+  <!-- TIER 3 — PERFORMANCE: preconnect to asset origin -->
+  <link rel="preconnect" href="https://satoshium.link" crossorigin>
+  <link rel="dns-prefetch" href="https://satoshium.link">
+ 
   <style>
+    /* === RESET & TOKENS === */
     :root{
       --card-wm:url('https://satoshium.link/assets/seal.png');
       --bg:#07090d;
@@ -19,9 +45,9 @@
       --gold2:#f4c36a;
       --line:rgba(214,163,74,.18);
     }
-
+ 
     *{box-sizing:border-box}
-
+ 
     html,body{
       margin:0;
       padding:0;
@@ -29,35 +55,43 @@
       color:var(--text);
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       line-height:1.6;
+      /* TIER 3 — UX: smooth in-page scrolling */
+      scroll-behavior:smooth;
     }
-
+ 
     body{
       padding-top:80px;
     }
-
+ 
+    /* TIER 3 — ACCESSIBILITY: keyboard focus ring */
+    :focus-visible{
+      outline:2px solid var(--gold2);
+      outline-offset:3px;
+    }
+ 
     a{
       color:var(--gold2);
       text-decoration:none;
     }
-
+ 
     a:hover{
       color:var(--gold);
     }
-
+ 
     .wrap{
       max-width:1120px;
       margin:0 auto;
       padding:0 18px;
     }
-
+ 
     .content{
       padding:34px 18px 60px;
     }
-
+ 
     .muted{
       color:var(--muted);
     }
-
+ 
     .pill{
       display:inline-flex;
       align-items:center;
@@ -71,7 +105,8 @@
       font-weight:700;
       letter-spacing:.04em;
     }
-
+ 
+    /* === HERO === */
     .hero{
       position:relative;
       overflow:hidden;
@@ -86,7 +121,7 @@
         0 0 0 1px rgba(214,163,74,.08),
         0 24px 70px rgba(0,0,0,.45);
     }
-
+ 
     .hero::before{
       content:"";
       position:absolute;
@@ -98,13 +133,13 @@
       filter:sepia(.35) saturate(.85) brightness(.65);
       z-index:0;
     }
-
+ 
     .hero-inner{
       position:relative;
       z-index:1;
       max-width:760px;
     }
-
+ 
     .hero h1{
       margin:16px 0 10px;
       font-size:52px;
@@ -114,27 +149,31 @@
         0 0 18px rgba(214,163,74,.20),
         0 0 34px rgba(214,163,74,.08);
     }
-
+ 
     .hero-sub{
       margin:0 0 18px;
       font-size:22px;
       color:#f0f4fb;
       font-weight:700;
     }
-
+ 
     .hero-copy{
       font-size:18px;
       color:#d7deeb;
       max-width:720px;
     }
-
+ 
+    /* TIER 3 — SEMANTIC: list reset for hero-actions pill list */
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       margin-top:20px;
+      list-style:none;
+      padding:0;
     }
-
+ 
+    /* === SECTIONS === */
     .section{
       margin-top:22px;
       padding:24px;
@@ -143,29 +182,30 @@
       background:linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
       box-shadow:0 0 0 1px rgba(214,163,74,.05);
     }
-
+ 
     .section h2{
       margin:0 0 14px;
       color:#f3f6fc;
       font-size:28px;
       line-height:1.15;
     }
-
+ 
     .section p{
       margin:0 0 16px;
       color:#d9e1ee;
     }
-
+ 
     .section ul{
       margin:8px 0 16px 20px;
       color:#d9e1ee;
     }
-
+ 
     .section li{
       margin:6px 0;
     }
-
-    .quote{
+ 
+    /* TIER 3 — SEMANTIC: blockquote reset + quote styling */
+    blockquote.quote{
       margin:18px 0;
       padding:18px 20px;
       border-left:3px solid var(--gold);
@@ -175,14 +215,15 @@
       font-size:18px;
       font-weight:600;
     }
-
+ 
+    /* === GRID & CARDS === */
     .grid-2{
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:16px;
       margin-top:16px;
     }
-
+ 
     .mini-card{
       padding:18px;
       border:1px solid rgba(214,163,74,.15);
@@ -190,31 +231,32 @@
       background:rgba(9,12,18,.72);
       transition:transform .18s ease, box-shadow .18s ease;
     }
-
+ 
     .mini-card:hover{
       transform:translateY(-3px);
       box-shadow:0 12px 28px rgba(0,0,0,.35);
     }
-
+ 
     .mini-card h3{
       margin:0 0 10px;
       color:var(--gold2);
       font-size:18px;
     }
-
+ 
     .mini-card p{
       margin:0;
       color:#d3dbea;
       font-size:15px;
     }
-
+ 
+    /* === LAYER NAVIGATION === */
     .layer-nav{
       display:grid;
       grid-template-columns:repeat(4, minmax(0,1fr));
       gap:16px;
       margin-top:18px;
     }
-
+ 
     .layer-card{
       padding:18px;
       border:1px solid rgba(214,163,74,.15);
@@ -222,114 +264,148 @@
       background:rgba(9,12,18,.72);
       transition:transform .18s ease, box-shadow .18s ease;
     }
-
+ 
     .layer-card:hover{
       transform:translateY(-3px);
       box-shadow:0 12px 28px rgba(0,0,0,.35);
     }
-
+ 
     .layer-card h3{
       margin:0 0 10px;
       color:#f3f6fc;
       font-size:18px;
     }
-
+ 
     .layer-card p{
       margin:0 0 12px;
       color:#d3dbea;
       font-size:15px;
     }
-
+ 
     .layer-card.current{
       border-color:rgba(214,163,74,.28);
       box-shadow:
         0 0 0 1px rgba(214,163,74,.10),
         0 12px 28px rgba(0,0,0,.28);
     }
-
+ 
     .footer-wrap{
       margin-top:40px;
     }
-
+ 
+    /* === PAGE ENTRANCE ANIMATION === */
+    @keyframes pageFade{
+      from{opacity:0;transform:translateY(12px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+ 
+    .content{
+      animation:pageFade .45s ease both;
+    }
+ 
+    /* === RESPONSIVE === */
     @media (max-width:960px){
       .layer-nav{
         grid-template-columns:repeat(2, minmax(0,1fr));
       }
     }
-
+ 
     @media (max-width:900px){
       .hero{
         padding:38px 24px;
       }
-
+ 
       .hero h1{
         font-size:40px;
       }
-
+ 
       .hero-sub{
         font-size:18px;
       }
-
+ 
       .hero-copy{
         font-size:17px;
       }
-
+ 
       .grid-2,
       .layer-nav{
         grid-template-columns:1fr;
       }
-
+ 
       .section h2{
         font-size:24px;
       }
     }
+ 
+    /* TIER 3 — ACCESSIBILITY: respect reduced-motion preference */
+    @media (prefers-reduced-motion:reduce){
+      .content{
+        animation:none;
+      }
+ 
+      .mini-card,
+      .layer-card{
+        transition:none;
+      }
+ 
+      .mini-card:hover,
+      .layer-card:hover{
+        transform:none;
+      }
+ 
+      html,body{
+        scroll-behavior:auto;
+      }
+    }
   </style>
 </head>
-
+ 
 <body>
-
+ 
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="https://satoshium.link/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-
-  <section class="hero">
+ 
+<main id="main-content" class="wrap content">
+ 
+  <section class="hero" aria-labelledby="hero-heading">
     <div class="hero-inner">
-      <span class="pill">🛡 Core Platform Layer</span>
-      <h1>Trust Layer</h1>
+      <span class="pill" aria-label="Core Platform Layer">🛡 Core Platform Layer</span>
+      <h1 id="hero-heading">Trust Layer</h1>
       <p class="hero-sub">Verifies reality.</p>
-
+ 
       <p class="hero-copy">
         The Trust Layer provides the verification, consensus, and cryptographic foundations of Satoshium. It is the layer that ensures systems, data, and future intelligent workflows can be checked, traced, and relied upon without dependence on opaque authority.
       </p>
-
-      <div class="hero-actions">
-        <span class="pill">Bitcoin-anchored</span>
-        <span class="pill">Verifiable systems</span>
-        <span class="pill">Cryptographic truth</span>
-      </div>
+ 
+      <!-- TIER 3 — SEMANTIC: hero pills as unordered list -->
+      <ul class="hero-actions" aria-label="Trust Layer features">
+        <li><span class="pill">Bitcoin-anchored</span></li>
+        <li><span class="pill">Verifiable systems</span></li>
+        <li><span class="pill">Cryptographic truth</span></li>
+      </ul>
     </div>
   </section>
-
-  <section class="section">
-    <h2>Why the Trust Layer Matters</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-why">
+    <h2 id="heading-why">Why the Trust Layer Matters</h2>
+ 
     <p>
       Intelligence without trustworthy foundations can drift into opacity, manipulation, or unverifiable decision-making. The Trust Layer exists so that Satoshium is not merely intelligent, but dependable.
     </p>
-
-    <div class="quote">
+ 
+    <!-- TIER 3 — SEMANTIC: blockquote instead of div -->
+    <blockquote class="quote">
       Before systems can reason well, they must be grounded well.
-    </div>
-
+    </blockquote>
+ 
     <p>
       In Satoshium, trust is not treated as branding, sentiment, or institutional reputation. It is treated as something that can be independently verified through transparent rules, auditable structures, and resilient cryptographic foundations.
     </p>
   </section>
-
-  <section class="section">
-    <h2>What the Trust Layer Establishes</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-establishes">
+    <h2 id="heading-establishes">What the Trust Layer Establishes</h2>
+ 
     <div class="grid-2">
       <div class="mini-card">
         <h3>🔐 Verification</h3>
@@ -337,21 +413,21 @@
           Creates a basis for checking whether information, actions, and outcomes can be confirmed rather than merely asserted.
         </p>
       </div>
-
+ 
       <div class="mini-card">
         <h3>⛓ Consensus</h3>
         <p>
           Anchors coordination to transparent rules instead of shifting interpretation or centralized discretion.
         </p>
       </div>
-
+ 
       <div class="mini-card">
         <h3>🧾 Auditability</h3>
         <p>
           Preserves a trail of logic, structure, and evidence so systems can be understood over time.
         </p>
       </div>
-
+ 
       <div class="mini-card">
         <h3>🛡 Resistance to Tampering</h3>
         <p>
@@ -360,14 +436,14 @@
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <h2>The Role of Bitcoin</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-bitcoin">
+    <h2 id="heading-bitcoin">The Role of Bitcoin</h2>
+ 
     <p>
       Bitcoin is the clearest existing example of a system built on verifiable ownership, transparent rules, and global consensus without centralized control. For Satoshium, Bitcoin is not used as a slogan — it is treated as infrastructure.
     </p>
-
+ 
     <ul>
       <li>verifiable ownership</li>
       <li>transparent monetary and consensus rules</li>
@@ -375,84 +451,86 @@
       <li>global accessibility</li>
       <li>independence from institutional trust models</li>
     </ul>
-
+ 
     <p class="muted">
       The Trust Layer draws from these qualities because long-term intelligent systems require a base that is stable, inspectable, and difficult to corrupt.
     </p>
   </section>
-
-  <section class="section">
-    <h2>What Trust Supports in Satoshium</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-supports">
+    <h2 id="heading-supports">What Trust Supports in Satoshium</h2>
+ 
     <p>
       The Trust Layer is not the entire platform, but it underlies everything else.
     </p>
-
+ 
     <ul>
       <li>knowledge systems need stable definitions and source integrity</li>
       <li>intelligence systems need reliable inputs and transparent boundaries</li>
       <li>simulation systems need consistent assumptions and traceable models</li>
       <li>public infrastructure needs durable rules and auditable foundations</li>
     </ul>
-
-    <div class="quote">
+ 
+    <!-- TIER 3 — SEMANTIC: blockquote instead of div -->
+    <blockquote class="quote">
       Trust is what allows the rest of the platform to mean anything.
-    </div>
+    </blockquote>
   </section>
-
-  <section class="section">
-    <h2>Core Platform Layers</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-layers">
+    <h2 id="heading-layers">Core Platform Layers</h2>
+ 
     <p class="muted">
       The Trust Layer is one part of a broader Satoshium system stack.
     </p>
-
+ 
     <div class="layer-nav">
-      <div class="layer-card current">
+      <!-- TIER 3 — ACCESSIBILITY: aria-current marks active page -->
+      <div class="layer-card current" aria-current="page">
         <h3>🛡 Trust Layer</h3>
         <p>
           Verification, consensus, and cryptographic truth foundations anchored in Bitcoin.
         </p>
         <span class="pill">Current Page</span>
       </div>
-
+ 
       <div class="layer-card">
         <h3>📚 Knowledge Layer</h3>
         <p>
           The shared language system of Satoshium — defining canonical terminology, architecture concepts, and trust models.
         </p>
-        <a href="knowledge.html">→ Defines meaning</a>
+        <a href="knowledge.html" aria-label="Knowledge Layer — Defines meaning">→ Defines meaning</a>
       </div>
-
+ 
       <div class="layer-card">
         <h3>🧠 Intelligence Layer</h3>
         <p>
-          Reasoning systems, tools, and agents that operate within Satoshium’s defined frameworks.
+          Reasoning systems, tools, and agents that operate within Satoshium's defined frameworks.
         </p>
-        <a href="intelligence.html">→ Uses meaning</a>
+        <a href="intelligence.html" aria-label="Intelligence Layer — Uses meaning">→ Uses meaning</a>
       </div>
-
+ 
       <div class="layer-card">
         <h3>🧪 Simulation / Interface Layer</h3>
         <p>
           Interfaces, simulations, and environments for testing systems and exploring future scenarios.
         </p>
-        <a href="simulation.html">→ Tests outcomes</a>
+        <a href="simulation.html" aria-label="Simulation Layer — Tests outcomes">→ Tests outcomes</a>
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <h2>Current Status</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-status">
+    <h2 id="heading-status">Current Status</h2>
+ 
     <p>
       The Trust Layer is currently expressed more through platform philosophy, Bitcoin alignment, and architectural direction than through a fully isolated public subsystem.
     </p>
-
+ 
     <p class="muted">
       Over time, this page can expand to document:
     </p>
-
+ 
     <ul>
       <li>trust assumptions across Satoshium systems</li>
       <li>verification models and evidence paths</li>
@@ -461,22 +539,22 @@
       <li>Bitcoin-linked trust architecture</li>
     </ul>
   </section>
-
+ 
   <hr />
 <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
   Satoshium is being built slowly, in public, and with architectural discipline.
 </div>
 <hr />
-  
+ 
   <div class="footer-wrap" id="footer-slot"></div>
-
+ 
 </main>
-
+ 
 <script>
 fetch("https://satoshium.link/components/footer.html")
 .then(r => r.text())
 .then(html => document.getElementById("footer-slot").innerHTML = html);
 </script>
-
+ 
 </body>
 </html>
