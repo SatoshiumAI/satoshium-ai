@@ -7,9 +7,35 @@
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#00eaff">
-
+ 
+<!-- TIER 3 — SEO: meta description -->
+<meta name="description" content="The Satoshium Manifesto — a foundational document exploring verifiable intelligence, transparent systems, and durable digital infrastructure aligned with truth rather than authority.">
+ 
+<!-- TIER 3 — SEO: Open Graph -->
+<meta property="og:title" content="The Satoshium Manifesto">
+<meta property="og:description" content="A calm build for a verifiable future — exploring what becomes possible when intelligence operates within verifiable systems and transparent rules.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://satoshium.ai/manifesto/">
+<meta property="og:image" content="https://satoshium.ai/assets/og-manifesto.png">
+<meta property="og:site_name" content="Satoshium">
+<meta property="og:locale" content="en_US">
+ 
+<!-- TIER 3 — SEO: Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Satoshium Manifesto">
+<meta name="twitter:description" content="A calm build for a verifiable future — exploring what becomes possible when intelligence operates within verifiable systems and transparent rules.">
+<meta name="twitter:image" content="https://satoshium.ai/assets/og-manifesto.png">
+<meta name="twitter:site" content="@SatoshiumAI">
+ 
+<!-- TIER 3 — SEO: canonical URL -->
+<link rel="canonical" href="https://satoshium.ai/manifesto/">
+ 
+<!-- TIER 3 — PERFORMANCE: preconnect + dns-prefetch for external asset origin -->
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+ 
 <title>Satoshium Manifesto</title>
-
+ 
 <style>
   :root{
     --bg:#07090d;
@@ -20,9 +46,9 @@
     --gold2:#f4c36a;
     --line:rgba(214,163,74,.18);
   }
-
+ 
   *{box-sizing:border-box}
-
+ 
   html,body{
     margin:0;
     padding:0;
@@ -30,45 +56,53 @@
     color:var(--text);
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
     line-height:1.6;
+    /* TIER 3 — UX: smooth scroll for in-page anchors */
+    scroll-behavior:smooth;
   }
-
+ 
   body{
     padding-top:80px;
   }
-
+ 
   a{
     color:var(--gold2);
     text-decoration:none;
   }
-
+ 
   a:hover{
     color:var(--gold);
   }
-
+ 
+  /* TIER 3 — ACCESSIBILITY: visible keyboard focus ring */
+  :focus-visible{
+    outline:2px solid var(--gold2);
+    outline-offset:3px;
+  }
+ 
   .wrap{
     max-width:1120px;
     margin:0 auto;
     padding:0 18px;
   }
-
+ 
   .content{
     padding:34px 18px 60px;
     opacity:0;
     transform:translateY(6px);
     animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
   }
-
+ 
   @keyframes pageEnter{
     to{
       opacity:1;
       transform:translateY(0);
     }
   }
-
+ 
   .muted{
     color:var(--muted);
   }
-
+ 
   .pill{
     display:inline-flex;
     align-items:center;
@@ -82,7 +116,7 @@
     font-weight:700;
     letter-spacing:.04em;
   }
-
+ 
   .hero{
     position:relative;
     overflow:hidden;
@@ -97,7 +131,7 @@
       0 0 0 1px rgba(214,163,74,.08),
       0 28px 80px rgba(0,0,0,.50);
   }
-
+ 
   .hero::before{
     content:"";
     position:absolute;
@@ -109,7 +143,7 @@
     filter:sepia(.35) saturate(.85) brightness(.65);
     z-index:0;
   }
-
+ 
   .hero::after{
     content:"";
     position:absolute;
@@ -120,13 +154,13 @@
     z-index:1;
     pointer-events:none;
   }
-
+ 
   .hero-inner{
     position:relative;
     z-index:2;
     max-width:760px;
   }
-
+ 
   .hero h1{
     margin:18px 0 14px;
     font-size:60px;
@@ -136,20 +170,20 @@
       0 0 18px rgba(214,163,74,.22),
       0 0 36px rgba(214,163,74,.10);
   }
-
+ 
   .hero-sub{
     font-size:22px;
     font-style:italic;
     color:#d9e3f5;
     margin:0 0 18px;
   }
-
+ 
   .hero-copy{
     max-width:720px;
     font-size:19px;
     color:#d7deeb;
   }
-
+ 
   .hero-lines{
     margin-top:24px;
     display:grid;
@@ -157,15 +191,15 @@
     color:#f0f4fb;
     font-weight:600;
   }
-
+ 
   .hero-lines span{
     display:block;
   }
-
+ 
   .hero-lines strong{
     color:var(--gold2);
   }
-
+ 
   .manifesto-mark{
     margin-top:26px;
     display:inline-flex;
@@ -178,7 +212,7 @@
     color:var(--muted);
     font-size:14px;
   }
-
+ 
   .section{
     margin-top:22px;
     padding:24px;
@@ -187,28 +221,29 @@
     background:linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
     box-shadow:0 0 0 1px rgba(214,163,74,.05);
   }
-
+ 
   .section h2{
     margin:0 0 14px;
     color:#f3f6fc;
     font-size:30px;
     line-height:1.15;
   }
-
+ 
   .section p{
     margin:0 0 16px;
     color:#d9e1ee;
   }
-
+ 
   .section ul{
     margin:8px 0 16px 20px;
     color:#d9e1ee;
   }
-
+ 
   .section li{
     margin:6px 0;
   }
-
+ 
+  /* TIER 3 — SEMANTIC: blockquote styling (was div.quote) */
   .quote{
     margin:18px 0;
     padding:18px 20px;
@@ -219,7 +254,7 @@
     font-size:18px;
     font-weight:600;
   }
-
+ 
   .three-lines{
     display:grid;
     gap:8px;
@@ -229,18 +264,18 @@
     line-height:1.1;
     color:#f3f6fc;
   }
-
+ 
   .three-lines span{
     display:block;
   }
-
+ 
   .principles{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:16px;
     margin-top:18px;
   }
-
+ 
   .principle{
     padding:18px;
     border:1px solid rgba(214,163,74,.15);
@@ -248,24 +283,24 @@
     background:rgba(9,12,18,.72);
     transition:transform .18s ease, box-shadow .18s ease;
   }
-
+ 
   .principle:hover{
     transform:translateY(-3px);
     box-shadow:0 12px 28px rgba(0,0,0,.35);
   }
-
+ 
   .principle h3{
     margin:0 0 10px;
     color:var(--gold2);
     font-size:18px;
   }
-
+ 
   .principle p{
     margin:0;
     color:#d3dbea;
     font-size:15px;
   }
-
+ 
   .closing{
     text-align:center;
     padding:34px 22px;
@@ -276,20 +311,20 @@
       radial-gradient(circle at top center, rgba(214,163,74,.08), transparent 40%),
       linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
   }
-
+ 
   .closing h2{
     margin:0 0 14px;
     color:var(--gold2);
     font-size:34px;
   }
-
+ 
   .closing p{
     max-width:760px;
     margin:0 auto 16px;
     color:#d9e1ee;
     font-size:18px;
   }
-
+ 
   .closing-lines{
     display:grid;
     gap:8px;
@@ -298,101 +333,124 @@
     font-size:22px;
     font-weight:700;
   }
-
+ 
   .footer-wrap{
     margin-top:40px;
   }
-
+ 
+  /* TIER 3 — ACCESSIBILITY: reduced-motion guard */
+  @media (prefers-reduced-motion:reduce){
+    html,body{
+      scroll-behavior:auto;
+    }
+ 
+    .content{
+      animation:none;
+      opacity:1;
+      transform:none;
+    }
+ 
+    .principle{
+      transition:none;
+    }
+ 
+    .principle:hover{
+      transform:none;
+    }
+  }
+ 
   @media (max-width:900px){
     .hero{
       padding:42px 24px;
     }
-
+ 
     .hero h1{
       font-size:44px;
     }
-
+ 
     .hero-sub{
       font-size:18px;
     }
-
+ 
     .hero-copy{
       font-size:17px;
     }
-
+ 
     .principles{
       grid-template-columns:1fr;
     }
-
+ 
     .section h2{
       font-size:24px;
     }
-
+ 
     .three-lines{
       font-size:22px;
     }
-
+ 
     .closing h2{
       font-size:28px;
     }
-
+ 
     .closing p{
       font-size:17px;
     }
   }
 </style>
 </head>
-
+ 
 <body>
-
+ 
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="https://satoshium.link/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-
-  <section class="hero">
+ 
+<!-- TIER 3 — ACCESSIBILITY: id="main-content" for landmark targeting -->
+<main id="main-content" class="wrap content">
+ 
+  <!-- TIER 3 — ACCESSIBILITY: aria-labelledby on every section -->
+  <section class="hero" aria-labelledby="heading-manifesto">
     <div class="hero-inner">
-      <span class="pill">📜 Foundational Document</span>
-      <h1>The Satoshium Manifesto</h1>
+      <span class="pill" aria-label="Foundational Document">📜 Foundational Document</span>
+      <h1 id="heading-manifesto">The Satoshium Manifesto</h1>
       <p class="hero-sub">A Calm Build for a Verifiable Future</p>
-
+ 
       <p class="hero-copy">
         Satoshium exists to explore what becomes possible when intelligence operates within verifiable systems and transparent rules.
       </p>
-
+ 
       <div class="hero-lines">
         <span>Not to chase trends.</span>
         <span>Not to follow hype.</span>
         <span><strong>But to help shape durable digital infrastructure aligned with truth rather than authority.</strong></span>
       </div>
-
-      <div class="manifesto-mark">
+ 
+      <div class="manifesto-mark" aria-label="Built calmly, built publicly, built to last">
         🌍 Built calmly. Built publicly. Built to last.
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <h2>🧱 Foundational Idea</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-foundation">
+    <h2 id="heading-foundation">🧱 Foundational Idea</h2>
+ 
     <p>Satoshium is built on a simple principle:</p>
-
+ 
     <div class="three-lines">
       <span>Not ruled.</span>
       <span>Not bought.</span>
       <span>Not stopped.</span>
     </div>
-
+ 
     <p>
       It is not a product. Not a platform. But a long-term exploration of what becomes possible when intelligence operates inside verifiable systems.
     </p>
   </section>
-
-  <section class="section">
-    <h2>🧭 Why Satoshium Exists</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-why">
+    <h2 id="heading-why">🧭 Why Satoshium Exists</h2>
+ 
     <p>We are entering a period where:</p>
-
+ 
     <ul>
       <li>artificial intelligence is rapidly advancing</li>
       <li>digital value is becoming native</li>
@@ -400,21 +458,22 @@
       <li>trust in institutions is shifting</li>
       <li>systems are growing more complex and opaque</li>
     </ul>
-
-    <div class="quote">
+ 
+    <!-- TIER 3 — SEMANTIC: div.quote → blockquote.quote -->
+    <blockquote class="quote">
       What happens if intelligence operates without verifiable foundations?
-    </div>
-
+    </blockquote>
+ 
     <p>
       Satoshium explores an alternative path: intelligence grounded in transparent rules and anchored to verifiable systems.
     </p>
   </section>
-
-  <section class="section">
-    <h2>🔐 The Role of Bitcoin</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-bitcoin">
+    <h2 id="heading-bitcoin">🔐 The Role of Bitcoin</h2>
+ 
     <p>Bitcoin provides a foundation unlike any other system.</p>
-
+ 
     <ul>
       <li>verifiable ownership</li>
       <li>transparent rules</li>
@@ -422,25 +481,25 @@
       <li>resistance to coercion</li>
       <li>independence from centralized control</li>
     </ul>
-
+ 
     <p>
       This makes it a natural base layer for building systems that require trust without reliance on institutions.
     </p>
-
+ 
     <p>
       Satoshium aligns with Bitcoin not as ideology, but as infrastructure.
     </p>
   </section>
-
-  <section class="section">
-    <h2>🧠 Intelligence Within Clear Boundaries</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-intelligence">
+    <h2 id="heading-intelligence">🧠 Intelligence Within Clear Boundaries</h2>
+ 
     <p>
       Intelligence without structure can drift. Structure without transparency can be abused.
     </p>
-
+ 
     <p>Satoshium explores how intelligent systems might operate within:</p>
-
+ 
     <ul>
       <li>clearly defined rules</li>
       <li>verifiable inputs and outputs</li>
@@ -448,135 +507,136 @@
       <li>modular architectures</li>
       <li>long-term accountability</li>
     </ul>
-
-    <div class="quote">
+ 
+    <!-- TIER 3 — SEMANTIC: div.quote → blockquote.quote -->
+    <blockquote class="quote">
       The goal is not control. The goal is clarity.
-    </div>
+    </blockquote>
   </section>
-
-  <section class="section">
-    <h2>🛠️ What Is Being Built</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-built">
+    <h2 id="heading-built">🛠️ What Is Being Built</h2>
+ 
     <p>Satoshium is not a single application or product.</p>
-
+ 
     <p>It is an evolving ecosystem that may include:</p>
-
+ 
     <div class="principles">
       <div class="principle">
         <h3>📚 Educational Infrastructure</h3>
         <p>Knowledge layers, public learning systems, and explanatory material for future builders.</p>
       </div>
-
+ 
       <div class="principle">
         <h3>🧩 Modular Tools & Agents</h3>
         <p>Composable systems and intelligent components released carefully when meaningful.</p>
       </div>
-
+ 
       <div class="principle">
         <h3>🧪 Public Research & Experiments</h3>
         <p>Verifiable system designs, documentation, and exploratory coordination models.</p>
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <h2>🌍 Built in Public</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-public">
+    <h2 id="heading-public">🌍 Built in Public</h2>
+ 
     <p>Satoshium is being developed openly so that:</p>
-
+ 
     <ul>
       <li>progress is visible</li>
       <li>ideas can be examined</li>
       <li>systems can be understood</li>
       <li>future builders can learn and contribute</li>
     </ul>
-
+ 
     <p>
       Transparency is not a marketing strategy. It is a design choice.
     </p>
   </section>
-
-  <section class="section">
-    <h2>🧭 Guiding Beliefs</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-beliefs">
+    <h2 id="heading-beliefs">🧭 Guiding Beliefs</h2>
+ 
     <div class="principles">
       <div class="principle">
         <h3>🔎 Verifiability</h3>
         <p>Verifiability matters more than authority.</p>
       </div>
-
+ 
       <div class="principle">
         <h3>🪟 Transparency</h3>
         <p>Transparency builds lasting trust.</p>
       </div>
-
+ 
       <div class="principle">
         <h3>🧱 Durability</h3>
         <p>Durable systems outlive rapid trends.</p>
       </div>
-
+ 
       <div class="principle">
         <h3>🧭 Simplicity</h3>
         <p>Simplicity outlasts complexity.</p>
       </div>
-
+ 
       <div class="principle">
         <h3>👤 Human Agency</h3>
         <p>Individuals should retain meaningful control.</p>
       </div>
-
+ 
       <div class="principle">
         <h3>📖 Education</h3>
         <p>Education is as important as technology.</p>
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <h2>🔭 A Long-Term Perspective</h2>
-
+ 
+  <section class="section" aria-labelledby="heading-longterm">
+    <h2 id="heading-longterm">🔭 A Long-Term Perspective</h2>
+ 
     <p>Satoshium is being built with patience.</p>
-
+ 
     <div class="three-lines" style="font-size:22px;">
       <span>No artificial deadlines.</span>
       <span>No hype cycles to satisfy.</span>
       <span>No rush to release unfinished systems.</span>
     </div>
-
+ 
     <p>Only steady forward movement.</p>
-
+ 
     <p>
       The objective is not to dominate the future. It is to contribute something meaningful to it.
     </p>
   </section>
-
-  <section class="closing">
-    <h2>🌱 An Open Invitation</h2>
-
+ 
+  <section class="closing" aria-labelledby="heading-invitation">
+    <h2 id="heading-invitation">🌱 An Open Invitation</h2>
+ 
     <p>
       Satoshium is open to observers, learners, and future contributors who value clarity over noise, structure over chaos, durability over speed, and thoughtful innovation over hype.
     </p>
-
+ 
     <div class="closing-lines">
       <span>The work is ongoing.</span>
       <span>The foundation is forming.</span>
       <span>The direction is steady.</span>
     </div>
-
-    <div class="manifesto-mark" style="margin-top:24px;">
+ 
+    <div class="manifesto-mark" style="margin-top:24px;" aria-label="Built calmly, built publicly, built to last">
       🌍 Built calmly. Built publicly. Built to last.
     </div>
   </section>
-
+ 
   <div class="footer-wrap" id="footer-slot"></div>
-
+ 
 </main>
-
+ 
 <script>
 fetch("https://satoshium.link/components/footer.html")
 .then(r => r.text())
 .then(html => document.getElementById("footer-slot").innerHTML = html);
 </script>
-
+ 
 </body>
 </html>
