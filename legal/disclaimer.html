@@ -8,333 +8,384 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta name="theme-color" content="#00eaff">
   <title>Satoshium — Disclaimer</title>
-<style>
-
-/* ===== Core Theme ===== */
-
-:root{
- --card-wm: url('https://satoshium.ai/assets/seal.png');
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
- --line:rgba(214,163,74,.18);
-}
-
-*{box-sizing:border-box}
-
-html,body{
-margin:0;
-padding:0;
-background:var(--bg);
-color:var(--text);
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-line-height:1.55
-}
-body{
- padding-top:80px;
-}
-a{color:var(--gold2);text-decoration:none}
-a:hover{color:var(--gold)}
-
-.wrap{max-width:980px;margin:0 auto;padding:0 18px}
-
-  .wrap.content{
-  opacity:0;
-  transform:translateY(6px);
-  animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
-}
-
-@keyframes pageEnter{
- to{
- opacity:1;
- transform:translateY(0);
- }
-}
-
-/* ===== Layout ===== */
-
-.content{
-padding:34px 18px 60px
-}
-
-h1,h2{
-margin:0 0 10px
-}
-
-h1{
-font-size:30px;
-color:var(--gold2)
-}
-
-h2{
-font-size:20px;
-color:var(--gold2);
-margin-top:26px
-}
-
-p,li{
-color:var(--text)
-}
-
-hr{
-border:none;
-border-top:1px solid var(--line);
-margin:22px 0
-}
-
-/* ===== Cards ===== */
-
-.card{
-position: relative;
-overflow: hidden;
-
-background: linear-gradient(
-to bottom right,
-rgba(12,16,24,.94),
-rgba(12,16,24,.88)
-);
-
-border:1px solid var(--line);
-border-radius:16px;
-
-padding:16px 16px;
-margin:16px 0;
-
-box-shadow:
-0 0 0 1px rgba(214,163,74,.08),
-0 20px 50px rgba(0,0,0,.45);
-}
-
-.card::before{
-content:"";
-position:absolute;
-inset:-60px;
-background-image: var(--card-wm);
-background-repeat:no-repeat;
-background-size: min(720px, 70vw);
-background-position: right -140px center;
-opacity:0.028;
-filter: blur(1px);
-pointer-events:none;
-z-index:0;
-}
-
-.card > *{
-position:relative;
-z-index:1
-}
-
-.card {
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,.35);
-}
-
-.card {
- border: 1px solid rgba(214,163,74,.15);
-}
-
-.muted{
-color:var(--muted)
-}
-
-.footer{
-border-top:1px solid var(--line);
-padding:18px 0 32px;
-color:var(--muted)
-}
-
-/* ===== Pills ===== */
-
-.pill{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:8px 10px;
-border:1px solid var(--line);
-border-radius:999px;
-background:rgba(214,163,74,.08);
-color:var(--gold2);
-font-size:12px;
-font-weight:700
-}
-
-ul{
-margin:8px 0 0 18px
-}
-
-.legal-links{
-display:flex;
-flex-wrap:wrap;
-gap:10px 14px;
-margin-top:10px
-}
-
-.legal-links a{
-font-weight:600
-}
-
-</style>
+ 
+  <!-- TIER 3 — SEO: meta description -->
+  <meta name="description" content="Legal disclaimer for the Satoshium platform — an experimental public software platform exploring decentralized intelligence, Bitcoin-anchored trust, and educational infrastructure.">
+ 
+  <!-- TIER 3 — SEO: canonical URL -->
+  <link rel="canonical" href="https://satoshium.ai/legal/disclaimer.html">
+ 
+  <!-- TIER 3 — SEO: Open Graph -->
+  <meta property="og:title" content="Satoshium — Disclaimer">
+  <meta property="og:description" content="Legal disclaimer for the Satoshium experimental platform covering use, accuracy, third-party links, and limitation of responsibility.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://satoshium.ai/legal/disclaimer.html">
+  <meta property="og:image" content="https://satoshium.ai/assets/og-legal.png">
+  <meta property="og:site_name" content="Satoshium">
+ 
+  <!-- TIER 3 — SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satoshium — Disclaimer">
+  <meta name="twitter:description" content="Legal disclaimer for the Satoshium experimental platform.">
+  <meta name="twitter:image" content="https://satoshium.ai/assets/og-legal.png">
+ 
+  <!-- TIER 3 — PERFORMANCE: preconnect to asset origin -->
+  <link rel="preconnect" href="https://satoshium.ai" crossorigin>
+  <link rel="dns-prefetch" href="https://satoshium.ai">
+ 
+  <style>
+ 
+    /* ===== Core Theme ===== */
+ 
+    :root{
+      --card-wm:url('https://satoshium.ai/assets/seal.png');
+      --bg:#07090d;
+      --panel:#0c1018;
+      --text:#e8edf7;
+      --muted:#9aa7bd;
+      --gold:#d6a34a;
+      --gold2:#f4c36a;
+      --line:rgba(214,163,74,.18);
+    }
+ 
+    *{box-sizing:border-box}
+ 
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.55;
+      /* TIER 3 — UX: smooth in-page scrolling */
+      scroll-behavior:smooth;
+    }
+ 
+    body{
+      padding-top:80px;
+    }
+ 
+    /* TIER 3 — ACCESSIBILITY: keyboard focus ring */
+    :focus-visible{
+      outline:2px solid var(--gold2);
+      outline-offset:3px;
+    }
+ 
+    a{color:var(--gold2);text-decoration:none}
+    a:hover{color:var(--gold)}
+ 
+    .wrap{max-width:980px;margin:0 auto;padding:0 18px}
+ 
+    .wrap.content{
+      opacity:0;
+      transform:translateY(6px);
+      animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+    }
+ 
+    @keyframes pageEnter{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+ 
+    /* ===== Layout ===== */
+ 
+    .content{
+      padding:34px 18px 60px;
+    }
+ 
+    h1,h2{
+      margin:0 0 10px;
+    }
+ 
+    h1{
+      font-size:30px;
+      color:var(--gold2);
+    }
+ 
+    h2{
+      font-size:20px;
+      color:var(--gold2);
+      margin-top:26px;
+    }
+ 
+    p,li{
+      color:var(--text);
+    }
+ 
+    hr{
+      border:none;
+      border-top:1px solid var(--line);
+      margin:22px 0;
+    }
+ 
+    /* ===== Cards — consolidated from three declarations ===== */
+ 
+    .card{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(
+        to bottom right,
+        rgba(12,16,24,.94),
+        rgba(12,16,24,.88)
+      );
+      border:1px solid rgba(214,163,74,.15);
+      border-radius:16px;
+      padding:16px 16px;
+      margin:16px 0;
+      box-shadow:
+        0 0 0 1px rgba(214,163,74,.08),
+        0 20px 50px rgba(0,0,0,.45);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+ 
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-60px;
+      background-image:var(--card-wm);
+      background-repeat:no-repeat;
+      background-size:min(720px, 70vw);
+      background-position:right -140px center;
+      opacity:0.028;
+      filter:blur(1px);
+      pointer-events:none;
+      z-index:0;
+    }
+ 
+    .card > *{
+      position:relative;
+      z-index:1;
+    }
+ 
+    .card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 25px rgba(0,0,0,.35);
+    }
+ 
+    .muted{
+      color:var(--muted);
+    }
+ 
+    .footer{
+      border-top:1px solid var(--line);
+      padding:18px 0 32px;
+      color:var(--muted);
+    }
+ 
+    /* ===== Pills ===== */
+ 
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(214,163,74,.08);
+      color:var(--gold2);
+      font-size:12px;
+      font-weight:700;
+    }
+ 
+    ul{
+      margin:8px 0 0 18px;
+    }
+ 
+    /* TIER 3 — SEMANTIC: legal-links as nav list */
+    .legal-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      margin-top:10px;
+      list-style:none;
+      padding:0;
+    }
+ 
+    .legal-links a{
+      font-weight:600;
+    }
+ 
+    /* TIER 3 — ACCESSIBILITY: respect reduced-motion preference */
+    @media (prefers-reduced-motion:reduce){
+      .wrap.content{
+        animation:none;
+        opacity:1;
+        transform:none;
+      }
+ 
+      .card{
+        transition:none;
+      }
+ 
+      .card:hover{
+        transform:none;
+      }
+ 
+      html,body{
+        scroll-behavior:auto;
+      }
+    }
+ 
+  </style>
 </head>
-
+ 
 <body id="top">
-
+ 
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-
-<div class="pill">⚠️ Disclaimer</div>
-
-<h1>Disclaimer</h1>
-
-<p class="muted">
-This Disclaimer applies to the public Satoshium platform, including its websites, pages, documentation, software experiments, interfaces, educational resources, linked environments, and public-facing technical materials.
-</p>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>Legal Navigation</h2>
-  <p>
-    This page is part of the Satoshium legal section.
+ 
+<main id="main-content" class="wrap content">
+ 
+  <span class="pill" aria-label="Disclaimer section">⚠️ Disclaimer</span>
+ 
+  <h1>Disclaimer</h1>
+ 
+  <p class="muted">
+    This Disclaimer applies to the public Satoshium platform, including its websites, pages, documentation, software experiments, interfaces, educational resources, linked environments, and public-facing technical materials.
   </p>
-
-  <div class="legal-links">
-    <a href="https://satoshium.ai/legal/">Legal Home</a>
-    <a href="https://satoshium.ai/legal/privacy.html">Privacy Policy</a>
-    <a href="https://satoshium.ai/legal/terms.html">Terms of Use</a>
-    <a href="https://satoshium.ai/legal/trademark.html">Trademark Notice</a>
-    <a href="https://satoshium.ai/legal/disclaimer.html">Disclaimer</a>
-  </div>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>Experimental Platform</h2>
-  <p>
-    Satoshium is an experimental public software platform exploring decentralized intelligence systems, governance structures, cryptographic automation, simulations, educational infrastructure, and Bitcoin-anchored trust models.
-    Many elements of the platform are conceptual, developmental, evolving, or not yet production-ready.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>Informational and Educational Purposes Only</h2>
-  <p>
-    Content presented across the Satoshium platform is provided for informational, educational, research, architectural, and exploratory purposes only.
-    Nothing on this site should be interpreted as a guarantee, certification, formal advisory opinion, or professional recommendation.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>No Financial, Investment, Tax, or Legal Advice</h2>
-  <p>
-    Satoshium does not provide financial advice, investment advice, tax advice, accounting advice, legal advice, fiduciary services, or regulated professional services.
-    References to Bitcoin, digital infrastructure, cryptographic systems, automation, or governance models are presented for educational and technical discussion only.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>No Warranty of Accuracy or Completeness</h2>
-  <p>
-    While reasonable effort may be made to present thoughtful and well-structured information, Satoshium makes no representation or warranty that any page, statement, model, simulation, dataset, explanation, or technical resource is complete, current, accurate, reliable, or suitable for any specific use.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>No Guarantee of Availability or Continuity</h2>
-  <p>
-    Public pages, files, demos, links, software tools, experiments, domains, repositories, or interface components may change, move, break, be removed, become unavailable, or be restructured at any time.
-    Satoshium does not guarantee uninterrupted access, uptime, continuity, or permanent availability of any part of the platform.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>Use at Your Own Discretion</h2>
-  <p>
-    Any use of information, code, concepts, workflows, experiments, linked environments, educational resources, or technical references provided through Satoshium is undertaken at your own discretion and risk.
-    Visitors are responsible for independently evaluating any information before relying upon it.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>No Professional Relationship Created</h2>
-  <p>
-    Accessing the platform, viewing materials, sending a message, or interacting with public-facing resources does not create any client, advisor, fiduciary, partnership, employment, agency, or professional services relationship with Satoshium or its owner.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>Third-Party Platforms and Links</h2>
-  <p>
-    Satoshium may reference or link to third-party platforms, repositories, software hosts, payment services, social platforms, infrastructure providers, code repositories, videos, articles, or external tools.
-    Those resources are outside Satoshium’s control and may change independently.
-    Satoshium is not responsible for third-party content, security, policies, functionality, or outcomes.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>No Endorsement Implied</h2>
-  <p>
-    Reference to any external product, project, protocol, tool, company, platform, open-source repository, or service does not necessarily imply endorsement, partnership, sponsorship, approval, or formal affiliation unless explicitly stated.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>Forward-Looking and Conceptual Material</h2>
-  <p>
-    Some materials presented on the platform may be forward-looking, conceptual, aspirational, speculative, or architectural in nature.
-    Descriptions of future systems, possible services, planned infrastructure, or long-horizon platform ideas are presented as exploratory concepts and should not be interpreted as binding commitments or guaranteed deliverables.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>Limitation of Responsibility</h2>
-  <p>
-    To the fullest extent permitted by applicable law, Satoshium disclaims responsibility for losses, damages, claims, liabilities, or consequences arising from reliance on site content, use of platform materials, interaction with linked resources, or use of experimental software and public technical artifacts.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>Updates to This Disclaimer</h2>
-  <p>
-    This Disclaimer may be revised from time to time as the Satoshium platform evolves across domains, software layers, educational systems, and public infrastructure.
-    Continued use of the platform after updates may be treated as acceptance of the revised version.
-  </p>
-</section>
-
-<section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');">
-  <h2>Contact</h2>
-  <p>
-    Questions regarding this Disclaimer may be directed through the currently published contact channel:
-    <a href="mailto:contact@satoshium.ai">contact@satoshium.ai</a>
-  </p>
-</section>
-
-<hr />
-
-<div class="wrap reflection">
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-legal-nav">
+    <h2 id="heading-legal-nav">Legal Navigation</h2>
+    <p>
+      This page is part of the Satoshium legal section.
+    </p>
+ 
+    <!-- TIER 3 — SEMANTIC: legal-links as nav with list -->
+    <nav aria-label="Legal pages">
+      <ul class="legal-links">
+        <li><a href="https://satoshium.ai/legal/" target="_blank" rel="noopener noreferrer">Legal Home</a></li>
+        <li><a href="https://satoshium.ai/legal/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+        <li><a href="https://satoshium.ai/legal/terms.html" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+        <li><a href="https://satoshium.ai/legal/trademark.html" target="_blank" rel="noopener noreferrer">Trademark Notice</a></li>
+        <li><a href="https://satoshium.ai/legal/disclaimer.html" target="_blank" rel="noopener noreferrer" aria-current="page">Disclaimer</a></li>
+      </ul>
+    </nav>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-experimental">
+    <h2 id="heading-experimental">Experimental Platform</h2>
+    <p>
+      Satoshium is an experimental public software platform exploring decentralized intelligence systems, governance structures, cryptographic automation, simulations, educational infrastructure, and Bitcoin-anchored trust models.
+      Many elements of the platform are conceptual, developmental, evolving, or not yet production-ready.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-informational">
+    <h2 id="heading-informational">Informational and Educational Purposes Only</h2>
+    <p>
+      Content presented across the Satoshium platform is provided for informational, educational, research, architectural, and exploratory purposes only.
+      Nothing on this site should be interpreted as a guarantee, certification, formal advisory opinion, or professional recommendation.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-no-advice">
+    <h2 id="heading-no-advice">No Financial, Investment, Tax, or Legal Advice</h2>
+    <p>
+      Satoshium does not provide financial advice, investment advice, tax advice, accounting advice, legal advice, fiduciary services, or regulated professional services.
+      References to Bitcoin, digital infrastructure, cryptographic systems, automation, or governance models are presented for educational and technical discussion only.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-no-warranty">
+    <h2 id="heading-no-warranty">No Warranty of Accuracy or Completeness</h2>
+    <p>
+      While reasonable effort may be made to present thoughtful and well-structured information, Satoshium makes no representation or warranty that any page, statement, model, simulation, dataset, explanation, or technical resource is complete, current, accurate, reliable, or suitable for any specific use.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-no-guarantee">
+    <h2 id="heading-no-guarantee">No Guarantee of Availability or Continuity</h2>
+    <p>
+      Public pages, files, demos, links, software tools, experiments, domains, repositories, or interface components may change, move, break, be removed, become unavailable, or be restructured at any time.
+      Satoshium does not guarantee uninterrupted access, uptime, continuity, or permanent availability of any part of the platform.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-discretion">
+    <h2 id="heading-discretion">Use at Your Own Discretion</h2>
+    <p>
+      Any use of information, code, concepts, workflows, experiments, linked environments, educational resources, or technical references provided through Satoshium is undertaken at your own discretion and risk.
+      Visitors are responsible for independently evaluating any information before relying upon it.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-no-relationship">
+    <h2 id="heading-no-relationship">No Professional Relationship Created</h2>
+    <p>
+      Accessing the platform, viewing materials, sending a message, or interacting with public-facing resources does not create any client, advisor, fiduciary, partnership, employment, agency, or professional services relationship with Satoshium or its owner.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-third-party">
+    <h2 id="heading-third-party">Third-Party Platforms and Links</h2>
+    <p>
+      Satoshium may reference or link to third-party platforms, repositories, software hosts, payment services, social platforms, infrastructure providers, code repositories, videos, articles, or external tools.
+      Those resources are outside Satoshium's control and may change independently.
+      Satoshium is not responsible for third-party content, security, policies, functionality, or outcomes.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-no-endorsement">
+    <h2 id="heading-no-endorsement">No Endorsement Implied</h2>
+    <p>
+      Reference to any external product, project, protocol, tool, company, platform, open-source repository, or service does not necessarily imply endorsement, partnership, sponsorship, approval, or formal affiliation unless explicitly stated.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-forward-looking">
+    <h2 id="heading-forward-looking">Forward-Looking and Conceptual Material</h2>
+    <p>
+      Some materials presented on the platform may be forward-looking, conceptual, aspirational, speculative, or architectural in nature.
+      Descriptions of future systems, possible services, planned infrastructure, or long-horizon platform ideas are presented as exploratory concepts and should not be interpreted as binding commitments or guaranteed deliverables.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-limitation">
+    <h2 id="heading-limitation">Limitation of Responsibility</h2>
+    <p>
+      To the fullest extent permitted by applicable law, Satoshium disclaims responsibility for losses, damages, claims, liabilities, or consequences arising from reliance on site content, use of platform materials, interaction with linked resources, or use of experimental software and public technical artifacts.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-updates">
+    <h2 id="heading-updates">Updates to This Disclaimer</h2>
+    <p>
+      This Disclaimer may be revised from time to time as the Satoshium platform evolves across domains, software layers, educational systems, and public infrastructure.
+      Continued use of the platform after updates may be treated as acceptance of the revised version.
+    </p>
+  </section>
+ 
+  <section class="card" style="--card-wm:url('https://satoshium.ai/assets/seal.png');" aria-labelledby="heading-contact">
+    <h2 id="heading-contact">Contact</h2>
+    <p>
+      Questions regarding this Disclaimer may be directed through the currently published contact channel:
+      <a href="mailto:contact@satoshium.ai" aria-label="Email Satoshium at contact@satoshium.ai">contact@satoshium.ai</a>
+    </p>
+  </section>
+ 
   <hr />
-  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Satoshium is being built slowly, in public, and with architectural discipline.
+ 
+  <div class="wrap reflection">
+    <hr />
+    <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+      Satoshium is being built slowly, in public, and with architectural discipline.
+    </div>
+    <hr />
+ 
+    <div id="footer-container"></div>
   </div>
-  <hr />
-
-  <div id="footer-container"></div>
-</div>
-
-<script src="https://satoshium.ai/assets/sayings.js"></script>
-<script>
-fetch("https://satoshium.ai/components/footer.html")
- .then(response => response.text())
- .then(data => {
-   document.getElementById("footer-container").innerHTML = data;
- });
-</script>
-
+ 
+  <script src="https://satoshium.ai/assets/sayings.js"></script>
+  <script>
+  fetch("https://satoshium.ai/components/footer.html")
+   .then(response => response.text())
+   .then(data => {
+     document.getElementById("footer-container").innerHTML = data;
+   });
+  </script>
+ 
 </main>
 </body>
 </html>
