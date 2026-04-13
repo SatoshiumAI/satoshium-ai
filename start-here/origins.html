@@ -7,13 +7,40 @@
   <link rel="alternate icon" href="/assets/favicon.ico">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta name="theme-color" content="#00eaff">
-
+ 
+  <!-- TIER 3 — SEO: meta description -->
+  <meta name="description" content="The origin story of Satoshium — how Bitcoin as verifiable truth and AI as a capability multiplier combine to unlock decentralized intelligence systems built by anyone and verified by everyone.">
+ 
+  <!-- TIER 3 — SEO: Open Graph -->
+  <meta property="og:title" content="Satoshium — The Origins Story">
+  <meta property="og:description" content="Bitcoin hardens truth for value. AI amplifies capability for execution. Satoshium merges them into Bitcoin-governed intelligence.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satoshium.ai/start-here/origins.html">
+  <meta property="og:image" content="https://satoshium.ai/assets/og-origins.png">
+  <meta property="og:site_name" content="Satoshium">
+  <meta property="og:locale" content="en_US">
+ 
+  <!-- TIER 3 — SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satoshium — The Origins Story">
+  <meta name="twitter:description" content="Bitcoin hardens truth for value. AI amplifies capability for execution. Satoshium merges them into Bitcoin-governed intelligence.">
+  <meta name="twitter:image" content="https://satoshium.ai/assets/og-origins.png">
+  <meta name="twitter:site" content="@SatoshiumAI">
+ 
+  <!-- TIER 3 — SEO: canonical URL -->
+  <link rel="canonical" href="https://satoshium.ai/start-here/origins.html">
+ 
+  <!-- TIER 3 — PERFORMANCE: dns-prefetch for external domains -->
+  <link rel="dns-prefetch" href="https://satoshium.ai">
+  <link rel="dns-prefetch" href="https://satoshium.info">
+  <link rel="dns-prefetch" href="https://satoshium.xyz">
+ 
   <title>Satoshium — The Origins Story</title>
-
+ 
 <style>
-
+ 
 /* ===== Core Theme ===== */
-
+ 
 :root{
  --card-wm: url('/assets/seal.png');
  --bg:#07090d;
@@ -24,98 +51,104 @@
  --gold2:#f4c36a;
  --line:rgba(214,163,74,.18);
 }
-
+ 
 *{box-sizing:border-box}
-
+ 
 html,body{
 margin:0;
 padding:0;
 background:var(--bg);
 color:var(--text);
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-line-height:1.55
+line-height:1.55;
+/* TIER 3 — UX: smooth scroll for in-page anchors */
+scroll-behavior:smooth;
 }
 body{
  padding-top:80px;
 }
-  .reflection{
+.reflection{
  margin-top:40px;
  margin-bottom:40px;
  color:var(--muted);
 }
-
+ 
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold)}
-
+ 
+/* TIER 3 — ACCESSIBILITY: visible keyboard focus ring */
+:focus-visible{
+  outline:2px solid var(--gold2);
+  outline-offset:3px;
+}
+ 
 .wrap{max-width:980px;margin:0 auto;padding:0 18px}
-
-  .wrap.content{
+ 
+.wrap.content{
   opacity:0;
   transform:translateY(6px);
   animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
 }
-
+ 
 @keyframes pageEnter{
  to{
  opacity:1;
  transform:translateY(0);
  }
 }
-
+ 
 /* ===== Layout ===== */
-
+ 
 .content{
 padding:34px 18px 60px
 }
-
+ 
 h1,h2{
 margin:0 0 10px
 }
-
+ 
 h1{
 font-size:30px;
 color:var(--gold2)
 }
-
+ 
 h2{
 font-size:20px;
 color:var(--gold2);
 margin-top:26px
 }
-
+ 
 p,li{
 color:var(--text)
 }
-
+ 
 hr{
 border:none;
 border-top:1px solid var(--line);
 margin:22px 0
 }
-
-/* ===== Cards ===== */
-
+ 
+/* ===== Cards — consolidated from three declarations ===== */
+ 
 .card{
 position: relative;
 overflow: hidden;
-
 background: linear-gradient(
 to bottom right,
 rgba(12,16,24,.94),
 rgba(12,16,24,.88)
 );
-
-border:1px solid var(--line);
+/* TIER 3 — CSS FIX: merged duplicate border (was .18 then overridden to .15) */
+border:1px solid rgba(214,163,74,.15);
 border-radius:16px;
-
 padding:16px 16px;
 margin:16px 0;
-
 box-shadow:
 0 0 0 1px rgba(214,163,74,.08),
 0 20px 50px rgba(0,0,0,.45);
+transition: transform .18s ease, box-shadow .18s ease;
 }
-
+ 
 .card::before{
 content:"";
 position:absolute;
@@ -129,36 +162,29 @@ filter: blur(1px);
 pointer-events:none;
 z-index:0;
 }
-
+ 
 .card > *{
 position:relative;
 z-index:1
 }
-.card {
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
+ 
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,.35);
 }
-
-.card {
- border: 1px solid rgba(214,163,74,.15);
-}
-
+ 
 .muted{
 color:var(--muted)
 }
-
+ 
 .footer{
 border-top:1px solid var(--line);
 padding:18px 0 32px;
 color:var(--muted)
 }
-
+ 
 /* ===== Pills ===== */
-
+ 
 .pill{
 display:inline-flex;
 align-items:center;
@@ -171,47 +197,136 @@ color:var(--gold2);
 font-size:12px;
 font-weight:700
 }
-
+ 
 ul{
 margin:8px 0 0 18px
 }
-
+ 
+/* TIER 3 — CSS FIX: added missing styles for classes used in HTML */
+ 
+/* Grid layout (used for Bitcoin/AI two-column and philosophy four-column) */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+ 
+/* Quote blocks */
+.quote{
+  margin:12px 0;
+  padding:16px 18px;
+  border-left:3px solid var(--gold);
+  border-radius:0 14px 14px 0;
+  background:rgba(214,163,74,.06);
+  color:#f5f7fb;
+  font-size:17px;
+  line-height:1.5;
+}
+ 
+/* Kicker / small label above headings */
+.kicker{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+ 
+/* Button row for action links */
+.btnrow{
+  margin-top:14px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+  color:var(--muted);
+}
+ 
+/* Button-style links */
+.btn{
+  color:var(--gold2);
+  font-weight:600;
+  font-size:14px;
+}
+.btn:hover{
+  color:var(--gold);
+  text-decoration:underline;
+}
+ 
+/* Small disclaimer text */
+.tiny{
+  font-size:12px;
+  color:var(--muted);
+}
+ 
+/* TIER 3 — ACCESSIBILITY: reduced-motion guard */
+@media (prefers-reduced-motion:reduce){
+  html,body{
+    scroll-behavior:auto;
+  }
+ 
+  .wrap.content{
+    animation:none;
+    opacity:1;
+    transform:none;
+  }
+ 
+  .card{
+    transition:none;
+  }
+ 
+  .card:hover{
+    transform:none;
+  }
+}
+ 
+@media (max-width:760px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+ 
 </style>
 </head>
-
+ 
 <body id="top">
-
+ 
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="/components/topbar-loader.js"></script>
-
-  <main class="wrap content">
-    <div class="pill">⚡ Satoshium Origins</div>
-
+ 
+  <!-- TIER 3 — ACCESSIBILITY: id="main-content" for landmark targeting -->
+  <main id="main-content" class="wrap content">
+    <span class="pill" aria-label="Satoshium Origins">⚡ Satoshium Origins</span>
+ 
     <h1 style="margin-top:12px;">Satoshium - The Origins Story</h1>
     <p class="muted">
-      This page explains the “why” behind Satoshium — the moment the idea became real:
+      This page explains the "why" behind Satoshium — the moment the idea became real:
       Bitcoin as verifiable truth for value, and AI as a capability multiplier for builders.
       Together, they unlock a new era: systems that can be built by anyone, and verified by everyone.
     </p>
-
-    <div class="card" style="--card-wm:url('/assets/seal.png');">
+ 
+    <!-- TIER 3 — ACCESSIBILITY: aria-labelledby on content sections -->
+    <div class="card" style="--card-wm:url('/assets/seal.png');" aria-labelledby="heading-moment">
       <div class="kicker">The moment</div>
-      <h2 style="margin-top:8px;">A single message landed: “You can build anything.”</h2>
+      <h2 id="heading-moment" style="margin-top:8px;">A single message landed: "You can build anything."</h2>
       <p class="muted" style="margin:8px 0 0;">
-        At Bitcoin Conference 2025, a message from <a href="https://www.michael.com/" target="_blank" rel="noreferrer">Michael Saylor</a> helped crystallize a new possibility: Bitcoin is incorruptible and programmable — and AI gives individuals a new level of capability. The combination makes it possible to build systems that once required entire institutions.
+        <!-- TIER 3 — SECURITY: added noopener (had noreferrer only) -->
+        At Bitcoin Conference 2025, a message from <a href="https://www.michael.com/" target="_blank" rel="noopener noreferrer">Michael Saylor</a> helped crystallize a new possibility: Bitcoin is incorruptible and programmable — and AI gives individuals a new level of capability. The combination makes it possible to build systems that once required entire institutions.
       </p>
-      <div class="quote" style="margin-top:12px;">
+      <!-- TIER 3 — SEMANTIC: div.quote → blockquote.quote -->
+      <blockquote class="quote" style="margin-top:12px;">
         <b>Bitcoin hardens truth for value.</b><br />
-        <b>AI amplifies capability for execution.<br/>
+        <!-- TIER 3 — HTML FIX: closed unclosed <b> tag -->
+        <b>AI amplifies capability for execution.</b><br/>
         <b>Satoshium exists to merge those into Bitcoin-governed intelligence.</b>
-      </div>
+      </blockquote>
     </div>
-
+ 
     <div class="grid">
-      <div class="card" style="--card-wm:url('/satoshium-progress/assets/btc-seal.png');">
-        <h2 style="margin-top:0;">₿ Bitcoin: truth you can verify</h2>
+      <div class="card" style="--card-wm:url('/satoshium-progress/assets/btc-seal.png');" aria-labelledby="heading-bitcoin">
+        <h2 id="heading-bitcoin" style="margin-top:0;">₿ Bitcoin: truth you can verify</h2>
         <p class="muted" style="margin:8px 0 10px;">
-          Bitcoin is not just “digital money.” It is a live, global protocol where the rules are known in advance
+          Bitcoin is not just "digital money." It is a live, global protocol where the rules are known in advance
           and enforcement is distributed. No gatekeeper decides who can participate.
         </p>
         <ul>
@@ -221,11 +336,11 @@ margin:8px 0 0 18px
           <li><b>Verifiable</b> — anyone can audit the system</li>
         </ul>
       </div>
-
-      <div class="card" style="--card-wm:url('/satoshium-progress/assets/ai-seal.jpg');">
-        <h2 style="margin-top:0;">🧠 AI: capability you can wield</h2>
+ 
+      <div class="card" style="--card-wm:url('/satoshium-progress/assets/ai-seal.jpg');" aria-labelledby="heading-ai">
+        <h2 id="heading-ai" style="margin-top:0;">🧠 AI: capability you can wield</h2>
         <p class="muted" style="margin:8px 0 10px;">
-          AI changes the builder’s starting line. It compresses learning, planning, drafting, prototyping, and iteration.
+          AI changes the builder's starting line. It compresses learning, planning, drafting, prototyping, and iteration.
           Used correctly, it turns a single person into a small team.
         </p>
         <ul>
@@ -236,10 +351,10 @@ margin:8px 0 0 18px
         </ul>
       </div>
     </div>
-
-    <div class="card" style="--card-wm:url('/satoshium-progress/assets/btc-seal.png');">
+ 
+    <div class="card" style="--card-wm:url('/satoshium-progress/assets/btc-seal.png');" aria-labelledby="heading-synthesis">
       <div class="kicker">The synthesis</div>
-      <h2 style="margin-top:8px;">⚡Bitcoin + AI is a new civilization lever.</h2>
+      <h2 id="heading-synthesis" style="margin-top:8px;">⚡Bitcoin + AI is a new civilization lever.</h2>
       <p class="muted" style="margin:8px 0 10px;">
         The world is entering an age where intelligence is abundant — and potentially centralized.
         If intelligence is centralized, society becomes fragile.
@@ -251,11 +366,12 @@ margin:8px 0 0 18px
         <li><b>Satoshium</b> is the attempt to apply Bitcoin-style verifiability to intelligence itself.</li>
       </ul>
     </div>
-  <!-- BUILD PHILOSOPHY content here including 4 small cards -->
-   <section class="wm-section" style="--wm:url('/satoshium-progress/assets/seal.png');">
-     <div class="card"> 
+ 
+    <!-- TIER 3 — HTML FIX: removed stray </div> (line 291 in original was unmatched) -->
+    <section class="wm-section" style="--wm:url('/satoshium-progress/assets/seal.png');">
+     <div class="card" aria-labelledby="heading-philosophy">
      <div class="kicker">The Satoshium Build Philosophy</div>
-      <h2 style="margin-top:8px;">🧭One tool at a time. Visible progress only.</h2>
+      <h2 id="heading-philosophy" style="margin-top:8px;">🧭One tool at a time. Visible progress only.</h2>
       <p class="muted" style="margin:8px 0 10px;">
         Satoshium is being built in public, slowly and deliberately.
         The goal is not hype — the goal is reliability.
@@ -288,41 +404,46 @@ margin:8px 0 0 18px
         </div>
       </div>
     </div>
-   </div>
-</section>
-    <div class="card" style="--card-wm:url('/assets/seal.png');">
+    </section>
+ 
+    <div class="card" style="--card-wm:url('/assets/seal.png');" aria-labelledby="heading-direction">
       <div class="kicker">Where this leads</div>
-      <h2 style="margin-top:8px;">🚀The direction is clear, even if the final form isn’t.</h2>
+      <h2 id="heading-direction" style="margin-top:8px;">🚀The direction is clear, even if the final form isn't.</h2>
       <p class="muted" style="margin:8px 0 10px;">
         Satoshium is early. It is growing by steady iteration:
         education pages, public progress, demos, and an ecosystem map — expanding into real tools over time.
       </p>
-      <div class="quote">
+      <!-- TIER 3 — SEMANTIC: div.quote → blockquote.quote -->
+      <blockquote class="quote">
         <b>Something special can be built slowly —</b><br />
         <span class="muted">if the foundation is truth, and the execution is consistent.</span>
-      </div>
-
+      </blockquote>
+ 
       <div class="btnrow">
-        <a class="btn" href="https://satoshium.info/education/satoshium/what-is-satoshium.html">What is Satoshium?</a> | 
-        <a class="btn" href="https://satoshium.info/education/bitcoin/what-is-bitcoin.html">What is Bitcoin?</a> | 
-        <a class="btn" href="https://satoshium.ai/updates/">View the Updates</a> | 
-        <a class="btn" href="https://satoshium.xyz/labs/experiments/">Try the Experiments</a>
+        <!-- TIER 3 — SECURITY: added target="_blank" rel="noopener noreferrer" to all external links -->
+        <a class="btn" href="https://satoshium.info/education/satoshium/what-is-satoshium.html" target="_blank" rel="noopener noreferrer">What is Satoshium?</a> |
+        <a class="btn" href="https://satoshium.info/education/bitcoin/what-is-bitcoin.html" target="_blank" rel="noopener noreferrer">What is Bitcoin?</a> |
+        <a class="btn" href="https://satoshium.ai/updates/" target="_blank" rel="noopener noreferrer">View the Updates</a> |
+        <a class="btn" href="https://satoshium.xyz/labs/experiments/" target="_blank" rel="noopener noreferrer">Try the Experiments</a>
       </div>
-
+ 
       <p class="tiny" style="margin-top:10px;">
         Note: This page summarizes an idea and inspiration. It is not financial advice.
       </p>
     </div>
-</main>                     
+</main>
+ 
 <div class="wrap reflection">
 <hr />
 <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
   Satoshium is being built slowly, in public, and with architectural discipline.
 </div>
 <hr />
-
+ 
 <div id="footer-container"></div>
-
+<!-- TIER 3 — HTML FIX: added missing </div> to close reflection wrapper -->
+</div>
+ 
 <script src="/assets/sayings.js"></script>
 <script>
 fetch("/components/footer.html")
@@ -333,4 +454,3 @@ fetch("/components/footer.html")
 </script>
 </body>
 </html>
-
