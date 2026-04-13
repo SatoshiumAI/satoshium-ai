@@ -7,7 +7,33 @@
   <link rel="alternate icon" href="/assets/favicon.ico">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta name="theme-color" content="#00eaff">
-
+ 
+  <!-- TIER 3 — SEO: meta description -->
+  <meta name="description" content="Satoshium Updates — weekly platform progress covering major structural milestones, system deployments, architecture expansions, and visible forward motion across the Satoshium ecosystem.">
+ 
+  <!-- TIER 3 — SEO: Open Graph -->
+  <meta property="og:title" content="Satoshium — Updates">
+  <meta property="og:description" content="Weekly platform updates focused on major structural progress, meaningful milestones, and notable hurdles cleared as Satoshium evolves.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://satoshium.ai/updates/">
+  <meta property="og:image" content="https://satoshium.ai/assets/og-updates.png">
+  <meta property="og:site_name" content="Satoshium">
+  <meta property="og:locale" content="en_US">
+ 
+  <!-- TIER 3 — SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satoshium — Updates">
+  <meta name="twitter:description" content="Weekly platform updates focused on major structural progress, meaningful milestones, and notable hurdles cleared as Satoshium evolves.">
+  <meta name="twitter:image" content="https://satoshium.ai/assets/og-updates.png">
+  <meta name="twitter:site" content="@SatoshiumAI">
+ 
+  <!-- TIER 3 — SEO: canonical URL -->
+  <link rel="canonical" href="https://satoshium.ai/updates/">
+ 
+  <!-- TIER 3 — PERFORMANCE: preconnect + dns-prefetch -->
+  <link rel="preconnect" href="https://satoshium.ai" crossorigin>
+  <link rel="dns-prefetch" href="https://satoshium.ai">
+ 
   <title>Satoshium — Updates</title>
 <style>
 :root{
@@ -20,70 +46,79 @@
  --gold2:#f4c36a;
  --line:rgba(214,163,74,.18);
 }
-
+ 
 *{box-sizing:border-box}
-
+ 
 html,body{
   margin:0;
   padding:0;
   background:var(--bg);
   color:var(--text);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.55
+  line-height:1.55;
+  /* TIER 3 — UX: smooth scroll for in-page anchors */
+  scroll-behavior:smooth;
 }
-
+ 
 body{
   padding-top:80px;
 }
-
+ 
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold)}
-
+ 
+/* TIER 3 — ACCESSIBILITY: visible keyboard focus ring */
+:focus-visible{
+  outline:2px solid var(--gold2);
+  outline-offset:3px;
+}
+ 
 .wrap{max-width:980px;margin:0 auto;padding:0 18px}
-
+ 
   .wrap.content{
   opacity:0;
   transform:translateY(6px);
   animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
 }
-
+ 
 @keyframes pageEnter{
  to{
  opacity:1;
  transform:translateY(0);
  }
 }
-
-
+ 
+ 
 .content{
   padding:34px 18px 60px
 }
-
+ 
 h1,h2{
   margin:0 0 10px
 }
-
+ 
 h1{
   font-size:30px;
   color:var(--gold2)
 }
-
+ 
 h2{
   font-size:20px;
   color:var(--gold2);
   margin-top:26px
 }
-
+ 
 p,li{
   color:var(--text)
 }
-
+ 
 hr{
   border:none;
   border-top:1px solid var(--line);
   margin:22px 0
 }
-
+ 
+/* ===== Cards — consolidated from three declarations ===== */
 .card{
   position: relative;
   overflow: hidden;
@@ -92,15 +127,17 @@ hr{
     rgba(12,16,24,.94),
     rgba(12,16,24,.88)
   );
-  border:1px solid var(--line);
+  /* TIER 3 — CSS FIX: merged duplicate border (was .18 then overridden to .15) */
+  border:1px solid rgba(214,163,74,.15);
   border-radius:16px;
   padding:16px 16px;
   margin:16px 0;
   box-shadow:
     0 0 0 1px rgba(214,163,74,.08),
     0 20px 50px rgba(0,0,0,.45);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
-
+ 
 .card::before{
   content:"";
   position:absolute;
@@ -114,28 +151,21 @@ hr{
   pointer-events:none;
   z-index:0;
 }
-
+ 
 .card > *{
   position:relative;
   z-index:1
 }
-.card {
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
+ 
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,.35);
 }
-
-.card {
- border: 1px solid rgba(214,163,74,.15);
-}
-
+ 
 .muted{
   color:var(--muted)
 }
-
+ 
 .pill{
   display:inline-flex;
   align-items:center;
@@ -148,21 +178,43 @@ hr{
   font-size:12px;
   font-weight:700
 }
-
+ 
 ul{
   margin:8px 0 0 18px
 }
+ 
+/* TIER 3 — ACCESSIBILITY: reduced-motion guard */
+@media (prefers-reduced-motion:reduce){
+  html,body{
+    scroll-behavior:auto;
+  }
+ 
+  .wrap.content{
+    animation:none;
+    opacity:1;
+    transform:none;
+  }
+ 
+  .card{
+    transition:none;
+  }
+ 
+  .card:hover{
+    transform:none;
+  }
+}
 </style>
 </head>
-
+ 
 <body id="top">
-
+ 
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="/components/topbar-loader.js"></script>
-
-
-<main class="wrap content">
-  <div class="pill">🧾 Updates</div>
+ 
+ 
+<!-- TIER 3 — ACCESSIBILITY: id="main-content" for landmark targeting -->
+<main id="main-content" class="wrap content">
+  <span class="pill" aria-label="Updates">🧾 Updates</span>
   <h1>Updates</h1>
   <p class="muted">
   Weekly-style platform updates focused on major structural progress, meaningful milestones,
@@ -170,9 +222,10 @@ ul{
   records the larger outward-facing story of the build as Satoshium evolves into a layered
   platform ecosystem with public, knowledge, infrastructure, experimental, and economic surfaces.
 </p>
-
-  <div class="card">
-  <h2>🔜 Next Focus</h2>
+ 
+  <!-- TIER 3 — ACCESSIBILITY: aria-labelledby on key structural section -->
+  <div class="card" aria-labelledby="heading-next-focus">
+  <h2 id="heading-next-focus">🔜 Next Focus</h2>
   <ul>
     <li>Begin building <strong>Satoshium Atlas</strong>, a jurisdiction-aware platform layer for mapping AI, Bitcoin, trust, and coordination across the United States</li>
     <li>Continue expanding the <strong>Phase004 Satoshium architecture</strong> across core domains, systems, services, and public infrastructure</li>
@@ -181,22 +234,22 @@ ul{
     <li>Keep the Updates page, journal history, and registry aligned with major visible progress</li>
   </ul>
 </div>
-
+ 
 <div class="card">
   <h2>2026-04-10 – 2026-04-12 — Atlas Phase 1.1 Jurisdiction Normalization Pipeline Stabilized & Interior-State Expansion Framework Established</h2>
   <ul>
     <li>Extended <strong>Satoshium Atlas Phase 0 completion</strong> into an operational <strong>Phase 1.1 jurisdiction-normalization execution window</strong>, transitioning Atlas from surface-topology vocabulary construction into repeatable nationwide structural package synthesis</li>
-
+ 
     <li>Completed normalized jurisdiction packages for <strong>Arizona and Colorado</strong>, correcting legacy classification overreach, enforcing strict evidence-derived signal construction, restoring stability-only trust-dimension interpretation, and aligning builder-mode layers with state-specific instruction lenses</li>
-
+ 
     <li>Performed a full <strong>cross-state lens-compliance audit</strong> across the initial Atlas cohort (California, Texas, New York, Virginia, Florida, Wyoming, Arizona, Colorado), confirming contract-consistent layer derivation boundaries across signals, trust-dimensions, profile, builder-mode, and change-log documents</li>
-
+ 
     <li>Validated the first scalable <strong>Hue jurisdiction package auto-generation pipeline</strong>, enabling complete state-package synthesis using instruction lenses rather than manual layer-by-layer drafting</li>
-
+ 
     <li>Completed additional normalized jurisdiction packages for <strong>New Mexico, Nevada, Utah, Oklahoma, and Kansas</strong>, expanding Atlas structural coverage across mountain, southwest-transition, plains logistics, and interior corridor environments</li>
-
+ 
     <li>Established the <strong>Kansas normalization sequence</strong> as the reference template for interior-state package construction, demonstrating stable short-form prompt execution with strict evidence.md anchoring and jurisdiction-lens alignment</li>
-
+ 
     <li>Confirmed operational stability of the Atlas layer-derivation pipeline:</li>
     <ul>
       <li><strong>evidence.md</strong> defines the jurisdiction’s documented structural baseline</li>
@@ -206,13 +259,13 @@ ul{
       <li><strong>builder-mode.md</strong> remains interpretive only</li>
       <li><strong>change-log.md</strong> records normalization procedure only</li>
     </ul>
-
+ 
     <li>Expanded Atlas baseline jurisdiction coverage across coastal hyperscale environments, federal-adjacent governance regions, western research corridors, mountain infrastructure zones, southwest transition regions, and plains logistics-and-aviation structures</li>
-
+ 
     <li>Completed construction of the first balanced <strong>multi-region Atlas normalization layer</strong> spanning thirteen structurally aligned jurisdictions, forming the initial nationwide compatibility-reference surface for evidence-first deployment interpretation</li>
-
+ 
     <li>Confirmed Atlas normalization velocity supporting a sustained execution target of <strong>five jurisdictions per build session</strong>, establishing a predictable pathway toward full fifty-state structural coverage</li>
-
+ 
     <li>Stabilized the Phase 1 jurisdiction workflow as a repeatable <strong>evidence-first normalization pipeline</strong> capable of supporting Chronicle packaging, Certifier compatibility modeling, Anchor routing interpretation, and future cross-jurisdiction inference layers within the Satoshium stack</li>
   </ul>
 </div>
@@ -263,15 +316,15 @@ ul{
   <h2>2026-04-06 — Aegis Certification Authority Readiness & WarGames Suite Completion</h2>
   <ul>
     <li>Completed <strong>Aegis: The Agent Firewall</strong> across <strong>v7.0 → v16.1</strong>, finishing the remaining lifecycle phases required to advance the system from a containment visibility engine into a <strong>Certification Authority readiness surface</strong> within the Satoshium Trust architecture</li>
-
+ 
     <li>Unified approximately <strong>420 lifecycle development artifacts</strong> into a canonical ledger set, including the full <strong>lifecycle ledger</strong>, <strong>structured ledger</strong>, and <strong>index map</strong>, establishing the first complete provenance record for Aegis containment evolution and certification-layer development</li>
-
+ 
     <li>Confirmed live operational connectivity between <strong>Aegis lifecycle projection layers</strong>, the <strong>Workers-based certification transport endpoint</strong>, the <strong>service panel interface</strong>, and the <strong>explorer-mode projection surface</strong>, creating the first active <strong>Certification Authority projection surface</strong> inside Satoshium infrastructure</li>
-
+ 
     <li>Completed <strong>Cloudflare custom domain integration</strong> for <strong>satoshium.net</strong> and verified routing between the public Aegis service page and the certification transport service endpoint, strengthening production-grade alignment between web surface, explorer projection, and lifecycle certification transport layers</li>
-
+ 
     <li>Established Aegis as a multi-role governance subsystem now functioning as an <strong>agent firewall</strong>, <strong>signal interpreter</strong>, <strong>lifecycle certifier</strong>, <strong>enforcement router</strong>, and <strong>certification authority projection surface</strong>, positioning it for future evolution into a deeper <strong>Signal Authority Layer</strong> inside the Phase004 architecture</li>
-
+ 
     <li>Completed <strong>Modules 04–05</strong> of the <strong>Satoshium WarGames Suite</strong>, finishing the full five-module strategic observability stack and extending the Games layer into a coherent environment for <strong>escalation dynamics</strong>, <strong>coordination breakdowns</strong>, <strong>coalition inference</strong>, and <strong>open strategic-field reasoning</strong></li>
   </ul>
 </div>
@@ -280,15 +333,15 @@ ul{
   <h2>2026-04-05 — Aegis Phases 5–6 Completion, WarGames Suite Expansion & Phase003 Repository Containment</h2>
   <ul>
     <li>Completed <strong>Phase 5 (Exposure Orchestration)</strong> and <strong>Phase 6 (Canon Participation Control)</strong> of <strong>Aegis: The Agent Firewall</strong>, extending the system from interpretive infrastructure into structured <strong>exposure routing, participation posture evaluation, eligibility classification, and authorization regime mapping</strong></li>
-
+ 
     <li>Confirmed Aegis now supports the full <strong>participation-control ladder</strong> (<strong>posture → planning → eligibility → authorization</strong>) while preserving <strong>explorer read-only guarantees</strong> and maintaining disabled canon-binding and execution authority ahead of Certification Authority surfaces</li>
-
+ 
     <li>Advanced Aegis from <strong>containment lifecycle infrastructure</strong> into <strong>participation-governance infrastructure</strong>, establishing the final prerequisite signal layers required before <strong>Phase 7 certification readiness architecture</strong> begins</li>
-
+ 
     <li>Expanded the <strong>Satoshium WarGames Suite</strong> inside <strong>satoshium.games</strong> with two additional strategic simulation environments, extending the platform’s structured-learning capability beyond solved equilibrium into escalation-path interpretation and system-scale instability recognition</li>
-
+ 
     <li>Launched <strong>Module 02 — Escalation Ladder Signal Explorer</strong> and <strong>Module 03 — Global Stability Simulator</strong>, completing the second deployment step of the WarGames simulation framework and establishing the foundation for future coordination and multi-agent strategy modules</li>
-
+ 
     <li>Completed the first structured <strong>Phase003 repository containment pass</strong>, renaming legacy repositories into a three-tier provenance classification layer:
       <strong>archive003 (5 repos)</strong>,
       <strong>library003 (8 repos)</strong>, and
@@ -444,7 +497,7 @@ ul{
     <li>Reached <strong>8,000 total contributions</strong>, marking another major cumulative milestone in the long-horizon buildout of Satoshium</li>
   </ul>
 </div>
-
+ 
 <div class="card">
   <h2>2026-03-19 — Glossary Hub Integration & Labs Architecture Progress</h2>
   <ul>
@@ -479,7 +532,7 @@ ul{
 <li>Continued Labs development and demo integrations</li>
 </ul>
 </div>
-
+ 
 <div class="card">
 <h2>2026-03-15 — System Refinements</h2>
 <ul>
@@ -488,7 +541,7 @@ ul{
 <li>Continued backend cleanup and organization</li>
 </ul>
 </div>
-
+ 
 <div class="card">
 <h2>2026-03-14 — Content & Page Creation</h2>
 <ul>
@@ -497,7 +550,7 @@ ul{
 <li>Expanded platform storytelling and structure</li>
 </ul>
 </div>
-
+ 
 <div class="card">
 <h2>2026-03-13 — Major Platform Migration</h2>
 <ul>
@@ -506,7 +559,7 @@ ul{
 <li>Unified topbar, footer, and navigation systems</li>
 </ul>
 </div>
-
+ 
 <div class="card">
 <h2>2026-03-12 — UI Enhancements</h2>
 <ul>
@@ -538,7 +591,7 @@ ul{
 <li>Shifted to a <strong>layered digital ecosystem</strong></li>
 </ul>
 </div>
-
+ 
   <div class="card">
   <h2>2026-03-09 to 2026-03-10 — Phase004 transition</h2>
 <ul>
@@ -562,7 +615,7 @@ ul{
 <li>Completed shared-component hardening</li>
 </ul>
   </div>
-
+ 
  <div class="card">
     <h2>2026-03-07 — Platform architecture milestone</h2>
 <ul>
@@ -587,7 +640,7 @@ ul{
 <li>Prioritized structure and scalability</li>
 </ul>
   </div>
-
+ 
  <div class="card">
     <h2>2026-02-27 — Glossary Hub (previously Builder) launch</h2>
 <ul>
@@ -597,7 +650,7 @@ ul{
 <li>Live: https://satoshium.xyz/labs/knowledge/glossary/</li>
 </ul>
   </div>
-
+ 
   <div class="card">
     <h2>2026-02-26 — Labs launch</h2>
 <ul>
@@ -607,7 +660,7 @@ ul{
 <li>Connected Progress to Labs demos</li>
 </ul>
   </div>
-
+ 
 <div class="card">
   <h2>2026-02-24 — Satoshium Labs & Experimental Layer</h2>
   <ul>
@@ -617,7 +670,7 @@ ul{
     <li>Transitioned Satoshium from static platform → interactive experience layer</li>
   </ul>
 </div>  
-
+ 
 <div class="card">
   <h2>2026-02-18 to 2026-02-19 — Trust Engine & Verification Layer</h2>
   <ul>
@@ -627,7 +680,7 @@ ul{
     <li>Enabled external validation and system-level trust guarantees</li>
   </ul>
 </div>
-
+ 
 <div class="card">
   <h2>2026-02-16 — Local AI System (Beehive)</h2>
   <ul>
@@ -637,7 +690,7 @@ ul{
     <li>Marked transition from conceptual design → functioning system</li>
   </ul>
 </div>
-
+ 
 <div class="card">
   <h2>2026-02-12 to 2026-02-13 — Canon (Governance Layer)</h2>
   <ul>
@@ -647,7 +700,7 @@ ul{
     <li>Completed Phase 1 of Canon development ahead of schedule</li>
   </ul>
 </div>
-
+ 
 <div class="card">
   <h2>2026-02-09 — Sovereign Infrastructure Foundations</h2>
   <ul>
@@ -657,7 +710,7 @@ ul{
     <li>Strengthened platform resilience and independence from single services</li>
   </ul>
 </div>  
-
+ 
 <div class="card">
   <h2>2026-02-08 — Satoshium AI Goes Live</h2>
   <ul>
@@ -667,7 +720,7 @@ ul{
     <li>Marked the beginning of the Satoshium intelligence layer</li>
   </ul>
 </div>
-
+ 
 <div class="card">
   <h2>2026-02-07 — Public Platform & Knowledge Layer</h2>
   <ul>
@@ -696,7 +749,7 @@ ul{
   </div>
   <hr />
 </main>
-
+ 
 <div id="footer-container"></div>
 <script src="/assets/sayings.js"></script>
 <script>
@@ -706,6 +759,6 @@ fetch("https://satoshium.ai/components/footer.html")
    document.getElementById("footer-container").innerHTML = data;
  });
 </script>
-
+ 
 </body>
 </html>
