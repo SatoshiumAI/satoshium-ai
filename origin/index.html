@@ -28,6 +28,8 @@ content="The origin timeline of Satoshium — a decentralized intelligence platf
  --line:rgba(214,163,74,.18);
 }
 
+*{box-sizing:border-box}
+
 body{
  margin:0;
  background:var(--bg);
@@ -36,8 +38,10 @@ body{
  padding-top:80px;
 }
 
-.wrap{max-width:960px;margin:auto;padding:0 14px}
-.content{padding:34px 18px 60px}
+/* Use a page-specific wrapper so asynchronously loaded footer/topbar CSS cannot override the origin page width. */
+.origin-wrap{max-width:960px;margin:0 auto;padding:0 14px}
+.content{padding:34px 0 60px}
+.wrap{max-width:960px;margin:0 auto;padding:0 14px}
 
 h1{font-size:34px;color:var(--gold2)}
 h2{color:var(--gold2)}
@@ -61,13 +65,9 @@ h2{color:var(--gold2)}
 }
 
 .timeline{
- border-left:2px solid var(--gold);
+ border-left:2px solid rgba(214,163,74,.35);
  padding-left:14px;
  margin-top:14px;
-}
-
-.timeline{
- border-left:2px solid rgba(214,163,74,.35);
 }
  
 .phase{
@@ -81,7 +81,7 @@ h2{color:var(--gold2)}
 <div id="topbar-slot" data-topbar="platform"></div>
 <script src="/components/topbar-loader.js"></script>
 
-<main id="main-content" class="wrap content">
+<main id="main-content" class="origin-wrap content">
 
 <section class="hero">
 <h1>Satoshium Origin Timeline</h1>
