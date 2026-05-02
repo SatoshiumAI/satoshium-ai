@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#b91c1c">
+
+<title>Satoshium — Origin Timeline</title>
+
+<meta name="description"
+content="The origin timeline of Satoshium — a decentralized intelligence platform exploring AI governed by Bitcoin-aligned verification, trust, and cryptographic coordination.">
+
+<link rel="canonical" href="https://satoshium.ai/origin/">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+body{
+ margin:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ padding-top:80px;
+}
+
+.wrap{max-width:1080px;margin:auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+
+h1{font-size:34px;color:var(--gold2)}
+h2{color:var(--gold2)}
+
+.muted{color:var(--muted)}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:20px;
+ padding:28px 22px;
+ margin-bottom:18px;
+ background:linear-gradient(to bottom right,#0c1018,#090d15);
+}
+
+.card{
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:16px;
+ padding:16px;
+ margin:16px 0;
+ background:linear-gradient(to bottom right,#0c1018,#090d15);
+}
+
+.timeline{
+ border-left:2px solid var(--gold);
+ padding-left:18px;
+ margin-top:14px;
+}
+
+.phase{
+ margin-bottom:22px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main id="main-content" class="wrap content">
+
+<section class="hero">
+<h1>Satoshium Origin Timeline</h1>
+
+<p class="muted">
+Satoshium is a decentralized intelligence platform exploring AI governed by
+Bitcoin-aligned verification, trust, and cryptographic coordination.
+This page records the conceptual evolution of the system from early protocol-first
+ideas through platform architecture and public deployment.
+</p>
+</section>
+
+<div class="card">
+<h2>Phase 1 — Protocol-Governed Intelligence (April–June 2025)</h2>
+
+<div class="timeline">
+
+<div class="phase">
+Satoshium emerged following the April 2025 Bitcoin Conference in Las Vegas,
+where the central question took shape:
+
+<strong>What happens when intelligence is governed by protocol instead of power?</strong>
+</div>
+
+<div class="phase">
+Initial repository infrastructure was created, governance files established,
+and internal agent roles defined as the earliest structural components of
+a decentralized intelligence environment.
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Phase 2 — Utility and Modularity (June–October 2025)</h2>
+
+<div class="timeline">
+
+<div class="phase">
+Reusable modules for encryption, messaging, simulation, and documentation
+standardization began forming across the ecosystem.
+</div>
+
+<div class="phase">
+Scenario-based testing environments and operational helper agents were
+introduced to support long-term architectural consistency.
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Phase 3 — Simulation and Certification Foundations (Late 2025)</h2>
+
+<div class="timeline">
+
+<div class="phase">
+Public-facing explanation layers expanded, including the documentation hub,
+architecture explorer, and early demonstrations of agent lifecycle logic.
+</div>
+
+<div class="phase">
+The groundwork for certification-oriented reasoning systems emerged,
+later informing the development of Aegis as the first operational subsystem.
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Phase 4 — Public Platform Emergence (February 2026)</h2>
+
+<div class="timeline">
+
+<div class="phase">
+Satoshium transitioned from repository-first development into a structured
+multi-domain public ecosystem.
+</div>
+
+<div class="phase">
+Platform layers including Atlas, Aegis, documentation surfaces, simulation
+environments, and routing infrastructure began forming the visible Satoshium
+Universe.
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Continuing Development</h2>
+
+<p class="muted">
+Satoshium continues evolving as a layered public ecosystem exploring
+verification-first intelligent systems, jurisdiction intelligence surfaces,
+cryptographic coordination infrastructure, and Bitcoin-aligned governance models.
+</p>
+</div>
+
+</main>
+
+<div class="wrap reflection">
+<hr />
+
+<div id="random-saying" class="muted"
+style="margin-bottom:14px;max-width:760px;">
+Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+
+<hr />
+
+<div id="footer-container"></div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("footer-container").innerHTML = data;
+});
+</script>
+
+</div>
+
+</body>
+</html>
