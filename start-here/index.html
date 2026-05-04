@@ -162,6 +162,18 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
 .image-frame{
   margin-top:18px;
 }
+
+.image-frame img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:12px;
+}
+
+ .image-frame h3{
+  margin:0 0 12px;
+  color:var(--gold2);
+} 
   
 /* TIER 3 — CSS FIX: removed duplicate .grid-2 (was declared twice) */
 .grid-2{
@@ -260,8 +272,9 @@ url('start-here/satoshium-full.jpg') center/cover no-repeat;
 <div class="image-frame">
  <h3>Satoshium Visual Overview</h3>
 <img
-src="/start-here/satoshium-full.jpg"
-alt="Satoshium Visual Overview image">
+  src="/start-here/satoshium-full.jpg"
+  alt="Satoshium Visual Overview image"
+  style="width:100%; height:auto; display:block; border-radius:12px;">
 </div>
  
 </section>
