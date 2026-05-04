@@ -147,7 +147,22 @@ hr{border:none;border-top:1px solid var(--line);margin:22px 0}
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,.35);
 }
- 
+
+.video-frame,
+.image-frame{
+  position:relative;
+  border-radius:14px;
+  padding:12px;
+  background:linear-gradient(145deg, rgba(214,163,74,.15), rgba(214,163,74,.02));
+  border:1px solid rgba(214,163,74,.25);
+  box-shadow:
+    0 0 0 1px rgba(214,163,74,.08),
+    0 25px 60px rgba(0,0,0,.55);
+}
+.image-frame{
+  margin-top:18px;
+}
+  
 /* TIER 3 — CSS FIX: removed duplicate .grid-2 (was declared twice) */
 .grid-2{
   display:grid;
