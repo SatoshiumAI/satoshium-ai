@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Orange Paper — Satoshium Print Artifact</title>
+<meta name="description" content="The Orange Paper is a Satoshium Print Artifact that reinterprets the Bitcoin whitepaper as a premium framed archival display." />
+<link rel="canonical" href="https://satoshium.ai/artifacts/orange-paper/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The Orange Paper — Satoshium Print Artifact" />
+<meta property="og:description" content="A premium Bitcoin whitepaper artifact rendered in illuminated orange on deep black." />
+<meta property="og:url" content="https://satoshium.ai/artifacts/orange-paper/" />
+<meta property="og:image" content="https://satoshium.ai/artifacts/orange-paper/02.png" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#00eaff">
+
+<style>
+:root{
+  --card-wm: url('/assets/seal.png');
+  --bg:#07090d;
+  --panel:#0c1018;
+  --text:#e8edf7;
+  --muted:#9aa7bd;
+  --gold:#d6a34a;
+  --gold2:#f4c36a;
+  --orange:#e8871e;
+  --line:rgba(214,163,74,.18);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes pageEnter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+  .wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;}
+}
+@media (prefers-reduced-motion: reduce) {
+  @keyframes pageEnterReduced{from{opacity:0}to{opacity:1}}
+  .wrap.content{opacity:0;animation:pageEnterReduced .18s ease forwards;}
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+h1,h2,h3{margin:0 0 10px}
+h1{font-size:34px;color:var(--gold2);line-height:1.15}
+h2{font-size:20px;color:var(--gold2);margin-top:26px}
+h3{font-size:16px;color:var(--gold2);margin-top:14px}
+p,li{color:var(--text)}
+hr{border:none;border-top:1px solid var(--line);margin:22px 0}
+
+.skip-link{position:absolute;top:-100%;left:12px;z-index:9999;padding:10px 18px;background:var(--gold2);color:#07090d;font-weight:700;border-radius:0 0 8px 8px;transition:top .15s ease}
+.skip-link:focus{top:0}
+
+.card{position:relative;overflow:hidden;background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:16px;padding:16px;margin:16px 0;box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease,box-shadow .18s ease}
+.card::before{content:"";position:absolute;inset:-60px;background-image:var(--card-wm);background-repeat:no-repeat;background-size:min(720px,70vw);background-position:right -140px center;opacity:.028;filter:blur(1px);pointer-events:none;z-index:0}
+.card>*{position:relative;z-index:1}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.35)}
+.muted{color:var(--muted)}
+
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(214,163,74,.08);color:var(--gold2);font-size:12px;font-weight:700}
+.pill.small{padding:6px 10px;font-size:12px}
+.pill.warn{background:rgba(244,195,106,.10);border-color:rgba(244,195,106,.25);color:var(--gold2)}
+.pill.ok{background:rgba(96,196,132,.10);border-color:rgba(96,196,132,.25);color:#bdf5d0}
+.card-actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn-gold{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:linear-gradient(135deg,rgba(214,163,74,.18),rgba(244,195,106,.12));border:1px solid rgba(214,163,74,.40);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:800;letter-spacing:.3px;text-decoration:none;transition:background .18s ease,border-color .18s ease,transform .12s ease}
+.btn-gold:hover{background:linear-gradient(135deg,rgba(214,163,74,.28),rgba(244,195,106,.22));border-color:rgba(214,163,74,.65);color:var(--gold2);transform:translateY(-1px)}
+
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center;margin-top:18px}
+.hero-img{border:1px solid rgba(214,163,74,.22);border-radius:18px;overflow:hidden;background:#050505;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+.hero-img img{display:block;width:100%;height:auto}
+.hero-copy{padding:8px 0}
+.hero-copy p{font-size:16px}
+.artifact-meta{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.gallery figure{margin:0;border:1px solid rgba(214,163,74,.15);border-radius:14px;overflow:hidden;background:rgba(7,9,13,.38)}
+.gallery img{display:block;width:100%;height:100%;object-fit:cover}
+.gallery figcaption{padding:9px 10px;color:var(--muted);font-size:12px;border-top:1px solid rgba(214,163,74,.12)}
+.spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+.spec{border:1px solid rgba(214,163,74,.16);border-radius:14px;padding:13px;background:rgba(7,9,13,.35)}
+.spec strong{color:var(--gold2)}
+.footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted)}
+
+@media(max-width:760px){.hero{grid-template-columns:1fr}.gallery,.spec-grid{grid-template-columns:1fr}h1{font-size:29px}}
+</style>
+</head>
+
+<body id="top">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="topbar-slot" data-topbar="platform"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main id="main-content" class="wrap content">
+
+<div class="pill" aria-label="Section: Satoshium Print Artifacts">🟧 Satoshium Print Artifacts</div>
+
+<section class="hero" aria-label="The Orange Paper overview">
+  <div class="hero-copy">
+    <h1 style="margin-top:12px;">The Orange Paper</h1>
+    <p class="muted">
+      A Bitcoin whitepaper artifact rendered in illuminated orange on deep black — designed as a quiet,
+      archival object for builders, collectors, and believers in sound money.
+    </p>
+    <div class="artifact-meta">
+      <span class="pill small warn">Framed artifact</span>
+      <span class="pill small">Bitcoin whitepaper inspired</span>
+      <span class="pill small ok">24&quot; × 36&quot; edition</span>
+    </div>
+    <div class="card-actions">
+      <a class="btn-gold" href="mailto:support@satoshium.ai?subject=Purchase%20Artifact%20-%20The%20Orange%20Paper" aria-label="Email Satoshium to purchase The Orange Paper artifact">Purchase Artifact →</a>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="/artifacts/orange-paper/02.png" alt="The Orange Paper framed Bitcoin whitepaper artifact displayed in a modern workspace." />
+  </div>
+</section>
+
+<div class="card">
+  <h2 style="margin-top:0;">📜 Artifact Philosophy</h2>
+  <p class="muted">
+    The Orange Paper is not intended as ordinary Bitcoin decor. It is a preserved-document interpretation:
+    a visual reminder that ideas can become systems, systems can become networks, and networks can reshape
+    how people think about trust, value, and sovereignty.
+  </p>
+  <p class="muted">
+    The design uses restrained typography, deep negative space, and a burnished orange tone to create the
+    feeling of an illuminated archival document — less merch, more artifact.
+  </p>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0;">🖼️ Mockup Views</h2>
+  <p class="muted">
+    The artifact is designed to sit quietly in an office, studio, node room, trading space, or minimalist living area.
+  </p>
+  <div class="gallery">
+    <figure>
+      <img src="/artifacts/orange-paper/01.png" alt="Front view of The Orange Paper framed artifact." />
+      <figcaption>Front view</figcaption>
+    </figure>
+    <figure>
+      <img src="/artifacts/orange-paper/03.png" alt="Angled side view of The Orange Paper framed artifact." />
+      <figcaption>Framed object view</figcaption>
+    </figure>
+    <figure>
+      <img src="/artifacts/orange-paper/04.png" alt="The Orange Paper framed artifact in a room setting." />
+      <figcaption>Room context</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0;">⚙️ Edition Details</h2>
+  <div class="spec-grid">
+    <div class="spec"><strong>Format</strong><br><span class="muted">Framed paper poster</span></div>
+    <div class="spec"><strong>Primary size</strong><br><span class="muted">24&quot; × 36&quot; vertical</span></div>
+    <div class="spec"><strong>Frame</strong><br><span class="muted">Matte black presentation frame</span></div>
+    <div class="spec"><strong>Finish</strong><br><span class="muted">Fine art or semi-gloss print option</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0;">🟧 Request Purchase</h2>
+  <p class="muted">
+    The Orange Paper is currently available by direct inquiry while Satoshium evaluates proof quality,
+    fulfillment consistency, and edition structure.
+  </p>
+  <div class="card-actions">
+    <a class="btn-gold" href="mailto:support@satoshium.ai?subject=Purchase%20Artifact%20-%20The%20Orange%20Paper">Email support@satoshium.ai →</a>
+  </div>
+</div>
+
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  Satoshium artifacts are built slowly, intentionally, and with respect for the systems that inspired them.
+</div>
+<hr />
+
+<div id="footer-container"></div>
+<script src="/assets/sayings.js"></script>
+<script>
+fetch("/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+</main>
+</body>
+</html>
