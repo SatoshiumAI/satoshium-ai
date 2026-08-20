@@ -575,8 +575,64 @@ ul{
 <li>Closed <strong>Phase VII — Production Schemas</strong> with the Chronicle Base Schema, Source / Evidence / Correction supporting schema specifications, Certification Event-Type Profile, schema documentation, compatibility architecture, and machine-readable validation stack established.</li>
 
 <li>Established the next operational sequence as <strong>Chronicle Validation Procedure → Production Procedure → First Production Chronicle Entry</strong>, marking the transition from defining Chronicle’s production structure to applying it.</li>
+
+<li><strong>August 19:</strong> Advanced Satoshium Chronicle through <strong>Phase VIII — Validation and Operational Procedure</strong>, establishing the institutional Validation architecture, completing the core Entry Production Procedure, and reconciling Chronicle’s major public pages against the completed Phase VII schema stack and new Phase VIII operational model.</li>
+
+<li>Created the public <strong>/chronicle/validation/</strong> landing page, defining Validation as Chronicle’s institutional conformance function for determining whether a constructed Chronicle Entry satisfies the requirements governing its current Entry Version.</li>
+
+<li>Established the formal distinction that <strong>Schema defines structure, Verification reviews Chronicle’s historical representation, Validation tests conformance, and Publication determines public production state</strong>.</li>
+
+<li>Created the institutional <strong>/chronicle/validation/README.md</strong>, documenting Validation authority boundaries, inputs, outputs, PASS / FAIL behavior, Validation domains, revalidation triggers, publication dependencies, machine-readable versus institutional Validation, and the distinction between Validation and Preservation Eligibility.</li>
+
+<li>Created the formal <strong>Chronicle Validation Rules</strong> artifact containing <strong>CHR-VAL-001 through CHR-VAL-014</strong>, covering Entry identifiers, Base Schema conformance, Event-Type Profile conformance, Controlled Values, Required and Conditional fields, authoritative references, date / time formatting, Relationship integrity, Provenance, Correction / Version consistency, Publication Readiness, Verification dependency, authority-boundary integrity, and human / machine consistency.</li>
+
+<li>Established the overall Chronicle Validation outcome as a binary <strong>PASS / FAIL</strong> decision, while permitting individual procedural rule results of <strong>PASS, FAIL, Not Applicable, or Not Evaluated</strong> where appropriate.</li>
+
+<li>Created the formal <strong>Chronicle Validation Sequence</strong>, defining the ordered execution of the CHR-VAL rule set and intentionally placing <strong>Publication Readiness</strong> near the end of the sequence after prerequisite structural, authority, provenance, Verification, and consistency checks.</li>
+
+<li>Created the <strong>Chronicle Validation Behavior</strong> artifact, establishing that <strong>PASS</strong> permits an Entry to proceed toward Publication while <strong>FAIL</strong> returns the current Entry representation for correction, completion, or review without deleting the Entry, erasing the Occurrence, reversing external authority, or permitting silent rewriting.</li>
+
+<li>Defined the initial <strong>Chronicle Validation Record</strong> architecture as lightweight, procedural, traceable, and non-duplicative, explicitly deciding <strong>not</strong> to create a new canonical Validation object, identifier namespace, lifecycle, or Base Schema field unless later production experience demonstrates a real operational need.</li>
+
+<li>Created the formal <strong>Chronicle Entry Production Procedure</strong>, establishing the operational sequence: <strong>Identify Occurrence → Assess Preservation Eligibility → Collect Authoritative References → Classify Event Type → Select Event-Type Profile → Assign Chronicle Identifier → Create Entry → Establish Relationships → Record Sources / Evidence / Provenance → Perform Verification → Perform Validation → Approve for Publication → Publish → Preserve</strong>.</li>
+
+<li>Established Chronicle’s formal <strong>Publication Gate</strong>: <strong>Required Verification State + Validation PASS + Required Authoritative References + Publication Prerequisites = Eligible for Publication</strong>.</li>
+
+<li>Defined post-publication maintenance behavior for Chronicle Entries, including materiality review, Corrections, new Entry Versions, distinct later Occurrences, Reverification, Revalidation, republication, withdrawal where appropriate, and preservation of prior material states under the principle <strong>Correct forward. Preserve backward.</strong></li>
+
+<li>Reconciled the main <strong>/chronicle/</strong> landing page against Phase VIII, adding Validation as a first-class institutional function, updating the schema stack, incorporating the full Chronicle production workflow, and identifying the operational dry run and first production Chronicle Entry as the next major milestones.</li>
+
+<li>Reconciled <strong>/chronicle/purpose/</strong> to incorporate authoritative references, Verification, Validation, Publication, Version lineage, the formal Entry Production Procedure, Suite authority boundaries, and the principle that <strong>Reference does not transfer authority</strong>.</li>
+
+<li>Reconciled <strong>/chronicle/records/</strong> to preserve <strong>Chronicle Entry</strong> as the sole canonical historical-preservation object and clarify that Sources, Evidence, and Corrections may use supporting records where operationally justified, while Provenance, Relationships, Verification, Validation, Version lineage, and Publication State should not be promoted into separate canonical objects merely for symmetry.</li>
+
+<li>Reconciled <strong>/chronicle/entries/</strong> to add Validation as a distinct Entry function, formalize the Publication Gate, incorporate the complete Entry Production Procedure, clarify Entry Version maintenance after publication, and preserve stable Chronicle Entry identity across Corrections and Versions.</li>
+
+<li>Reconciled <strong>/chronicle/sources/</strong> to replace future-oriented Validation language with the active Phase VIII Validation model, clarify when a separate Source Record is warranted, preserve Source Role as an intentionally unfrozen candidate vocabulary, and distinguish Source identity from Evidence, Provenance, Verification, Validation, and authority.</li>
+
+<li>Reconciled <strong>/chronicle/evidence/</strong> to integrate Evidence into the active Validation architecture, preserve Evidence Type as an approved Controlled Value set, keep Evidence Relationship terminology provisional, and clarify that a distinct Evidence Record should exist only where additional structure provides durable operational value.</li>
+
+<li>Reconciled <strong>/chronicle/verification/</strong> to separate substantive historical review from formal Validation conformance, move identifier and schema-conformance checks into Validation where appropriate, add Historical Context review, formalize Verification’s handoff into Validation, and eliminate the older framing that Verification merely “measures confidence.”</li>
+
+<li>Reconciled <strong>/chronicle/corrections/</strong> to incorporate Validation failures as possible correction triggers, require Revalidation following applicable material changes, add Validation results to Correction lineage, and clarify that a distinct later authoritative action ordinarily becomes a new Chronicle Entry rather than a Correction to the earlier Occurrence.</li>
+
+<li>Reconciled <strong>/chronicle/schemas/</strong> to formally recognize <strong>Phase VII — Production Schemas as complete</strong>, distinguish machine-readable schema validation from broader institutional Chronicle Validation, document the finalized Certification Event-Type Profile requirements, and update the production sequence to reflect the active Phase VIII operational layer.</li>
+
+<li>Reconciled <strong>/chronicle/integration/</strong> to carry authoritative Suite references through Entry production, Verification, Validation, and Publication while preserving institutional ownership, and clarified that related SREG references remain conditional and never substitute for required Certifier authority.</li>
+
+<li>Reconciled <strong>/chronicle/certification-events/</strong> to incorporate the finalized Certification Event-Type Profile requirements, including <strong>event_type_profile = certification-event-profile</strong>, <strong>originating_system = certifier</strong>, approved certification Event Types, non-null Event Date, structured authoritative Certifier references, conditional SREG linkage, Validation behavior, and the certification-specific Publication Gate.</li>
+
+<li>Reconciled <strong>/chronicle/historical-preservation/</strong> to define Historical Preservation as the continuing institutional outcome surrounding the Chronicle Entry rather than a second canonical object, and incorporated Verification, Validation, Publication, Corrections, Versions, maintenance, retrospective preservation, and long-term lineage into the preservation model.</li>
+
+<li>Reconciled <strong>/chronicle/status/</strong> to reflect Chronicle’s actual current state: <strong>Phase VII complete</strong>, <strong>Phase VIII core architecture established with operational dry run pending</strong>, Chronicle still <strong>pre-operational</strong>, and the first production Chronicle Entry not yet established.</li>
+
+<li>Removed the generic <strong>Entry Status</strong> concept from the active production-state model, preserving <strong>Lifecycle State, Verification State, and Publication State</strong> as the distinct controlled state systems governing Chronicle Entries.</li>
+
+<li>Updated Chronicle’s current readiness position from schema and Validation design work to <strong>remaining public-page reconciliation → operational dry run → first production Chronicle Entry → publication / preservation review → practical production review → Entry discovery</strong>.</li>
+
+<li>Established the next major Chronicle milestone as a formal <strong>end-to-end operational dry run</strong> using <strong>SC-CERT-2026-0001</strong> as the likely first test case, while intentionally leaving that exercise for the next working session and <strong>not counting the dry run as completed work for August 19</strong>.</li>
  
-<li>Reached <strong>12,821 total commitments</strong> across the Satoshium development repositories.</li>
+<li>Reached <strong>12,844 total commitments</strong> across the Satoshium development repositories.</li>
  </ul>
 </div>
 </div>
