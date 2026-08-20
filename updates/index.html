@@ -633,6 +633,70 @@ ul{
 <li>Updated Chronicle’s current readiness position from schema and Validation design work to <strong>remaining public-page reconciliation → operational dry run → first production Chronicle Entry → publication / preservation review → practical production review → Entry discovery</strong>.</li>
 
 <li>Established the next major Chronicle milestone as a formal <strong>end-to-end operational dry run</strong> using <strong>SC-CERT-2026-0001</strong> as the likely first test case, while intentionally leaving that exercise for the next working session and <strong>not counting the dry run as completed work for August 19</strong>.</li>
+
+---
+
+ <li><strong>August 20:</strong> Completed the first formal <strong>end-to-end operational dry run</strong> of Satoshium Chronicle using <strong>SC-CERT-2026-0001</strong> as the real institutional test case and <strong>CHR-2026-0001</strong> as a simulated Chronicle candidate identifier.</li>
+
+<li>Ran the Chronicle Entry Production Procedure through the complete dry-run sequence: <strong>Identify Occurrence → Assess Preservation Eligibility → Collect Authoritative References → Classify Event Type → Select Event-Type Profile → Assign Candidate Identifier → Create Candidate Entry → Establish Relationships → Record Sources / Evidence / Provenance → Perform Verification → Perform Validation → Assess Publication Readiness</strong>.</li>
+
+<li>Identified the qualifying historical Occurrence as the <strong>July 5, 2026 issuance of SC-CERT-2026-0001</strong> by Satoshium Certifier, representing the inaugural Operational certification of the <strong>Satoshium Atlas Jurisdiction Record — El Salvador</strong>.</li>
+
+<li>Completed the formal <strong>Preservation Eligibility</strong> assessment and determined the certification Occurrence to be <strong>ELIGIBLE</strong> based on institutional relevance, historical significance, lifecycle significance, first / milestone significance, architectural significance, relationship significance, and continuity value.</li>
+
+<li>Confirmed that Preservation Eligibility remains distinct from Evidence sufficiency, Verification, and Validation, allowing Chronicle to determine that an Occurrence is historically worthy of preservation without re-performing Certifier’s certification analysis.</li>
+
+<li>Established <strong>SC-CERT-2026-0001</strong> as the primary authoritative record for the represented certification Occurrence, with <strong>system: certifier</strong> and <strong>record_type: Certification Package</strong>, satisfying the Certification Event-Type Profile’s authoritative-reference requirement.</li>
+
+<li>Confirmed that <strong>SREG-2026-0001</strong> remains authoritative for Registry registration and cataloging but should be represented in Chronicle as a materially relevant <strong>Relationship</strong> rather than as a substitute for Certifier authority.</li>
+
+<li>Confirmed that the <strong>Atlas Jurisdiction Record — El Salvador</strong> remains authoritative for the underlying Atlas subject and should be represented through Chronicle Relationships, Sources, and Provenance without transferring Atlas authority into Chronicle.</li>
+
+<li>Classified the historical Occurrence using the approved production Event Type <strong>certification_created</strong>, preserving the distinction between Chronicle’s historical classification and Certifier’s authoritative certification terminology such as <strong>Issued · Active</strong>.</li>
+
+<li>Selected <strong>certification-event-profile v1.0.0</strong> as the governing Event-Type Profile and confirmed that its production requirements could be satisfied, including <strong>event_type_profile = certification-event-profile</strong>, <strong>originating_system = certifier</strong>, a non-null Event Date, structured Certifier authority reference, Historical Context, strengthened Provenance, and conditional Registry linkage.</li>
+
+<li>Tested <strong>CHR-2026-0001</strong> as the simulated Chronicle identifier and confirmed that it conforms to the production <strong>CHR-YYYY-NNNN</strong> identifier model while explicitly preserving the rule that a dry-run identifier is <strong>not assigned, reserved, or consumed</strong>.</li>
+
+<li>Constructed a complete simulated <strong>Chronicle Entry Version 1</strong> using the Chronicle Base Schema and Certification Event-Type Profile, including the candidate title <strong>Creation of SC-CERT-2026-0001</strong>, Event Date <strong>2026-07-05</strong>, Historical Context, authoritative Certifier reference, Provenance, Verification State, Lifecycle State, and Publication State.</li>
+
+<li>Confirmed that Chronicle can legitimately construct a Draft Entry using <strong>verification_state = not_reviewed</strong>, <strong>lifecycle_state = draft</strong>, and <strong>publication_state = not_published</strong> without prematurely representing the Entry as Verified, Validated, Active, or Published.</li>
+
+<li>Established candidate Chronicle Relationships connecting <strong>CHR-2026-0001</strong> to <strong>SREG-2026-0001</strong> using <strong>related_to</strong> and to the <strong>Atlas Jurisdiction Record — El Salvador</strong> using <strong>references</strong>, while avoiding unnecessary duplication of the primary Certifier authority as a separate Relationship.</li>
+
+<li>Classified the <strong>Certification Process Report, Certification Receipt, SCRD HTML, and SCRD JSON</strong> as supporting Certifier Sources with evidentiary value for Chronicle Verification, while determining that separate Chronicle Evidence Records were not required for this case.</li>
+
+<li>Established the operational principle that Chronicle should use <strong>actual published identifiers where they exist</strong> and durable descriptive references or URLs where no formal identifier exists, rather than inventing identifiers for supporting artifacts.</li>
+
+<li>Confirmed the cross-Suite Provenance and preservation path as <strong>Atlas → Certifier → Registry → Chronicle</strong>, while preserving the distinction that this represents historical lineage and information flow rather than transfer of institutional authority.</li>
+
+<li>Completed formal Chronicle <strong>Verification</strong> of the simulated Entry, reviewing identity, Occurrence, Event Date, subject, Event Type, certification class, authoritative references, Registry and Atlas Relationships, Source traceability, Provenance, Historical Context, temporal consistency, authority boundaries, and material limitations.</li>
+
+<li>Assigned the simulated Entry a final dry-run <strong>Verification State of verified</strong>, with no material limitations identified in Chronicle’s historical representation.</li>
+
+<li>Performed the complete Phase VIII <strong>CHR-VAL-001 through CHR-VAL-014 Validation sequence</strong> against the simulated Entry using the production Chronicle Base Schema and Certification Event-Type Profile.</li>
+
+<li>Recorded <strong>PASS</strong> for Entry Identifier, Base Schema Conformance, Event-Type Profile Conformance, Controlled Values, Required / Conditional Fields, Authoritative References, Date / Time Formatting, Relationship Integrity, Provenance, Verification Dependency, Authority Boundary Integrity, Human / Machine Consistency, and Publication Readiness.</li>
+
+<li>Recorded <strong>Not Applicable</strong> for <strong>CHR-VAL-010 — Correction and Version Consistency</strong> because the simulated Entry represented Entry Version 1 with no prior Chronicle Version or Correction lineage.</li>
+
+<li>Completed Validation with an overall result of <strong>PASS</strong>, demonstrating that the candidate Chronicle Entry could satisfy the production Base Schema, Certification Event-Type Profile, and Phase VIII institutional Validation requirements without requiring schema redesign.</li>
+
+<li>Completed the formal Chronicle <strong>Publication Gate</strong> and determined the simulated candidate to be <strong>ELIGIBLE FOR PUBLICATION</strong> based on Verification, Validation PASS, required authoritative references, and publication prerequisites.</li>
+
+<li>Preserved the distinction that <strong>CHR-VAL-011 — Publication Readiness</strong> tests whether publication prerequisites are satisfied from a Validation standpoint, while the separate <strong>Publication Gate</strong> makes the institutional decision permitting an Entry to proceed toward Publication.</li>
+
+<li>Confirmed that the dry run produced <strong>no Base Schema change, no Certification Event-Type Profile change, no identifier architecture change, no Controlled Values change, no Relationship-model change, no Provenance-model redesign, no Verification-model redesign, and no Publication-architecture redesign</strong>.</li>
+
+<li>Recorded several operational clarifications from the dry run, including the distinction between CHR-VAL-011 and the Publication Gate, avoidance of invented supporting-artifact identifiers, non-consumption of simulated Chronicle identifiers, continued deferral of a formal Provenance Method Controlled Value set, and avoidance of redundant Relationships where authority is already expressed elsewhere.</li>
+
+<li>Completed and preserved the standalone institutional report <strong>chronicle-phase-viii-operational-dry-run-report.md</strong>, documenting the complete test case, operational sequence, Verification results, CHR-VAL Validation results, Publication Gate, authority-boundary review, operational clarifications, and final <strong>PASS</strong> result.</li>
+
+<li>Confirmed that the dry run did <strong>not</strong> assign or reserve <strong>CHR-2026-0001</strong>, create a canonical production Chronicle Entry, change lifecycle or publication state, generate a production publication timestamp, or publish anything.</li>
+
+<li>Established the final dry-run conclusion that <strong>CHR-2026-0001 is capable of becoming Chronicle’s first production Entry</strong>, but remains only a simulated candidate until the formal production review and implementation are performed.</li>
+
+<li>Scheduled the next Chronicle milestone for <strong>Saturday, August 22, 2026</strong>: apply the documented dry-run procedural clarifications, perform the real production review, formally assign the first production Chronicle identifier if approved, create the production Entry and associated files / pages, perform real Verification and Validation, pass the Publication Gate, and proceed toward publication of Chronicle’s first canonical Entry.</li>
  
 <li>Reached <strong>12,844 total commitments</strong> across the Satoshium development repositories.</li>
  </ul>
