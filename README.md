@@ -1,164 +1,98 @@
-# 🪐 Satoshium — AI Platform Layer
+# 🪐 Satoshium — Main Public Platform
 
-Satoshium is a decentralized intelligence infrastructure project aligned with the Bitcoin standard.
+**Domain:** `satoshium.ai`  
+**Role:** Main public platform and ecosystem entry surface  
+**Status:** Active  
+**Updated:** September 2026
 
-This repository contains the primary public architecture surface for the Satoshium platform and supports the development of verifiable coordination systems, governance tooling, documentation layers, and experimental intelligence interfaces.
+Satoshium is a Bitcoin-aligned intelligence, verification, governance, knowledge, and institutional ecosystem built in public. This surface introduces the wider ecosystem and the now-operational **Satoshium Suite**.
 
-It functions as the entry layer for the broader Satoshium ecosystem.
+## Satoshium Suite — Operational
 
+| Institution | Canonical responsibility |
+|---|---|
+| **Atlas** | Authoritative Intelligence |
+| **Navigator** | Workflow Definition / Orchestration |
+| **Certifier** | Certification Package |
+| **Registry** | Satoshium Registry Record |
+| **Chronicle** | Chronicle Entry |
+| **Anchor** | Integrity Reference |
+| **Beacon** | Discovery Signal / Discovery Metadata |
+| **Attestor** | Attestation + Rule-Constrained Evaluation + Trust Statement |
 
----
+The institutions remain independently governed even when their objects participate in Suite relationships.
 
-# 🌐 The Satoshium Domain Ecosystem
+```text
+Connection ≠ Identity
+Reference ≠ Derivation
+Reference ≠ Support
+Reference ≠ Authority Transfer
+```
 
-Satoshium develops as a layered multi-domain platform where each domain supports a distinct role.
+**Reference does not transfer authority.**
 
-| Domain | Role |
-|-------|------|
-| **satoshium.ai** | Public platform architecture layer |
-| **satoshium.info** | Knowledge and engineering workspace layer |
-| **satoshium.xyz** | Experimental simulation and prototype frontier |
-| **satoshium.net** | Infrastructure and coordination network layer |
-| **satoshium.store** | Cultural and economic surface |
-| **satoshium.link** | Shared component gateway |
-| **satoshium.dev** | Developer ecosystem (planned) |
-| **satoshium.us** | Jurisdictional / operational layer (planned) |
+## Production-Proven Lineage
 
-Together these domains form the **Satoshium platform architecture**.
+```text
+SC-CERT-2026-0001
+SREG-2026-0001
+CHR-2026-0001
+ANCH-2026-0001
+BEAC-2026-0001
+ATT-2026-0001
+TRST-2026-0001
+```
 
+Attestor's first production operation produced `ATT-2026-0001` and `TRST-2026-0001`, both **Active · Published · V1.0**, and established Attestor Operational Proof.
 
----
+## Domain Ecosystem
 
-# 🧭 Role of This Repository
+- `satoshium.ai` — main public platform and architecture entry surface
+- `satoshium.info` — knowledge, documentation, and architecture-workbench surfaces
+- `satoshium.xyz` — experiments, Labs, simulations, and prototypes
+- `satoshium.net` — infrastructure, Services, Signal, and coordination
+- `satoshium.store` — cultural and economic surface
+- `satoshium.link` — shared components and cross-domain continuity
+- `satoshium.dev` — developer and public-build surface
+- `satoshium.us` — U.S. jurisdiction-aware surface and public operational home of the Suite
+- `satoshium.games` — games and interactive experiences
 
-This repository serves as the **public architecture layer** of the Satoshium platform.
+## Services and Non-Suite Systems
 
-It maintains:
+Satoshium also contains operational Services outside the formal Suite. **Aegis** remains external/pre-Suite rather than a formal Suite institution. Agent Governance, Verification Ledger, Signal Boards, and related tools remain part of the broader public ecosystem.
 
-- platform structure documentation
-- system registry references
-- governance interface surfaces
-- verification infrastructure entry points
-- updates and milestone tracking
-- architecture navigation layers
-- ecosystem coordination visibility
+## Universe Mapper
 
+The **Universe Mapper RC 0.1** remains an interim source-backed architecture workbench. Its earlier model predates completion of Beacon and Attestor and therefore requires reconciliation against the completed operational Suite before final browser-integration decisions.
 
----
+The Mapper describes architecture; it does not create institutional authority or canonical relationships.
 
-# 🧠 Platform Architecture Layers
+## Current Position
 
-Satoshium is structured as a layered coordination system.
+```text
+Original Suite institutional build sequence → COMPLETE
+Beacon → Operational
+Attestor → Operational
+Attestor Operational Proof → ESTABLISHED
+Immediate post-Attestor reconciliation → COMPLETE FOR NOW
+Suite Reconciliation → Scheduled September 26, 2026
+Interoperability Review → Follows
+```
 
-| Layer | Purpose |
-|------|---------|
-| **Trust Layer** | Verification systems and governance tooling |
-| **Knowledge Layer** | Terminology, Canon, and specifications |
-| **Intelligence Layer** | Agents and reasoning interfaces |
-| **Simulation Layer** | Scenario modeling environments |
-| **Interface Layer** | Public platform surfaces |
+Satoshium remains under active long-horizon development even though the formal Suite is operational. Future production acts remain separately governed.
 
-This repository primarily supports the:
+## Documentation Principle
 
-➡ **Interface Layer**
+Repository documentation describes the architecture that exists. It does not redesign architecture merely to make documentation uniform.
 
-
----
-
-# 🧩 Key Platform Systems Referenced Here
-
-Examples include:
-
-- Glossary Hub (Canonical Terminology System)
-- Agent Governance Tool
-- Verification Ledger Tool
-- Signal Boards
-- Sovereign Signal
-- Canon & Specs documentation layer
-- Repository Map
-- Public Updates record
-
-System identifiers are documented in:
-
-/registry/system-registry.md
-
-
-
----
-
-# ⚙ Shared Platform Components
-
-Many Satoshium domains share navigation and interface components hosted through:
-
-https://satoshium.link
-
-Examples include:
-
-/components/topbar.html
-/components/footer.html
-/components/domain-layers.html
+> **AI, governed by Bitcoin.**
 
 
-These maintain consistent architecture visibility across the ecosystem.
+## Repository Role
 
+This repository contains the primary `satoshium.ai` public surface: homepage, architecture and documentation entry points, public development history, service/tool routing, and navigation into the formal Suite and wider multi-domain ecosystem.
 
----
-
-# 🧾 Development Status
-
-Satoshium is under active long-horizon development.
-
-This repository contains:
-
-- operational documentation systems
-- coordination interfaces
-- governance tools
-- verification infrastructure
-- experimental architecture layers
-- evolving platform structure
-
-Interfaces and systems may expand over time.
-
-
----
-
-# 📚 Platform Philosophy
-
-Satoshium is being built:
-
-- slowly
-- publicly
-- with architectural discipline
-
-The objective is not rapid deployment, but durable infrastructure aligned with verifiable systems.
-
-
----
-
-# 🔗 Explore the Platform
-
-- https://satoshium.ai
-- https://satoshium.info
-- https://satoshium.xyz
-- https://satoshium.net
-- https://satoshium.store
-- https://satoshium.link
-
-
----
-
-# 🧠 Satoshium
-
-**AI governed by Bitcoin.**
-
-Satoshium explores how decentralized intelligence systems can emerge from:
-
-- cryptographic rules
-- transparent architecture
-- modular coordination systems
-- open documentation
-- long-horizon system design
-
+It is an entry and documentation surface. It does not supersede the canonical authority of individual Suite institutions or other Satoshium systems.
 
 ---
 
