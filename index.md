@@ -1,108 +1,88 @@
-# Satoshium
+# Satoshium — Main Public Platform
 
-Satoshium is a public research and development platform exploring how intelligence systems can operate within cryptographic structure rather than institutional authority.
+**Domain:** `satoshium.ai`  
+**Role:** Main public platform and ecosystem entry surface  
+**Status:** Active  
+**Updated:** September 2026
 
-The platform develops coordination infrastructure for agents, tools, and human participants working across decentralized environments.
+Satoshium is a Bitcoin-aligned intelligence, verification, governance, knowledge, and institutional ecosystem built in public. This surface introduces the wider ecosystem and the now-operational **Satoshium Suite**.
 
-Participation begins with shared understanding.
+## Satoshium Suite — Operational
 
----
+| Institution | Canonical responsibility |
+|---|---|
+| **Atlas** | Authoritative Intelligence |
+| **Navigator** | Workflow Definition / Orchestration |
+| **Certifier** | Certification Package |
+| **Registry** | Satoshium Registry Record |
+| **Chronicle** | Chronicle Entry |
+| **Anchor** | Integrity Reference |
+| **Beacon** | Discovery Signal / Discovery Metadata |
+| **Attestor** | Attestation + Rule-Constrained Evaluation + Trust Statement |
 
-# Platform Purpose
+The institutions remain independently governed even when their objects participate in Suite relationships.
 
-Satoshium investigates how intelligence systems can function:
+```text
+Connection ≠ Identity
+Reference ≠ Derivation
+Reference ≠ Support
+Reference ≠ Authority Transfer
+```
 
-- transparently
-- verifiably
-- cooperatively
-- across open networks
-- without centralized control structures
+**Reference does not transfer authority.**
 
-The project develops layered coordination infrastructure designed to support long-horizon agent interaction.
+## Production-Proven Lineage
 
----
+```text
+SC-CERT-2026-0001
+SREG-2026-0001
+CHR-2026-0001
+ANCH-2026-0001
+BEAC-2026-0001
+ATT-2026-0001
+TRST-2026-0001
+```
 
-# Architectural Direction
+Attestor's first production operation produced `ATT-2026-0001` and `TRST-2026-0001`, both **Active · Published · V1.0**, and established Attestor Operational Proof.
 
-Satoshium develops as a multi-layer platform composed of:
+## Domain Ecosystem
 
-- Canon Layer — shared definitions and alignment anchors
-- Trust Layer — verification and coordination integrity
-- Signal Layer — coordination visibility across systems
-- Agent Layer — operational intelligence components
-- Interface Layer — public tools, documentation, and simulations
+- `satoshium.ai` — main public platform and architecture entry surface
+- `satoshium.info` — knowledge, documentation, and architecture-workbench surfaces
+- `satoshium.xyz` — experiments, Labs, simulations, and prototypes
+- `satoshium.net` — infrastructure, Services, Signal, and coordination
+- `satoshium.store` — cultural and economic surface
+- `satoshium.link` — shared components and cross-domain continuity
+- `satoshium.dev` — developer and public-build surface
+- `satoshium.us` — U.S. jurisdiction-aware surface and public operational home of the Suite
+- `satoshium.games` — games and interactive experiences
 
-These layers evolve publicly across domain repositories including:
+## Services and Non-Suite Systems
 
-- satoshium.ai
-- satoshium.net
-- satoshium.xyz
-- satoshium.dev
-- satoshium.info
-- satoshium.link
+Satoshium also contains operational Services outside the formal Suite. **Aegis** remains external/pre-Suite rather than a formal Suite institution. Agent Governance, Verification Ledger, Signal Boards, and related tools remain part of the broader public ecosystem.
 
----
+## Universe Mapper
 
-# Public Development Model
+The **Universe Mapper RC 0.1** remains an interim source-backed architecture workbench. Its earlier model predates completion of Beacon and Attestor and therefore requires reconciliation against the completed operational Suite before final browser-integration decisions.
 
-Satoshium is built:
+The Mapper describes architecture; it does not create institutional authority or canonical relationships.
 
-- incrementally
-- transparently
-- across multiple repositories
-- with versioned documentation
-- through experimental infrastructure deployment
+## Current Position
 
-The platform prioritizes observable structure over speculative claims.
+```text
+Original Suite institutional build sequence → COMPLETE
+Beacon → Operational
+Attestor → Operational
+Attestor Operational Proof → ESTABLISHED
+Immediate post-Attestor reconciliation → COMPLETE FOR NOW
+Suite Reconciliation → Scheduled September 26, 2026
+Interoperability Review → Follows
+```
 
----
+Satoshium remains under active long-horizon development even though the formal Suite is operational. Future production acts remain separately governed.
 
-# Coordination Philosophy
+## Documentation Principle
 
-Satoshium explores a simple question:
+Repository documentation describes the architecture that exists. It does not redesign architecture merely to make documentation uniform.
 
-What if coordination did not require control?
-
-Instead of centralized authority, the platform investigates whether shared structure can support cooperation between independent agents operating across open environments.
-
----
-
-# Platform Status
-
-Satoshium is an active research platform.
-
-Tools, simulations, and documentation are released publicly as infrastructure components mature.
-
-Some systems remain experimental and may evolve over time.
-
----
-
-# Relationship to the Signal Layer
-
-The Signal Layer supports visibility across platform components and coordination surfaces.
-
-It enables:
-
-- shared status awareness
-- system integrity signaling
-- cross-repository coordination markers
-- infrastructure readiness tracking
-
-This layer connects documentation, simulations, registries, and agent-facing services across the Satoshium ecosystem.
-
----
-
-# Participation
-
-Participation begins with understanding.
-
-Exploration may start through:
-
-- architecture documentation
-- public simulations
-- governance tools
-- verification infrastructure
-- glossary systems
-- research environments
-
-Satoshium develops as layered coordination infrastructure built in public across multiple domain repositories.
+> **AI, governed by Bitcoin.**
