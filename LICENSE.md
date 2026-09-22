@@ -14,7 +14,7 @@ Satoshium is released under the MIT License.
 
 The MIT License is a permissive open-source license that allows individuals and organizations to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of software and documentation, subject to the conditions contained within the license.
 
-The official legal license governing this repository is contained in the repository's `LICENSE` file.
+The official legal license governing this repository is contained in the repository's `LICENSE.txt` file.
 
 This document exists to provide additional context regarding licensing philosophy and intended usage.
 
@@ -67,38 +67,52 @@ Attribution helps preserve project history, contributor recognition, and ecosyst
 
 # Ecosystem Overview
 
-Satoshium serves as the architectural and philosophical foundation of a broader ecosystem of interoperable projects, services, frameworks, and educational resources.
+Satoshium is a Bitcoin-aligned intelligence, verification, governance, knowledge, and institutional ecosystem composed of public domains, operational services, documentation surfaces, research environments, and the formal **Satoshium Suite**.
 
-The ecosystem may include domains relating to:
+The Satoshium Suite is operational and presently includes distinct institutional responsibilities for:
 
-* Knowledge
-* Verification
-* Governance
-* Identity
-* Trust
-* Security
-* Discovery
-* Research
-* Simulation
-* Education
-* Infrastructure
+* Authoritative Intelligence — Atlas
+* Workflow Definition / Orchestration — Navigator
+* Certification — Certifier
+* Registration — Registry
+* Historical Preservation — Chronicle
+* Integrity References — Anchor
+* Discovery Signals / Discovery Metadata — Beacon
+* Attestation, Rule-Constrained Evaluation, and Trust Statements — Attestor
 
-Individual repositories may contain additional documentation and licensing guidance specific to their respective domains.
+These institutions may participate in governed relationships while retaining their own authority, provenance, canonical objects, and responsibilities.
+
+Individual repositories and domains may contain additional documentation and licensing guidance specific to their respective roles.
 
 ---
 
 # Architectural Vision
 
-Satoshium explores how decentralized intelligence systems may operate using:
+Satoshium develops durable infrastructure for intelligence, knowledge, verification, governance, institutional records, integrity, discovery, attestation, research, and public coordination.
 
-* Shared knowledge
+Its architecture uses:
+
+* Shared and attributable knowledge
 * Verifiable information
 * Transparent governance
-* Open standards
+* Open and inspectable documentation
 * Interoperable infrastructure
+* Governed institutional boundaries
 * Human and machine collaboration
 
-The objective is not merely software development, but the creation of durable frameworks that improve understanding, coordination, and decision-making across digital environments.
+The objective is not merely software development, but durable infrastructure that improves understanding, coordination, verification, and attributable decision-making across digital environments.
+
+Within the Satoshium Suite, interoperability does not erase institutional boundaries:
+
+> **Reference does not transfer authority.**
+
+---
+
+# Operational and Institutional Context
+
+The existence of an operational Satoshium institution, service, canonical record, validation result, conformance determination, certification, integrity reference, discovery signal, attestation, evaluation outcome, or trust statement does not expand the MIT License or create guarantees beyond the governing artifact's defined scope.
+
+Satoshium preserves distinctions among institutional authority, object identity, provenance, validation, conformance, lifecycle, publication, and evaluation. Licensing permission should not be interpreted as transferring institutional authority or changing the meaning of a canonical Satoshium record.
 
 ---
 
@@ -175,20 +189,24 @@ Satoshium exists to support understanding and collaboration, not to claim owners
 
 ---
 
-# Future Versions
+# Future Development
 
-Future versions of Satoshium may introduce:
+Satoshium remains under active long-horizon development even though the formal Satoshium Suite is operational.
 
-* Additional frameworks
-* Governance systems
-* Verification methodologies
+Future development may include:
+
+* Additional governed production operations
+* New or revised frameworks and methodologies
 * Research initiatives
-* Infrastructure services
+* Infrastructure and public services
 * Educational resources
 * AI-assisted capabilities
 * New ecosystem components
+* Reconciliation and interoperability work across existing systems
 
-Unless otherwise specified, such additions are expected to remain subject to the applicable repository license.
+Operational status of an existing institution does not automatically establish the status, validity, conformance, publication state, or authority of future objects or implementations.
+
+Unless otherwise specified, future additions remain subject to the applicable repository license.
 
 ---
 
@@ -202,16 +220,19 @@ Open licensing supports that objective by allowing future developers, researcher
 
 # Domain Ecosystem
 
-Satoshium may be expressed through multiple domains and repositories, including:
+Satoshium is expressed through multiple public domains and repositories, including:
 
-* Vision and Architecture
-* Infrastructure and Operations
-* Research and Experimentation
-* Simulation and Interactive Learning
-* Distribution and Access
-* Knowledge and Verification Systems
+* `satoshium.ai` — main public platform and architecture entry surface
+* `satoshium.info` — knowledge, documentation, and architecture-workbench surfaces
+* `satoshium.xyz` — experiments, Labs, simulation, and prototype frontier
+* `satoshium.net` — infrastructure, Services, Signal, and coordination surfaces
+* `satoshium.store` — cultural and economic surface
+* `satoshium.link` — shared components and cross-domain continuity
+* `satoshium.dev` — developer and public-build surface
+* `satoshium.us` — U.S. jurisdiction-aware surface and public operational home of the Satoshium Suite
+* `satoshium.games` — games and interactive experience surface
 
-Each domain serves a distinct role while contributing to the broader mission of the ecosystem.
+Each domain serves a distinct role while contributing to the broader ecosystem. Domain membership or cross-domain reference does not itself create or transfer institutional authority.
 
 ---
 
@@ -219,7 +240,7 @@ Each domain serves a distinct role while contributing to the broader mission of 
 
 Individual repositories, services, frameworks, and domains may contain their own:
 
-* LICENSE
+* LICENSE or LICENSE.txt
 * LICENSE.md
 * Governance documents
 * Security policies
@@ -242,7 +263,7 @@ Questions or clarifications:
 For the legally binding license terms governing this repository, see:
 
 ```text
-LICENSE
+LICENSE.txt
 ```
 
 located at the root of the repository.
