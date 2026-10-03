@@ -4,8 +4,8 @@
 **Canonical Page:** `index.html`  
 **Repository Documentation:** `README.md`  
 **Status:** Active  
-**Updated:** September 21, 2026  
-**Current Contributions:** 13,610
+**Updated:** October 2, 2026  
+**Current Contributions:** 13,793
 
 ---
 
@@ -31,67 +31,260 @@ The current public archive is organized primarily as **monthly executive briefin
 
 ## Current Position
 
-September 2026 completed the original institutional build sequence for the **Satoshium Suite**.
+September 2026 closed with the **Satoshium Suite fully operational and formally reconciled**.
 
 The formal Suite institutions are:
 
 ```text
 Atlas      → Authoritative Intelligence
 Navigator  → Workflow Definition / Orchestration
-Certifier  → Certification Package
-Registry   → Satoshium Registry Record
-Chronicle  → Chronicle Entry
-Anchor     → Integrity Reference
-Beacon     → Discovery Signal / Discovery Metadata
-Attestor   → Attestation / Trust Statement
+Certifier  → Operational Certification
+Registry   → Canonical Registration / Public Catalog
+Chronicle  → Historical Preservation
+Anchor     → Integrity Preservation
+Beacon     → Discovery & Signals
+Attestor   → Governed Attestation & Rule-Constrained Evaluation
 ```
 
-Attestor completed its first governed production operation on **September 19, 2026**, creating:
+All eight formal Suite institutions are now **Operational**.
+
+Aegis remains outside the formal Suite as a Satoshium Service.
+
+The September 30 Suite Reconciliation established the current governing architecture and completed:
 
 ```text
-ATT-2026-0001  → Active · Published · V1.0
-TRST-2026-0001 → Active · Published · V1.0
+Final Architecture Matrix             → COMPLETE · APPROVED
+Governing Distinctions Record          → COMPLETE · APPROVED
+Suite Reconciliation Decision Register → COMPLETE · APPROVED
+Final Suite-wide Consistency Review    → PASS
+Completion Test                        → PASS · 10 / 10
 ```
 
-The production Evaluation Outcome was `supported`, both objects completed production Validation and Conformance, and Attestor subsequently established **Operational Proof**.
-
-By **September 21**, the immediate post-Attestor reconciliation had been completed across the principal affected Attestor, Certifier, Suite, production-record, methodology, FAQ, and `satoshium.us` surfaces.
+No known material Suite-level contradiction remains silently unresolved.
 
 ---
 
 ## Current Executive Outlook
 
-The next formal work is intentionally scheduled rather than accelerated.
+October begins from a different posture than the summer build period.
+
+The Suite is no longer being assembled institution by institution. The current focus is now:
 
 ```text
-September 21–25
-  Deliberate pause / other project work
-
-September 26
-  Suite Reconciliation begins
-
-Following Suite Reconciliation
-  Interoperability Review
-
-Subsequent governed work
-  Additional Suite reviews
-  Universe Mapper reconciliation
-  Final integration decisions as appropriate
+Completed Suite
+  ↓
+Universe-level documentation alignment
+  ↓
+Architecture representation
+  ↓
+Interoperability review
+  ↓
+Maintenance / refinement / governed expansion
 ```
 
-Completing the institutional build sequence ahead of schedule does not require moving the next phase forward.
+The first major October task was the reconciliation and controlled republication of the **Satoshium Universe Mapper**.
+
+The Mapper now reflects the completed Suite while preserving historical Development-era records and prior architectural checkpoints.
+
+---
+
+## October 2026 Development Position
+
+### October 1 — Universe Mapper Post-Suite Reconciliation
+
+Prompt #26 reconciled the Satoshium Universe Mapper against the completed September 30 Suite architecture.
+
+Major changes included:
+
+```text
+Formal Suite systems          → 8 Operational / 0 Development
+Canonical relationships       → 34 → 49
+Production graph edges        → 6 → 21
+AuthorityRecords              → 17 → 20
+Canonical production records  → 4 → 7
+Source records                → 41 → 51
+Historical Development records→ 10 preserved
+```
+
+Beacon and Attestor were reconciled from Development to Operational using approved architecture and production evidence.
+
+The Mapper added the current production objects:
+
+```text
+BEAC-2026-0001
+ATT-2026-0001
+TRST-2026-0001
+```
+
+The ten former Development relationship proposals were individually adjudicated rather than bulk-promoted. Historical Development records were preserved.
+
+The original Prompt #18 architecture baseline remained byte-for-byte unchanged.
+
+A separate post-Suite checkpoint was created:
+
+```text
+snapshot-post-suite-reconciliation-2026-09-30
+fnv1a-ae9060a3
+```
+
+Prompt #26 validation completed with:
+
+```text
+Architecture tests → 142 PASS
+Typecheck          → PASS
+Production build   → PASS
+Desktop / tablet / mobile review → PASS
+```
+
+The release remained blocked at that point because Beacon's public source material still contained stale Development-era wording.
+
+---
+
+### October 2 — Beacon Resolution and RC 0.2
+
+Beacon source documentation was corrected at the source and re-reviewed.
+
+The formerly blocking issue:
+
+```text
+issue-beacon-operational-discovery-boundary
+```
+
+was formally resolved while preserving the original `SOURCE_CONFLICT / OPEN` history.
+
+Two new dated Beacon source-review records were added:
+
+```text
+source-beacon-status-reconciliation-2026-10-02
+source-beacon-production-reconciliation-2026-10-02
+```
+
+The source inventory increased:
+
+```text
+51 → 53
+```
+
+No structural architecture changed.
+
+A third audited checkpoint was created:
+
+```text
+snapshot-beacon-conflict-resolution-2026-10-02
+fnv1a-0f601dee
+```
+
+All prior snapshots remain preserved and independently valid.
+
+The current architecture remains:
+
+```text
+Formal Suite institutions    → 8 Operational
+Current Development systems  → 0
+Canonical relationships      → 49
+Production graph edges       → 21
+AuthorityRecords             → 20
+Canonical production records → 7
+Source records               → 53
+Historical Development records → 10
+```
+
+The current Invariant Monitor result is:
+
+```text
+22 PASS
+0 FAIL
+1 INDETERMINATE
+1 NOT_APPLICABLE
+```
+
+The remaining INDETERMINATE result concerns incomplete independently recorded operational/runtime evidence coverage.
+
+It is explicitly classified as:
+
+```text
+NON_BLOCKING_DISCLOSED_LIMITATION
+Scope → READ_ONLY_ARCHITECTURE_REFERENCE
+```
+
+The invariant itself remains INDETERMINATE. It was not weakened or rewritten as PASS.
+
+Release Readiness is now:
+
+```text
+READY_WITH_DISCLOSURES
+```
+
+---
+
+## Universe Mapper RC 0.2
+
+The Satoshium Universe Mapper is now published as:
+
+```text
+RC 0.2
+Temporary Read-Only Architecture Reference
+Pre-1.0
+```
+
+RC 0.2 is intentionally limited.
+
+It is not:
+
+- independent runtime assurance;
+- certification authority;
+- universal validation;
+- proof of truth or trust;
+- permanent public integration;
+- Version 1.0.
+
+The release preserves:
+
+```text
+noindex
+nofollow
+noarchive
+```
+
+The live application remains hosted at:
+
+```text
+https://satoshium-universe-mapper.replit.app/
+```
+
+The stable Satoshium doorway remains:
+
+```text
+https://satoshium.info/satoshium-universe-mapper/
+```
+
+The controlled publication smoke check passed.
+
+A strict HTML hash mismatch was traced solely to a Replit-injected analytics script. Removing that recognized deployment-layer injection yielded byte-identical application HTML.
+
+Final RC 0.2 verification:
+
+```text
+Architecture tests → 147 PASS
+Typecheck          → PASS
+Production build   → PASS
+Release Readiness  → READY_WITH_DISCLOSURES
+Smoke check        → PASS
+```
 
 ---
 
 ## September 2026 Institutional Milestones
 
+September completed the original institutional build sequence for the Satoshium Suite and then completed whole-Suite reconciliation.
+
 ### Universe Mapper RC 0.1
 
-The Satoshium Universe Mapper reached **RC 0.1** and was published through Replit as a temporary architecture discovery and review workbench.
+The Satoshium Universe Mapper first reached **RC 0.1** as a temporary architecture discovery and review workbench.
 
-Its role is to expose documented Satoshium architecture without manufacturing relationships, transferring authority, or treating documentation as operational evidence.
+Its original role was to expose documented Satoshium architecture without manufacturing relationships, transferring authority, or treating documentation as operational evidence.
 
-Permanent browser integration remains deferred until reconciliation against the completed Suite.
+RC 0.1 is now historical. It has been superseded by RC 0.2.
 
 ### Beacon
 
@@ -139,13 +332,11 @@ The operation preserved the governing distinction:
 
 > **Reference does not transfer authority.**
 
-The immediate Attestor completion reconciliation is now **closed for the present phase**. Remaining stale assumptions or cross-Suite inconsistencies should be discovered through the scheduled Suite Reconciliation and Interoperability Review rather than through an indefinite Attestor cleanup.
-
 ---
 
-## Production-Proven Suite Relationships
+## Production-Proven Suite Objects
 
-The current production history includes the following canonical institutional objects:
+The current production history includes:
 
 ```text
 SC-CERT-2026-0001
@@ -157,30 +348,60 @@ ATT-2026-0001
 TRST-2026-0001
 ```
 
-These objects are connected through governed relationships but remain owned by their respective institutions.
+These objects remain owned by their respective institutions and are connected only through source-backed governed relationships.
 
-Important relationship distinctions include:
+Important distinctions remain:
 
 ```text
 Connection ≠ Identity
 Reference ≠ Derivation
 Reference ≠ Support
 Reference ≠ Authority Transfer
+Conceptual Sequence ≠ Mandatory Pipeline
+Exercised Lineage ≠ Mandatory Architecture
 ```
 
 `TRST-2026-0001` is `derived-from` `ATT-2026-0001`.
 
-The Attestation and Trust Statement reference relevant Certifier, Registry, Chronicle, Anchor, and Beacon objects without assuming their authority.
+Attestor objects reference relevant Certifier, Registry, Chronicle, Anchor, and Beacon objects without assuming their authority.
+
+---
+
+## Architecture History and Checkpoints
+
+The Mapper now preserves three audited architecture checkpoints:
+
+```text
+snapshot-post-prompt-17
+  → fnv1a-b47306f6
+
+snapshot-post-suite-reconciliation-2026-09-30
+  → fnv1a-ae9060a3
+
+snapshot-beacon-conflict-resolution-2026-10-02
+  → fnv1a-0f601dee
+```
+
+These checkpoints preserve architectural history rather than rewriting older states to match current architecture.
+
+Review issues and source observations are part of normalized snapshot inventory. A review-state change may therefore create a new checkpoint even when structural architecture remains unchanged.
 
 ---
 
 ## Archive Model
 
-The public Updates page should preserve development history rather than continuously rewrite earlier periods as though later architecture already existed.
+The public Updates page preserves development history rather than continuously rewriting earlier periods as though later architecture already existed.
 
-Earlier monthly briefings therefore remain historical records of what Satoshium understood, built, or had operational at that time.
+Earlier monthly briefings remain historical records of what Satoshium understood, built, or had operational at that time.
 
 Where later work materially changes the current institutional position, that change belongs in the current Executive Outlook and current-month briefing rather than through silent retroactive rewriting of older historical entries.
+
+At the beginning of a new month:
+
+1. close all earlier monthly `<details>` sections;
+2. add the new current month as the only expanded section;
+3. update the Executive Outlook;
+4. preserve earlier months unchanged unless correcting a factual error.
 
 ---
 
@@ -197,19 +418,22 @@ Daily Journal → detailed chronological development record
 Updates       → executive institutional and architectural narrative
 ```
 
-The Updates page may summarize multiple days of work into a single milestone when that better represents the institutional significance of the work.
+The Updates page may include concise dated daily-activity summaries when a short sequence of days represents a major transition, as occurred with the Universe Mapper on October 1–2.
 
 ---
 
 ## Contribution Position
 
-As of **September 21, 2026**:
+The most recently recorded contribution position is:
 
 ```text
-Total contributions → 13,610
+September 30, 2026
+Total contributions → 13,793
 ```
 
 Contribution counts are historical development markers. They do not establish institutional maturity, Validation, Conformance, publication state, or Operational status.
+
+Update this value only when a newer verified contribution total is available.
 
 ---
 
@@ -220,11 +444,15 @@ When updating `/updates/`:
 1. Preserve prior monthly briefings as historical records unless correcting a factual error.
 2. Update the **Executive Outlook** when the project's immediate institutional direction changes.
 3. Add major developments to the current month's Executive Briefing.
-4. Keep implementation-level detail in daily journals rather than duplicating it unnecessarily.
-5. Preserve institutional authority boundaries and canonical terminology.
-6. Do not treat architecture, documentation, contribution count, or publication alone as proof of Operational status.
-7. Use production evidence and governed institutional determinations when describing an institution as Operational.
-8. Keep the contribution position current when a new development entry records a new total.
+4. Use concise dated daily-activity summaries only when they materially improve the executive record.
+5. Keep implementation-level detail in daily journals rather than duplicating it unnecessarily.
+6. Preserve institutional authority boundaries and canonical terminology.
+7. Do not treat architecture, documentation, contribution count, or publication alone as proof of Operational status.
+8. Use production evidence and governed institutional determinations when describing an institution as Operational.
+9. Keep current release boundaries and evidence limitations explicit.
+10. Never rewrite a prior snapshot, historical issue, or prior month's accurate development state merely to align it with present architecture.
+11. Keep the contribution position current when a newer verified total is recorded.
+12. Preserve the governing distinction: **Reference does not transfer authority.**
 
 ---
 
@@ -242,9 +470,10 @@ Origins & Early Exploration
 → July 2026
 → August 2026
 → September 2026
+→ October 2026
 ```
 
-The earliest material reflects Satoshium's exploratory and platform-building period. Later entries increasingly document formal institutional architecture and production operations.
+The earliest material reflects Satoshium's exploratory and platform-building period. Later entries increasingly document formal institutional architecture, production operations, Suite reconciliation, and governed ecosystem-wide architectural review.
 
 ---
 
@@ -256,13 +485,17 @@ The earliest material reflects Satoshium's exploratory and platform-building per
 └── README.md    → Repository documentation for the Updates surface
 ```
 
-The former `updates.md` filename should be retired after this document is installed as `README.md`.
-
 ---
 
-## Governing Principle
+## Governing Principles
 
 > **Daily journals preserve the detailed chronology. Updates preserve the executive story of institutional development.**
+
+> **Production validates architecture. Architecture does not validate itself.**
+
+> **Reference does not transfer authority.**
+
+> **Maps are representations. Source provenance remains the authority.**
 
 ---
 
