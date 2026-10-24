@@ -60,7 +60,7 @@ It currently requires:
 
 Application state is stored locally in the browser using `localStorage` under:
 
-`SatoshiumMentorState`
+`satoshiumMentorState`
 
 This README records that implementation detail only. It does not elevate browser-local state into a canonical Satoshium record or institutional object.
 
